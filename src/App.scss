@@ -18,17 +18,40 @@
   border-top: none;
   box-sizing: border-box;
   mix-blend-mode: difference;
+  z-index: 2;
+  position: relative;
+  pointer-events: none;
 }
 
 .content {
   width: calc(100% - 120px);
   height: calc(100% - 120px);
-  background-color: #FFF;
   position: absolute;
   top: 60px;
   left: 60px;
   z-index: 1;
+
+  > .page {
+    margin: auto;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+  }
+
+  /* page themes */
+  > .page-theme-light {
+    background-color: #FFF !important;
+  }
+
+  > .page-theme-dark {
+    background-color: #000 !important;
+  }
 }
+
+
 
 nav {
   height: 50px;
@@ -37,7 +60,7 @@ nav {
   position: absolute;
   margin-top: -26px;
   display: flex;
-  z-index: 1;
+  z-index: 2;
   mix-blend-mode: difference;
 
   ul {
@@ -46,6 +69,7 @@ nav {
     margin: 0;
     padding: 0;
     list-style: none;
+    overflow: hidden;
 
     li {
       display: inline-block;
@@ -64,6 +88,7 @@ nav {
     li.nav-separator {
       height: 1px;
       flex-basis: 30px;
+      min-width: 30px;
       margin-top: 1px;
       background-color: #FFF;
       mix-blend-mode: difference;
@@ -87,8 +112,51 @@ nav {
 
 
 /* media queries */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 575px) {
   .App {
-    padding: 15px;
+    padding: 10px;
+    padding-top: 20px;
+    margin: initial;
+    height: auto;
+  }
+
+  .content {
+    width: calc(100% - 60px);
+    height: calc(100% - 70px);
+    left: 30px;
+    top: 40px;
+  }
+
+  nav {
+    width: calc(100% - 20px);
+
+    ul {
+      li {
+        font-size: 1em;
+
+        &:not(.nav-separator) {
+          padding: 0px 5px;
+        }
+
+        &.nav-separator {
+          min-width: 15px;
+
+          &:first-child {
+            min-width: initial;
+            flex-basis: 100%;
+          }
+
+          &:last-child {
+            min-width: initial;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  nav ul li {
+    font-size: .76em;
   }
 }
