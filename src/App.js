@@ -41,10 +41,11 @@ let animations = {
 
 function App() {
   const ref = useRef(null);
+  const navRef = useRef(null);
   const [page, setPage] = useState({
     theme: 'light',
     active: 'first-page',
-    path: '/'
+    path: ''
   });
 
   const switchPage = (pathName) => {
@@ -52,7 +53,8 @@ function App() {
       theme: page.theme === 'light' ? 'dark' : 'light',
       active: page.active === 'first-page' ? 'second-page' : 'first-page',
       path: pathName
-    })
+    });
+    repositionActiveTabIndicator();
   }
 
   const updateBodyStyles = () => {
@@ -60,9 +62,12 @@ function App() {
     document.body.style.backgroundColor = viewportPage.getPropertyValue('background-color');
   }
 
-  if(ref.current) {
-    animations.expandToContent.width = ref.current.offsetWidth;
-    animations.expandToContent.height = ref.current.offsetHeight;
+  const repositionActiveTabIndicator = () => {
+    if( navRef.current ) {
+      const [activeTabEl, indicator] = [navRef.current.querySelector('a.active'), navRef.current.querySelector('.nav-active-page-indicator')];
+      const [activeTabPos, activeTabWidth] = [activeTabEl.offsetLeft, activeTabEl.offsetWidth]
+      indicator.style.left = `${activeTabPos + (activeTabWidth / 2) - 3.5}px`;
+    }
   }
 
   // trigger page switch animation when location changes
@@ -72,14 +77,26 @@ function App() {
       if( location.pathname !== page.path ) {
         switchPage(location.pathname);
       }
-      console.log('sdf')
     }, [location]);
+  }
+
+  let resizeEnd;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeEnd);
+    resizeEnd = this.setTimeout(function() {
+      repositionActiveTabIndicator();
+    }, 250);
+  });
+
+  if(ref.current) {
+    animations.expandToContent.width = ref.current.offsetWidth;
+    animations.expandToContent.height = ref.current.offsetHeight;
   }
 
   return (
     <Router>
       <div className="App">
-        <nav>
+        <nav ref={navRef}>
           <span className="nav-active-page-indicator"></span>
           <ul>
             <li className="nav-separator"></li>

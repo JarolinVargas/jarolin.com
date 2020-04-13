@@ -115,6 +115,8 @@ nav {
     background-color: #FFF;
     mix-blend-mode: difference;
     position: absolute;
+    transition-property: left;
+    transition-duration: .30s;
   }
 }
 
@@ -160,6 +162,10 @@ nav {
           }
         }
       }
+    }
+
+    .nav-active-page-indicator {
+      top: 9px;
     }
   }
 }
