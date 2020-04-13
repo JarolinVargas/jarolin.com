@@ -1,12 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Frame } from "framer";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-  useLocation
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, NavLink, useLocation } from "react-router-dom";
 import './App.scss';
 import PageContent from './PageContent';
 
@@ -40,15 +34,15 @@ let animations = {
 }
 
 function App() {
-  const ref = useRef(null);
-  const navRef = useRef(null);
+  const [ref, navRef] = [useRef(null), useRef(null)];
   const [page, setPage] = useState({
-    theme: 'light',
-    active: 'first-page',
+    theme: 'dark',
+    active: 'second-page',
     path: ''
   });
 
   const switchPage = (pathName) => {
+    global.updateClickables();
     setPage({
       theme: page.theme === 'light' ? 'dark' : 'light',
       active: page.active === 'first-page' ? 'second-page' : 'first-page',
@@ -88,7 +82,7 @@ function App() {
     }, 250);
   });
 
-  if(ref.current) {
+  if( ref.current ) {
     animations.expandToContent.width = ref.current.offsetWidth;
     animations.expandToContent.height = ref.current.offsetHeight;
   }
@@ -113,7 +107,7 @@ function App() {
           <Frame className="page page-theme-light" data-active={page.active === 'first-page'} animate={page.active === 'first-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'first-page' ? null : updateBodyStyles}>
             {page.active === 'first-page' ? <PageContent triggerTransition={usePageTransition}/> : null}
           </Frame>
-          <Frame className="page page-theme-dark" data-active={page.active === 'second-page'} initial={false} animate={page.active === 'second-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'second-page' ? null : updateBodyStyles}>
+          <Frame className="page page-theme-dark" data-active={page.active === 'second-page'} animate={page.active === 'second-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'second-page' ? null : updateBodyStyles}>
             {page.active === 'second-page' ? <PageContent triggerTransition={usePageTransition}/> : null}
           </Frame>
         </main>
