@@ -1,8 +1,15 @@
 import React, { useState, useRef } from 'react';
-import { Frame} from "framer"
+import { Frame } from "framer";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+  useLocation
+} from "react-router-dom";
 import './App.scss';
+import PageContent from './PageContent';
 
-// animations
 let animations = {
   expandToViewport: {
     width: '100vw',
@@ -36,13 +43,15 @@ function App() {
   const ref = useRef(null);
   const [page, setPage] = useState({
     theme: 'light',
-    active: 'first-page'
+    active: 'first-page',
+    path: '/'
   });
 
-  const switchPage = () => {
+  const switchPage = (pathName) => {
     setPage({
       theme: page.theme === 'light' ? 'dark' : 'light',
-      active: page.active === 'first-page' ? 'second-page' : 'first-page'
+      active: page.active === 'first-page' ? 'second-page' : 'first-page',
+      path: pathName
     })
   }
 
@@ -51,31 +60,48 @@ function App() {
     document.body.style.backgroundColor = viewportPage.getPropertyValue('background-color');
   }
 
-  // update animations object width and height
   if(ref.current) {
     animations.expandToContent.width = ref.current.offsetWidth;
     animations.expandToContent.height = ref.current.offsetHeight;
   }
 
+  // trigger page switch animation when location changes
+  const usePageTransition = () => {
+    let location = useLocation();
+    React.useEffect(() => {
+      if( location.pathname !== page.path ) {
+        switchPage(location.pathname);
+      }
+      console.log('sdf')
+    }, [location]);
+  }
+
   return (
-    <div className="App">
-      <nav>
-        <ul>
-          <li className="nav-separator"></li>
-          <li><a href="#" onClick={switchPage}>ABOUT ME</a></li>
-          <li className="nav-separator"></li>
-          <li><a href="#" onClick={switchPage}>PROJECTS</a></li>
-          <li className="nav-separator"></li>
-          <li><a href="#" onClick={switchPage}>THOUGHTS</a></li>
-          <li className="nav-separator"></li>
-        </ul>
-      </nav>
-      <div className="frame"></div>
-      <main className="content" ref={ref}>
-        <Frame className="page page-theme-light" data-active={page.active === 'first-page'} animate={page.active === 'first-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'first-page' ? null : updateBodyStyles}></Frame>
-        <Frame className="page page-theme-dark" data-active={page.active === 'second-page'} initial={false} animate={page.active === 'second-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'second-page' ? null : updateBodyStyles}></Frame>
-      </main>
-    </div>
+    <Router>
+      <div className="App">
+        <nav>
+          <span className="nav-active-page-indicator"></span>
+          <ul>
+            <li className="nav-separator"></li>
+            <li><NavLink to="/" exact>ABOUT ME</NavLink></li>
+            <li className="nav-separator"></li>
+            <li><NavLink to="/projects">PROJECTS</NavLink></li>
+            <li className="nav-separator"></li>
+            <li><NavLink to="/thoughts">THOUGHTS</NavLink></li>
+            <li className="nav-separator"></li>
+          </ul>
+        </nav>
+        <div className="frame"></div>
+        <main className="content" ref={ref}>
+          <Frame className="page page-theme-light" data-active={page.active === 'first-page'} animate={page.active === 'first-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'first-page' ? null : updateBodyStyles}>
+            {page.active === 'first-page' ? <PageContent triggerTransition={usePageTransition}/> : null}
+          </Frame>
+          <Frame className="page page-theme-dark" data-active={page.active === 'second-page'} initial={false} animate={page.active === 'second-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'second-page' ? null : updateBodyStyles}>
+            {page.active === 'second-page' ? <PageContent triggerTransition={usePageTransition}/> : null}
+          </Frame>
+        </main>
+      </div>
+    </Router>
   );
 }
 

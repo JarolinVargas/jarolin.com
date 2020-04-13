@@ -107,6 +107,15 @@ nav {
       text-decoration: none;
     }
   }
+
+  .nav-active-page-indicator {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: #FFF;
+    mix-blend-mode: difference;
+    position: absolute;
+  }
 }
 
 
