@@ -1,3 +1,7 @@
+My personal website (in development)
+License: FOR EDUCATIONAL/SHARING PURPOSES ONLY. DO NOT RE-USE/COPY/RE-DESTRIBUTE
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
