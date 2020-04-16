@@ -15,6 +15,7 @@ let animations = {
       ease: 'anticipate'
     },
     transitionEnd: {
+      display: 'none',
       width: 0,
       height: 0
     },
@@ -23,6 +24,7 @@ let animations = {
     width: '100%',
     height: '100%',
     zIndex: 3,
+    display: 'block',
     position: 'absolute',
     transition: {
       duration: .500,

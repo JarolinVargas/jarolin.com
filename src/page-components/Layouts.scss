@@ -5,6 +5,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
 
+    /* col 2 */
     &.layout-col-2 {
         &.narrow-col-2 {
             grid-template-columns: 1fr 2fr;
@@ -17,6 +18,17 @@
         position: relative;
         /*border: solid 1px red;
         height: 500px;*/
+    }
+
+    /* col 3 */
+    &.layout-col-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: 50%;
+
+        > div {
+            padding: 30px;
+            min-width: 0;
+        }
     }
 
     /* separator */
@@ -42,6 +54,23 @@
             bottom: 30px;
             border: solid 1px #D7D7D9;
             background-color: #FFF;
+        }
+    }
+
+    &.separator-dashedborder {
+        > div {
+            box-sizing: border-box;
+            border-right: dashed 1px;
+            border-top: dashed 1px;
+            border-color: #d7d7d9;
+
+            &:nth-child(-n+3) {
+                border-top: 0;
+            }
+
+            &:nth-child(3n+3) {
+                border-right: 0;
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
-import Separator from './page-components/Separator';
+import Separator from './page-components/ItemBanner';
 import Button from './page-components/Button';
+import ItemBanner from './page-components/ItemBanner';
 import './themes.scss';
 import './page-components/Text.scss';
 import './page-components/Layouts.scss';
@@ -26,7 +27,17 @@ export function AboutMe() {
 
 export function Projects() {
   return (
-    <h1></h1>
+    <div className="layouts layout-col-3 separator-dashedborder">
+      <div><ItemBanner/></div>
+      <div><ItemBanner/></div>
+      <div><ItemBanner/></div>
+      <div><ItemBanner/></div>
+      <div><ItemBanner/></div>
+      <div><ItemBanner/></div>
+      <div><ItemBanner/></div>
+      <div></div>
+      <div></div>
+    </div>
   )
 }
 
