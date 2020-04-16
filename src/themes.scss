@@ -1,0 +1,13 @@
+.page {
+    &.page-theme-light {
+        color: #000;
+
+        .bolder-color {
+            border-color: #D7D7D9;
+        }
+    }
+
+    &.page-theme-dark {
+        color: #FFF;
+    }
+}

@@ -24,7 +24,7 @@ body {
 #cursor {
   width: 30px;
   height: 30px;
-  border-radius: 50px;
+  border-radius: 30px;
   border-style: solid;
   border-width: 1px;
   border-color: #FFF;
@@ -41,7 +41,7 @@ body {
 
   &:before {
     content: "";
-    border-radius: 5px;
+    border-radius: 7px;
     width: 7px;
     height: 7px;
     left: 11px;
@@ -58,5 +58,11 @@ body {
       left: -15px;
       top: -15px;
     }
+  }
+}
+
+body:not(:hover) {
+  #cursor {
+    display: none;
   }
 }

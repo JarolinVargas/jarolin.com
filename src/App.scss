@@ -62,6 +62,9 @@ nav {
   display: flex;
   z-index: 2;
   mix-blend-mode: difference;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   ul {
     display: flex;
@@ -117,6 +120,7 @@ nav {
     position: absolute;
     transition-property: left;
     transition-duration: .30s;
+    transition-timing-function: ease-out;
   }
 }
 

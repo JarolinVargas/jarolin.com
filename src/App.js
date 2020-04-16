@@ -11,7 +11,8 @@ let animations = {
     position: 'fixed',
     zIndex: 2,
     transition: {
-      duration: .500
+      duration: .500,
+      ease: 'anticipate'
     },
     transitionEnd: {
       width: 0,
@@ -24,7 +25,8 @@ let animations = {
     zIndex: 3,
     position: 'absolute',
     transition: {
-      duration: .500
+      duration: .500,
+      ease: 'anticipate'
     },
     transitionEnd: {
       width: '',

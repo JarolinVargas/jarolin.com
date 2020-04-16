@@ -1,0 +1,18 @@
+$secondaryFont: 'Abril Fatface', sans-serif;
+
+p {
+    line-height: 2;
+}
+
+.my-name {
+    font-family: $secondaryFont;
+    font-size: 3.3em;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    line-height: 1;
+}
+
+.my-bio {
+    margin-bottom: 60px;
+}
