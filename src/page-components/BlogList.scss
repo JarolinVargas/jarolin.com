@@ -1,0 +1,19 @@
+.BlogList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    li:not(:last-child) {
+        border-bottom: dashed 1px #D7D7D9;
+    }
+
+    a {
+        padding: 60px 30px;
+        display: block;
+    }
+
+    h1 {
+        margin: 0 0 10px 0;
+    }
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import Separator from './page-components/ItemBanner';
 import Button from './page-components/Button';
 import ItemBanner from './page-components/ItemBanner';
+import BlogList from './page-components/BlogList';
 import './themes.scss';
 import './page-components/Text.scss';
 import './page-components/Layouts.scss';
@@ -46,6 +47,8 @@ export function Projects() {
 
 export function Thoughts() {
   return (
-    <h1></h1>
+    <div className="layouts padding-off">
+      <div><BlogList/></div>
+    </div>
   )
 }

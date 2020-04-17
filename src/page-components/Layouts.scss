@@ -20,6 +20,10 @@
         height: 500px;*/
     }
 
+    &.padding-off > div {
+        padding: 0;
+    }
+
     /* col 3 */
     &.layout-col-3 {
         grid-template-columns: 1fr 1fr 1fr;

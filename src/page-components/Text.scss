@@ -1,5 +1,10 @@
 $secondaryFont: 'Abril Fatface', sans-serif;
 
+.secondaryFont {
+    font-family: $secondaryFont;
+    font-weight: 400;
+}
+
 p {
     line-height: 2;
 }
