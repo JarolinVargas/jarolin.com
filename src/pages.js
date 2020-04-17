@@ -24,8 +24,6 @@ export function AboutMe() {
 
 
 
-
-
 export function Projects() {
   return (
     <div className="layouts layout-col-3 separator-dashedborder">
@@ -43,12 +41,18 @@ export function Projects() {
 }
 
 
-
-
 export function Thoughts() {
   return (
     <div className="layouts padding-off">
       <div><BlogList/></div>
     </div>
+  )
+}
+
+
+
+export function ProjectView() {
+  return (
+    <h1>Project Id:</h1>
   )
 }
