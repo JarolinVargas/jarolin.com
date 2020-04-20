@@ -71,3 +71,11 @@ body:not(:hover) {
     display: none;
   }
 }
+
+#new-background {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}

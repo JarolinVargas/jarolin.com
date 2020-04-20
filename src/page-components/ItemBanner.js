@@ -2,9 +2,9 @@ import React from 'react';
 import './ItemBanner.scss';
 import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react-router-dom";
 
-export default function ItemBanner() {
+export default function ItemBanner(props) {
     return (
-        <Link to="/projects/luminal" className="ItemBanner">
+        <Link to="/projects/luminal" className={`ItemBanner${props.fullHeight ? ' full-height' : ''}`} onClick={() => props.switchPage('projects/luminal', true)}>
             <span className="banner-image">
                 <img src="#" alt="#"/>
             </span>

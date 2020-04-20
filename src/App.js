@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Frame } from "framer";
 import { BrowserRouter as Router, Switch, Route, NavLink, useLocation } from "react-router-dom";
 import './App.scss';
@@ -43,38 +43,46 @@ function App() {
     path: ''
   });
 
-  const switchPage = (pathName) => {
+  useEffect(() => {
+    switchPage();
+    window.addEventListener('popstate', (event) => {
+      repositionActiveTabIndicator();
+    });
+  }, []);
+
+  const switchPage = (pathName, direct, event) => {
     global.updateClickables();
     setPage({
       theme: page.theme === 'light' ? 'dark' : 'light',
       active: page.active === 'first-page' ? 'second-page' : 'first-page',
       path: pathName
+      //direct: direct
     });
-    repositionActiveTabIndicator();
+    repositionActiveTabIndicator(event);
   }
 
   const updateBodyStyles = () => {
     const viewportPage = window.getComputedStyle(ref.current.querySelector('[data-active="false"]'), null);
-    document.body.style.backgroundColor = viewportPage.getPropertyValue('background-color');
+    document.body.querySelector('#new-background').style.backgroundColor = viewportPage.getPropertyValue('background-color');
   }
 
-  const repositionActiveTabIndicator = () => {
+  const repositionActiveTabIndicator = (clickedLink) => {
     if( navRef.current ) {
-      const [activeTabEl, indicator] = [navRef.current.querySelector('a.active'), navRef.current.querySelector('.nav-active-page-indicator')];
+      const [activeTabEl, indicator] = [!clickedLink ? navRef.current.querySelector('a.active') : clickedLink.target, navRef.current.querySelector('.nav-active-page-indicator')];
       const [activeTabPos, activeTabWidth] = [activeTabEl.offsetLeft, activeTabEl.offsetWidth]
       indicator.style.left = `${activeTabPos + (activeTabWidth / 2) - 3.5}px`;
     }
   }
 
-  // trigger page switch animation when location changes
+  /* trigger page switch animation when location changes
   const usePageTransition = () => {
     let location = useLocation();
     React.useEffect(() => {
       if( location.pathname !== page.path ) {
-        switchPage(location.pathname);
+        switchPage(location.pathname, false);
       }
     }, [location]);
-  }
+  }*/
 
   let resizeEnd;
   window.addEventListener('resize', function() {
@@ -96,21 +104,21 @@ function App() {
           <span className="nav-active-page-indicator"></span>
           <ul>
             <li className="nav-separator"></li>
-            <li><NavLink to="/" exact>ABOUT ME</NavLink></li>
+            <li><NavLink to="/" exact onClick={(event) => switchPage('/', true, event)}>ABOUT ME</NavLink></li>
             <li className="nav-separator"></li>
-            <li><NavLink to="/projects">PROJECTS</NavLink></li>
+            <li><NavLink to="/projects" onClick={(event) => switchPage('/projects', true, event)}>PROJECTS</NavLink></li>
             <li className="nav-separator"></li>
-            <li><NavLink to="/thoughts">THOUGHTS</NavLink></li>
+            <li><NavLink to="/thoughts" onClick={(event) => switchPage('/thoughts', true, event)}>THOUGHTS</NavLink></li>
             <li className="nav-separator"></li>
           </ul>
         </nav>
         <div className="frame"></div>
         <main className="content" ref={ref}>
-          <Frame className="page page-theme-light" data-active={page.active === 'first-page'} animate={page.active === 'first-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'first-page' ? null : updateBodyStyles}>
-            {page.active === 'first-page' ? <PageContent triggerTransition={usePageTransition}/> : null}
+          <Frame className="page page-theme-light" data-active={page.active === 'first-page'} animate={page.active === 'first-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'first-page' ? null : updateBodyStyles} initial={{width:0, height:0}}>
+            {page.active === 'first-page' ? <PageContent /*triggerTransition={usePageTransition}*/ switchPage={switchPage} /*direct={page.direct}*/ path={page.path}/> : null}
           </Frame>
-          <Frame className="page page-theme-dark" data-active={page.active === 'second-page'} animate={page.active === 'second-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'second-page' ? null : updateBodyStyles}>
-            {page.active === 'second-page' ? <PageContent triggerTransition={usePageTransition}/> : null}
+          <Frame className="page page-theme-dark" data-active={page.active === 'second-page'} animate={page.active === 'second-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'second-page' ? null : updateBodyStyles} initial={{width:0, height:0}}>
+            {page.active === 'second-page' ? <PageContent /*triggerTransition={usePageTransition}*/ switchPage={switchPage} /*direct={page.direct}*/ path={page.path}/> : null}
           </Frame>
         </main>
       </div>
