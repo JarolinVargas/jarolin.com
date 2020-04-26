@@ -4,12 +4,14 @@ import Separator from './page-components/ItemBanner';
 import ItemBanner from './page-components/ItemBanner';
 import BlogList from './page-components/BlogList';
 import './themes.scss';
-import './page-components/Text.scss';
 import './page-components/Layouts.scss';
 
 export function AboutMe() {
   return (
-    <div className="layouts layout-col-2 narrow-col-2 separator">
+    ''
+  );
+  /*return (
+    <div className="layouts layout-col-2 narrow-col-2">
       <div>
         
       </div>
@@ -17,14 +19,17 @@ export function AboutMe() {
         <MyIntro/>
       </div>
     </div>
-  )
+  )*/
 }
 
 
 
 export function Projects(props) {
   return (
-    <div className="layouts layout-col-3 separator-dashedborder">
+    ''
+  )
+  /*return (
+    <div className="layouts layout-col-3">
       <div><ItemBanner switchPage={props.switchPage} fullHeight={true}/></div>
       <div><ItemBanner switchPage={props.switchPage} fullHeight={true}/></div>
       <div><ItemBanner switchPage={props.switchPage} fullHeight={true}/></div>
@@ -35,18 +40,21 @@ export function Projects(props) {
       <div></div>
       <div></div>
     </div>
-  )
+  )*/
 }
 
 
 export function Thoughts() {
   return (
+    ''
+  )
+  /*return (
     <div className="layouts padding-off">
       <div>
         <BlogList/>
       </div>
     </div>
-  )
+  )*/
 }
 
 

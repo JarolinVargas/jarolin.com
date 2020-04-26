@@ -16,8 +16,7 @@
         padding: 30px;
         box-sizing: border-box;
         position: relative;
-        /*border: solid 1px red;
-        height: 500px;*/
+        border-color: inherit;
     }
 
     &.padding-off > div {
@@ -28,10 +27,12 @@
     &.layout-col-3 {
         grid-template-columns: 1fr 1fr 1fr;
         grid-auto-rows: 50%;
+        padding: 15px;
+        box-sizing: border-box;
 
         > div {
-            padding: 30px;
             min-width: 0;
+            padding: 15px;
         }
     }
 
@@ -67,6 +68,7 @@
             border-right: dashed 1px;
             border-top: dashed 1px;
             border-color: #d7d7d9;
+            padding: 30px;
 
             &:nth-child(-n+3) {
                 border-top: 0;

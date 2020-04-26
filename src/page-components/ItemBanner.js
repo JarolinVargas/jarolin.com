@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react
 
 export default function ItemBanner(props) {
     return (
-        <Link to="/projects/luminal" className={`ItemBanner${props.fullHeight ? ' full-height' : ''}`} onClick={() => props.switchPage('projects/luminal', true)}>
+        <Link to="/projects/luminal" className={`ItemBanner${props.fullHeight ? ' full-height' : ''}`} onClick={() => props.switchPage('projects/luminal')}>
             <span className="banner-image">
                 <img src="#" alt="#"/>
             </span>
