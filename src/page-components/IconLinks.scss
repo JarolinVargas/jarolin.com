@@ -1,0 +1,19 @@
+.IconLinks {
+    display: block;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 1.2em;
+
+        li {
+            display: inline-block;
+            padding: 0px 30px 0px 0px;
+
+            a {
+                box-sizing: border-box;
+            }
+        }
+    }
+}

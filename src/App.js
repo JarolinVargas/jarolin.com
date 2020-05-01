@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Frame } from "framer";
-import { BrowserRouter as Router, Switch, Route, NavLink, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
+import { AboutMe, Projects, Thoughts, ProjectView, ThoughtView } from './pages';
 import './App.scss';
-import PageContent from './PageContent';
 
 let animations = {
   expandToViewport: {
@@ -10,6 +10,7 @@ let animations = {
     height: '100vh',
     position: 'fixed',
     zIndex: 2,
+    borderRadius: 0,
     transition: {
       duration: .500,
       ease: 'anticipate'
@@ -23,6 +24,7 @@ let animations = {
   expandToContent: {
     scale: 1,
     zIndex: 3,
+    borderRadius: 10,
     position: 'absolute',
     transition: {
       duration: .500,
@@ -36,7 +38,7 @@ let animations = {
   }
 }
 
-function App() {
+export default function App() {
   const [ref, navRef] = [useRef(null), useRef(null)];
   const [page, setPage] = useState({
     theme: 'dark',
@@ -116,4 +118,15 @@ function App() {
   );
 }
 
-export default App;
+
+function PageContent(props) {
+  return (
+      <Switch>
+          <Route path="/" exact children={<AboutMe/>} />
+          <Route path="/projects" exact children={<Projects switchPage={props.switchPage}/>} />
+          <Route path="/thoughts" exact children={<Thoughts/>} />
+          <Route path="/projects/:name" children={<ProjectView/>} />
+          <Route path="/thoughts/:id" children={<ThoughtView/>} />
+      </Switch>
+  )
+}

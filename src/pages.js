@@ -3,23 +3,22 @@ import MyIntro from './page-components/MyIntro';
 import Separator from './page-components/ItemBanner';
 import ItemBanner from './page-components/ItemBanner';
 import BlogList from './page-components/BlogList';
+import IconLinks from './page-components/IconLinks';
 import './themes.scss';
 import './page-components/Layouts.scss';
 
 export function AboutMe() {
   return (
-    ''
-  );
-  /*return (
     <div className="layouts layout-col-2 narrow-col-2">
       <div>
         
       </div>
-      <div>
+      <div className="center-col">
         <MyIntro/>
+        <IconLinks/>
       </div>
     </div>
-  )*/
+  )
 }
 
 

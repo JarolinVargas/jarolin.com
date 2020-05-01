@@ -1,6 +1,10 @@
 .page {
     &.page-theme-light {
-        color: #000;
+        color: #666;
+
+        .primary-color {
+            color: #557CFF;
+        }
 
         .bolder-color {
             border-color: #D7D7D9;
