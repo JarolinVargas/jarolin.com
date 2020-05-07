@@ -1,10 +1,13 @@
 import React from 'react';
+import { projects } from './projects-case-studies.jsx';
 import MyIntro from './page-components/MyIntro';
 import Separator from './page-components/ItemBanner';
 import ItemBanner from './page-components/ItemBanner';
 import BlogList from './page-components/BlogList';
 import IconLinks from './page-components/IconLinks';
-import {GridLines, Circle, GridDots} from './page-components/background/Background';
+import ListLabel from './page-components/ListLabel';
+import ProjectButton from './page-components/ProjectButton';
+import { GridLines, Circle, GridDots } from './page-components/background/Background';
 import './themes.scss';
 import './page-components/Layouts.scss';
 
@@ -66,14 +69,26 @@ export function Thoughts() {
 
 export function ProjectView() {
   return (
-    <div className="layouts layout-col-2 narrow-col-2">
-      <div>
-
+    <React.Fragment>
+      <div className="layouts layout-col-2 narrower-col-1">
+        <div>
+          {projects['luminal-website-builder'].jsx}
+        </div>
+        <div>
+          <div className="layouts-vertical" style={{position: 'sticky', top: 50}}>
+            <div>
+              <ProjectButton/>
+            </div>
+            <div>
+              <ListLabel style={{marginTop: 120}}/>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-
+      <div className="Background">
+        <GridDots width="100%" height="400" right={330}/>
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 

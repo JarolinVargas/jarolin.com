@@ -1,0 +1,24 @@
+.ProjectButton {
+    width: 100%;
+    position: relative;
+
+    a {
+        width: 186px;
+        height: 186px;
+        line-height: 186px;
+        letter-spacing: 3px;
+        font-size: 24px;
+        border-radius: 100%;
+        margin: 0 auto;
+        display: block;
+        background: linear-gradient(0deg,rgba(38,71,214,1) 0%,rgba(72,101,230,1) 100%);
+        color: #FFF;
+        text-align: center;
+        box-shadow: 0 0 0 .5em rgba(0, 0, 0, 0.05), 0 0 0 1.1em rgba(0, 0, 0, 0.1), 0 0 0 1.9em rgba(0, 0, 0, .05);
+        transition: border-radius .10s;
+
+        &:hover {
+            border-top-right-radius: 2px;
+        }
+    }
+}

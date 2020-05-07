@@ -100,7 +100,7 @@ export default function App() {
             <li className="nav-separator"></li>
             <li><NavLink to="/projects" onClick={(event) => switchPage('/projects', event)}>PROJECTS</NavLink></li>
             <li className="nav-separator"></li>
-            <li><NavLink to="/thoughts" onClick={(event) => switchPage('/thoughts', event)}>THOUGHTS</NavLink></li>
+            <li><NavLink to="/thoughts" onClick={(event) => switchPage('/thoughts', event)}>ARTICLES</NavLink></li>
             <li className="nav-separator"></li>
           </ul>
         </nav>

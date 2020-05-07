@@ -2,6 +2,9 @@
     width: 100%;
     height: 100%;
     display: grid;
+    grid-gap: 30px;
+    padding: 30px;
+    box-sizing: border-box;
     overflow-y: scroll;
     overflow-x: hidden;
 
@@ -9,6 +12,10 @@
     &.layout-col-2 {
         &.narrow-col-2 {
             grid-template-columns: 1fr 1.5fr;
+        }
+
+        &.narrower-col-1 {
+            grid-template-columns: 3fr 1fr;
         }
     }
 
@@ -28,8 +35,6 @@
 
     /* col 3 alt */
     &.layout-col-3-alt {
-        grid-gap: 30px;
-        padding: 30px;
         box-sizing: border-box;
         grid-template-columns: 1fr 1fr 1fr;
 
@@ -112,4 +117,11 @@
             }
         }
     }*/
+}
+
+
+
+.layouts-vertical {
+    display: flex;
+    flex-direction: column;
 }
