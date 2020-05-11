@@ -1,0 +1,17 @@
+.FloatingView {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    border-bottom-right-radius: 0 !important;
+    z-index: 1000;
+
+    > .label {
+        line-height: 100px;
+        text-align: center;
+        color: #FFF;
+        display: block;
+    }
+}

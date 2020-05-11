@@ -7,6 +7,7 @@ import BlogList from './page-components/BlogList';
 import IconLinks from './page-components/IconLinks';
 import ListLabel from './page-components/ListLabel';
 import ProjectButton from './page-components/ProjectButton';
+import FloatingView from './page-components/FloatingView';
 import { GridLines, Circle, GridDots } from './page-components/background/Background';
 import './themes.scss';
 import './page-components/Layouts.scss';
@@ -38,6 +39,7 @@ export function AboutMe() {
 export function Projects(props) {
   return (
     <React.Fragment>
+      <FloatingView></FloatingView>
       <div className="layouts layout-col-3-alt padding-off">
         <div className="col-1"><ItemBanner switchPage={props.switchPage}/></div>
         <div className="col-2"><ItemBanner switchPage={props.switchPage}/></div>
@@ -86,7 +88,7 @@ export function ProjectView() {
         </div>
       </div>
       <div className="Background">
-        <GridDots width="100%" height="400" right={330}/>
+        {/*<GridDots width="100%" height="400" right={330}/>*/}
       </div>
     </React.Fragment>
   )
