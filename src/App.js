@@ -9,8 +9,8 @@ let animations = {
     width: '100vw',
     height: '100vh',
     position: 'fixed',
+    filter: 'opacity(0)',
     zIndex: 2,
-    borderRadius: 0,
     transition: {
       duration: .500,
       ease: 'anticipate'
@@ -22,9 +22,9 @@ let animations = {
     },
   },
   expandToContent: {
+    filter: 'opacity(1)',
     scale: 1,
     zIndex: 3,
-    borderRadius: 10,
     position: 'absolute',
     transition: {
       duration: .500,
@@ -63,10 +63,10 @@ export default function App() {
     repositionActiveTabIndicator(event);
   }
 
-  const updateNewBackgroundStyles = () => {
+  /*const updateNewBackgroundStyles = () => {
     const viewportPage = window.getComputedStyle(ref.current.querySelector('[data-active="false"]'), null);
     document.body.querySelector('#new-background').style.backgroundColor = viewportPage.getPropertyValue('background-color');
-  }
+  }*/
 
   const repositionActiveTabIndicator = (clickedLink) => {
     if( navRef.current ) {
@@ -106,10 +106,10 @@ export default function App() {
         </nav>
         <div className="frame"></div>
         <main className="content" ref={ref}>
-          <Frame className="page page-theme-light" data-active={page.active === 'first-page'} animate={page.active === 'first-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'first-page' ? null : updateNewBackgroundStyles} initial={{scale:0}}>
+          <Frame className="page page-theme-light" data-active={page.active === 'first-page'} animate={page.active === 'first-page' ? animations.expandToContent : animations.expandToViewport} /*onAnimationComplete={page.active === 'first-page' ? null : updateNewBackgroundStyles}*/ initial={{scale:0}}>
             {page.active === 'first-page' ? <PageContent switchPage={switchPage} path={page.path}/> : null}
           </Frame>
-          <Frame className="page page-theme-dark" data-active={page.active === 'second-page'} animate={page.active === 'second-page' ? animations.expandToContent : animations.expandToViewport} onAnimationComplete={page.active === 'second-page' ? null : updateNewBackgroundStyles} initial={{scale:0}}>
+          <Frame className="page page-theme-light" data-active={page.active === 'second-page'} animate={page.active === 'second-page' ? animations.expandToContent : animations.expandToViewport} /*onAnimationComplete={page.active === 'second-page' ? null : updateNewBackgroundStyles}*/ initial={{scale:0}}>
             {page.active === 'second-page' ? <PageContent switchPage={switchPage} path={page.path}/> : null}
           </Frame>
         </main>

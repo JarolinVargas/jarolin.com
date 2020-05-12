@@ -20,8 +20,12 @@ const animations = {
 export default function FloatingView() {
     const [active, setActive] = useState(0);
 
+    function toggleActive() {
+        setActive(!active ? true : false);
+    }
+
     return (
-        <Frame className="FloatingView" onClick={() => setActive(!active ? true : false)} animate={!active ? animations.default : animations.expand }>
+        <Frame className="FloatingView" onClick={toggleActive} animate={!active ? animations.default : animations.expand }>
             <span className="label">MORE</span>
         </Frame>
     )

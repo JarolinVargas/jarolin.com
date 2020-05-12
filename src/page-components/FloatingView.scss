@@ -5,6 +5,7 @@
     width: 100px;
     height: 100px;
     overflow: scroll;
+    max-width: calc(100% - 20px);
     border-bottom-right-radius: 0 !important;
     z-index: 1000;
 
