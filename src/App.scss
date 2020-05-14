@@ -11,6 +11,7 @@ $frameOutlineColor: #FFF;
   position: relative;
   box-sizing: border-box;
   font-size: 18px;
+  color: #2d3356bf;
 }
 
 .frame {
@@ -19,7 +20,7 @@ $frameOutlineColor: #FFF;
   border: solid 1px $frameOutlineColor;
   border-top: none;
   box-sizing: border-box;
-  mix-blend-mode: difference;
+  /*mix-blend-mode: difference;*/
   z-index: 2;
   position: relative;
   pointer-events: none;
@@ -44,14 +45,9 @@ $frameOutlineColor: #FFF;
     background-attachment: fixed;
     overflow: hidden;
   }
-
-  /* page themes */
-  > .page-theme-light {
+  
+  > .page {
     background-color: #FFF !important;
-  }
-
-  > .page-theme-dark {
-    background-color: #000 !important;
   }
 }
 
@@ -64,7 +60,7 @@ nav {
   margin-top: -26px;
   display: flex;
   z-index: 2;
-  mix-blend-mode: difference;
+  /*mix-blend-mode: difference;*/
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -125,6 +121,15 @@ nav {
     transition-duration: .30s;
     transition-timing-function: ease-out;
   }
+}
+
+
+.primary-color {
+  color: #557CFF;
+}
+
+.bolder-color {
+  border-color: #D7D7D9;
 }
 
 

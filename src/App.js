@@ -63,11 +63,6 @@ export default function App() {
     repositionActiveTabIndicator(event);
   }
 
-  /*const updateNewBackgroundStyles = () => {
-    const viewportPage = window.getComputedStyle(ref.current.querySelector('[data-active="false"]'), null);
-    document.body.querySelector('#new-background').style.backgroundColor = viewportPage.getPropertyValue('background-color');
-  }*/
-
   const repositionActiveTabIndicator = (clickedLink) => {
     if( navRef.current ) {
       const [activeTabEl, indicator] = [!clickedLink ? navRef.current.querySelector('a.active') : clickedLink.target, navRef.current.querySelector('.nav-active-page-indicator')];
@@ -98,18 +93,18 @@ export default function App() {
             <li className="nav-separator"></li>
             <li><NavLink to="/" exact onClick={(event) => switchPage('/', event)}>ABOUT ME</NavLink></li>
             <li className="nav-separator"></li>
-            <li><NavLink to="/projects" onClick={(event) => switchPage('/projects', event)}>PROJECTS</NavLink></li>
+            <li><NavLink to="/projects" onClick={(event) => switchPage('/projects', event)}>PORTFOLIO</NavLink></li>
             <li className="nav-separator"></li>
-            <li><NavLink to="/thoughts" onClick={(event) => switchPage('/thoughts', event)}>ARTICLES</NavLink></li>
+            <li><NavLink to="/thoughts" onClick={(event) => switchPage('/thoughts', event)}>WRITINGS</NavLink></li>
             <li className="nav-separator"></li>
           </ul>
         </nav>
         <div className="frame"></div>
         <main className="content" ref={ref}>
-          <Frame className="page page-theme-light" data-active={page.active === 'first-page'} animate={page.active === 'first-page' ? animations.expandToContent : animations.expandToViewport} /*onAnimationComplete={page.active === 'first-page' ? null : updateNewBackgroundStyles}*/ initial={{scale:0}}>
+          <Frame className="page" data-active={page.active === 'first-page'} animate={page.active === 'first-page' ? animations.expandToContent : animations.expandToViewport} initial={{scale:0}}>
             {page.active === 'first-page' ? <PageContent switchPage={switchPage} path={page.path}/> : null}
           </Frame>
-          <Frame className="page page-theme-light" data-active={page.active === 'second-page'} animate={page.active === 'second-page' ? animations.expandToContent : animations.expandToViewport} /*onAnimationComplete={page.active === 'second-page' ? null : updateNewBackgroundStyles}*/ initial={{scale:0}}>
+          <Frame className="page" data-active={page.active === 'second-page'} animate={page.active === 'second-page' ? animations.expandToContent : animations.expandToViewport} initial={{scale:0}}>
             {page.active === 'second-page' ? <PageContent switchPage={switchPage} path={page.path}/> : null}
           </Frame>
         </main>
@@ -124,7 +119,7 @@ function PageContent(props) {
       <Switch>
           <Route path="/" exact children={<AboutMe/>} />
           <Route path="/projects" exact children={<Projects switchPage={props.switchPage}/>} />
-          <Route path="/thoughts" exact children={<Thoughts/>} />
+          <Route path="/thoughts" exact children={<Thoughts switchPage={props.switchPage}/>}/>} />
           <Route path="/projects/:name" children={<ProjectView/>} />
           <Route path="/thoughts/:id" children={<ThoughtView/>} />
       </Switch>

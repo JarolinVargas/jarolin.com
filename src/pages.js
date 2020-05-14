@@ -3,6 +3,7 @@ import { projects } from './projects-case-studies.jsx';
 import MyIntro from './page-components/MyIntro';
 import Separator from './page-components/ItemBanner';
 import ItemBanner from './page-components/ItemBanner';
+import ArticleBanner from './page-components/ArticleBanner';
 import BlogList from './page-components/BlogList';
 import IconLinks from './page-components/IconLinks';
 import ListLabel from './page-components/ListLabel';
@@ -54,17 +55,21 @@ export function Projects(props) {
 }
 
 
-export function Thoughts() {
+export function Thoughts(props) {
   return (
-    ''
-  )
-  /*return (
-    <div className="layouts padding-off">
-      <div>
-        <BlogList/>
+    <React.Fragment>
+      <FloatingView></FloatingView>
+      <div className="layouts layout-col-4-alt padding-off col-separator-dash">
+        <div className="col-1"><ArticleBanner switchPage={props.switchPage}/></div>
+        <div className="col-2"><ArticleBanner switchPage={props.switchPage}/></div>
+        <div className="col-3"><ArticleBanner switchPage={props.switchPage}/></div>
+        <div className="col-4"><ArticleBanner switchPage={props.switchPage}/></div>
       </div>
-    </div>
-  )*/
+      <div className="Background">
+        
+      </div>
+    </React.Fragment>
+  )
 }
 
 
@@ -98,6 +103,8 @@ export function ProjectView() {
 
 export function ThoughtView() {
   return (
-    <h1>Post id</h1>
+    <React.Fragment>
+      dlf
+    </React.Fragment>
   )
 }

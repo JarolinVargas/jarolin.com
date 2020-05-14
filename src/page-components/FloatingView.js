@@ -22,6 +22,11 @@ export default function FloatingView() {
 
     function toggleActive() {
         setActive(!active ? true : false);
+        if( !active ) {
+            document.body.classList.add('floating-view-active');
+        } else {
+            document.body.classList.remove('floating-view-active');
+        }
     }
 
     return (
