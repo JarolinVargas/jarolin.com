@@ -10,6 +10,15 @@
     transition-property: transform, filter;
     transition-duration: .10s;
 
+    /* col 1 */
+    &.layout-col-1 {
+        grid-template-columns: 1fr;
+
+        > .col-1 {
+            margin: 0 auto;
+        }
+    }
+
     /* col 2 */
     &.layout-col-2 {
         &.narrow-col-2 {
@@ -31,7 +40,7 @@
         }
     }
 
-    &.padding-off > div {
+    &.padding-off {
         padding: 0;
     }
 

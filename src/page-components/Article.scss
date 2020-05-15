@@ -3,6 +3,15 @@
         margin-top: 250px;
     }
 
+    &.writings {
+        padding: 60px 30px;
+        box-sizing: border-box;
+        border: solid 1px #D7D7D9;
+        border-top-left-radius: 30px;
+        height: 3000px;
+        border-bottom: 0;
+    }
+
     p {
         line-height: 2;
         font-weight: 400;
