@@ -10,7 +10,8 @@ import IconLinks from './page-components/IconLinks';
 import ListLabel from './page-components/ListLabel';
 import ProjectButton from './page-components/ProjectButton';
 import FloatingView from './page-components/FloatingView';
-import { GridLines, Circle, GridDots } from './page-components/background/Background';
+import articleIMGPlaceholder from './assets/article-img-placeholder.png';
+import { GridLines, Circle, GridDots, Image } from './page-components/background/Background';
 import './themes.scss';
 import './page-components/Layouts.scss';
 
@@ -79,6 +80,24 @@ export function Thoughts(props) {
 export function ProjectView() {
   return (
     <React.Fragment>
+    <FloatingView></FloatingView>
+    <div className="layouts layout-col-1 padding-off">
+      <div className="col-1" style={{maxWidth: 1000}}>
+        <article>
+            <ArticleHeading height={400} button="https://link" colReversed/>
+            <div className="article writings">
+              <p>Luminal Website Builder is part of a personal project I've been working on for a number of years. It allows users with little or no coding experience to build their personal or small business website with an easy-to-use interface. Similar to Wix and Squarespace website builders; users can create responsive and multi-purpose websites by dragging and dropping elements, editing text, changing colors, and changing options of individual elements without writing or editing code.</p> 
+            </div>
+        </article>
+      </div>
+    </div>
+    <div className="Background">
+      <Image styles={{maxWidth: 1000, height: 400}}></Image>
+    </div>
+  </React.Fragment>
+  )
+  /*return (
+    <React.Fragment>
       <div className="layouts layout-col-2 narrower-col-1">
         <div className="col-1">
           {projects['luminal-website-builder'].jsx}
@@ -95,10 +114,10 @@ export function ProjectView() {
         </div>
       </div>
       <div className="Background">
-        {/*<GridDots width="100%" height="400" right={330}/>*/}
+        {/*<GridDots width="100%" height="400" right={330}/>}
       </div>
     </React.Fragment>
-  )
+  )*/
 }
 
 
@@ -110,7 +129,7 @@ export function ThoughtView() {
       <div className="layouts layout-col-1 padding-off">
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>
-              <ArticleHeading/>
+              <ArticleHeading image={articleIMGPlaceholder}/>
               <div className="article writings">
                 <p>Luminal Website Builder is part of a personal project I've been working on for a number of years. It allows users with little or no coding experience to build their personal or small business website with an easy-to-use interface. Similar to Wix and Squarespace website builders; users can create responsive and multi-purpose websites by dragging and dropping elements, editing text, changing colors, and changing options of individual elements without writing or editing code.</p> 
               </div>

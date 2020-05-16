@@ -38,3 +38,9 @@ export function Circle(props) {
         <div className="Circle" style={{width: props.size, height: props.size, right: props.right, top: props.top, boxShadow: props.shadow}}></div>
     )
 }
+
+export function Image(props) {
+    return (
+        <div className="Image" style={props.styles}></div>
+    )
+}
