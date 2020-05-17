@@ -41,6 +41,6 @@ export function Circle(props) {
 
 export function Image(props) {
     return (
-        <div className="Image" style={props.styles}></div>
+        <div className={`Image${props.fade ? ' fade' : ''}`} style={props.styles}></div>
     )
 }

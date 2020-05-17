@@ -4,10 +4,11 @@
     right: 10px;
     width: 100px;
     height: 100px;
-    overflow: scroll;
+    overflow-y: scroll;
     max-width: calc(100% - 20px);
     border-bottom-right-radius: 0 !important;
     z-index: 1000;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
 
     > .label {
         line-height: 100px;

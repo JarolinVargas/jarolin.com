@@ -6,11 +6,12 @@
     &.writings {
         padding: 60px 30px;
         box-sizing: border-box;
-        border: solid 1px #D7D7D9;
         border-top-left-radius: 30px;
         height: 3000px;
+        border-right: solid 1px #D7D7D9;
         border-bottom: 0;
         background-color: #FFF;
+        box-shadow: -50px 0px 50px rgba(0,0,0,0.1);
     }
 
     p {

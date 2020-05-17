@@ -92,7 +92,7 @@ export function ProjectView() {
       </div>
     </div>
     <div className="Background">
-      <Image styles={{maxWidth: 1000, height: 400}}></Image>
+      <Image styles={{maxWidth: 1000, height: '100%'}} fade={true}></Image>
     </div>
   </React.Fragment>
   )

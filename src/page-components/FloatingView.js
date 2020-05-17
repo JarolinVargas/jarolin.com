@@ -31,7 +31,7 @@ export default function FloatingView() {
 
     return (
         <Frame className="FloatingView" onClick={toggleActive} animate={!active ? animations.default : animations.expand }>
-            <span className="label">MORE</span>
+            {!active && <span className="label">MORE</span>}
         </Frame>
     )
 }
