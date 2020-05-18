@@ -30,3 +30,22 @@
         }
     }
 }
+
+/* layout column scale effect when hovered */
+.layouts.article-banners-hover-effect {
+    overflow: visible;
+
+    > div {
+        transition-property: transform, box-shadow, border-radius;
+        transition-duration: .20s;
+        background-color: #FFF;
+
+        &:hover {
+            transform: scale(1.04);
+            border: none;
+            z-index: 1;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+    }
+}

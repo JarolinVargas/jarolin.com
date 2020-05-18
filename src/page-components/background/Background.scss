@@ -24,6 +24,8 @@
     height: 500px;
     background-color: #F7F7F9;
     position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     &.fade {
         -webkit-mask-image: linear-gradient(to left, transparent 0%, #FFF 75%);

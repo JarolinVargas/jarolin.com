@@ -121,6 +121,18 @@
         }
     }
 
+    /* scrollbar */
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #FFE53B;
+        background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+        border-right: solid 2px #FFF;
+    }
+
     /* col 3 
     &.layout-col-3 {
         grid-template-columns: 1fr 1fr 1fr;
