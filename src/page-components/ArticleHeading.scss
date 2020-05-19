@@ -6,16 +6,20 @@
     border-right: solid 1px #D7D7D9;
     display: flex;
 
-    img {
-        vertical-align: top;
-    }
-
-    > .article-img {
+    .article-img {
         align-self: center;
+        width: 350px;
+        flex-shrink: 0;
+
+        img {
+            vertical-align: top;
+            border-radius: 100%;
+            max-width: 100%;
+        }
     }
 
-    > .article-meta {
-        width: 100%;
+    .article-meta {
+        flex-basis: 100%;
         flex-grow: 1;
         padding-left: 30px;
         align-self: center;

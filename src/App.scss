@@ -44,6 +44,11 @@ $frameOutlineColor: #FFF;
     right: 0px;
     background-attachment: fixed;
     overflow: hidden;
+
+    > *:not(.FloatingView) {
+      transition-property: transform, filter;
+      transition-duration: .20s;
+    }
   }
   
   > .page {

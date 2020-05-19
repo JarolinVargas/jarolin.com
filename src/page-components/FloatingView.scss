@@ -23,6 +23,10 @@ body.floating-view-active {
         > *:not(.FloatingView) {
             filter: blur(5px);
             transform: scale(.98);
+
+            * {
+                pointer-events: none;
+            }
         }
     }
 }

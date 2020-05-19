@@ -7,8 +7,6 @@
     box-sizing: border-box;
     overflow-y: scroll;
     overflow-x: hidden;
-    transition-property: transform, filter;
-    transition-duration: .10s;
 
     /* col 1 */
     &.layout-col-1 {

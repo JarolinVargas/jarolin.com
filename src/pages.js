@@ -44,10 +44,10 @@ export function Projects(props) {
     <React.Fragment>
       <FloatingView></FloatingView>
       <div className="layouts layout-col-3-alt">
-        <div className="col-1"><ItemBanner switchPage={props.switchPage}/></div>
-        <div className="col-2"><ItemBanner switchPage={props.switchPage}/></div>
-        <div className="col-3"><ItemBanner switchPage={props.switchPage}/></div>
-        <div className="col-4"><ItemBanner switchPage={props.switchPage}/></div>
+        <div className="col-1"><ItemBanner switchPage={props.switchPage} title="Luminal Website Builder &amp; HTML5 Template" url="https://whaaa"/></div>
+        <div className="col-2"><ItemBanner switchPage={props.switchPage} title="ForceBrands Newsroom Blog" url="https://whaaa"/></div>
+        <div className="col-3"><ItemBanner switchPage={props.switchPage} title="ForceBrands Client Job Board React App" url="https://whaaa"/></div>
+        <div className="col-4"><ItemBanner switchPage={props.switchPage} title="Manhattan Bridge Capital Website" url="https://whaaa"/></div>
       </div>
       <div className="Background">
         <GridDots width="100%" height="100%" bottom={0} right={0}/>
@@ -63,10 +63,10 @@ export function Thoughts(props) {
     <React.Fragment>
       <FloatingView></FloatingView>
       <div className="layouts layout-col-4-alt padding-off col-separator-dash article-banners-hover-effect">
-        <div className="col-1"><ArticleBanner switchPage={props.switchPage}/></div>
-        <div className="col-2"><ArticleBanner switchPage={props.switchPage}/></div>
-        <div className="col-3"><ArticleBanner switchPage={props.switchPage}/></div>
-        <div className="col-4"><ArticleBanner switchPage={props.switchPage}/></div>
+        <div className="col-1" style={{backgroundImage: `url(${articleIMGPlaceholder})`}}><ArticleBanner switchPage={props.switchPage}/></div>
+        <div className="col-2" style={{backgroundImage: `url(${articleIMGPlaceholder})`}}><ArticleBanner switchPage={props.switchPage}/></div>
+        <div className="col-3" style={{backgroundImage: `url(${articleIMGPlaceholder})`}}><ArticleBanner switchPage={props.switchPage}/></div>
+        <div className="col-4" style={{backgroundImage: `url(${articleIMGPlaceholder})`}}><ArticleBanner switchPage={props.switchPage}/></div>
       </div>
       <div className="Background">
         
@@ -92,6 +92,7 @@ export function ProjectView() {
         </div>
       </div>
       <div className="Background">
+        <GridDots width="1000" height="100%" left={0}/>
         <Image styles={{maxWidth: 1000, height: '100%', backgroundImage: `url(${process.env.PUBLIC_URL}/images/portfolio/luminal-site-builder-cover.png)`}} fade={true}></Image>
       </div>
     </React.Fragment>
