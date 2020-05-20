@@ -5,8 +5,11 @@
     grid-gap: 30px;
     padding: 30px;
     box-sizing: border-box;
-    overflow-y: scroll;
-    overflow-x: hidden;
+
+    &.scroll-y {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
 
     /* col 1 */
     &.layout-col-1 {
@@ -45,6 +48,9 @@
     /* col 3 alt */
     &.layout-col-3-alt {
         box-sizing: border-box;
+        padding: 15px;
+        grid-row-gap: 15px;
+        grid-column-gap: 15px;
         grid-template-columns: 1fr 1fr 1fr;
 
         > .col-1 {

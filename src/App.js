@@ -4,32 +4,27 @@ import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-do
 import { AboutMe, Projects, Thoughts, ProjectView, ThoughtView } from './pages';
 import './App.scss';
 
+const transition = {duration: .500, ease: 'anticipate'}
 let animations = {
-  expandToViewport: {
+  exit: {
     width: '100vw',
     height: '100vh',
     position: 'fixed',
     filter: 'opacity(0)',
     zIndex: 2,
-    transition: {
-      duration: .500,
-      ease: 'anticipate'
-    },
+    transition,
     transitionEnd: {
       scale: 0,
       width: 0,
       height: 0
     },
   },
-  expandToContent: {
+  enter: {
     filter: 'opacity(1)',
     scale: 1,
     zIndex: 3,
     position: 'absolute',
-    transition: {
-      duration: .500,
-      ease: 'anticipate'
-    },
+    transition,
     transitionEnd: {
       scale: 1,
       width: '',
@@ -41,7 +36,6 @@ let animations = {
 export default function App() {
   const [ref, navRef] = [useRef(null), useRef(null)];
   const [page, setPage] = useState({
-    theme: 'dark',
     active: 'second-page',
     path: ''
   });
@@ -54,9 +48,7 @@ export default function App() {
   }, []);
 
   const switchPage = (pathName, event) => {
-    global.updateClickables();
     setPage({
-      theme: page.theme === 'light' ? 'dark' : 'light',
       active: page.active === 'first-page' ? 'second-page' : 'first-page',
       path: pathName
     });
@@ -80,8 +72,8 @@ export default function App() {
   });
 
   if( ref.current ) {
-    animations.expandToContent.width = ref.current.offsetWidth;
-    animations.expandToContent.height = ref.current.offsetHeight;
+    animations.enter.width = ref.current.offsetWidth;
+    animations.enter.height = ref.current.offsetHeight;
   }
 
   return (
@@ -101,10 +93,10 @@ export default function App() {
         </nav>
         <div className="frame"></div>
         <main className="content" ref={ref}>
-          <Frame className="page" data-active={page.active === 'first-page'} animate={page.active === 'first-page' ? animations.expandToContent : animations.expandToViewport} initial={{scale:0}}>
+          <Frame className="page" data-active={page.active === 'first-page'} animate={page.active === 'first-page' ? animations.enter : animations.exit} initial={{scale:0}}>
             {page.active === 'first-page' ? <PageContent switchPage={switchPage} path={page.path}/> : null}
           </Frame>
-          <Frame className="page" data-active={page.active === 'second-page'} animate={page.active === 'second-page' ? animations.expandToContent : animations.expandToViewport} initial={{scale:0}}>
+          <Frame className="page" data-active={page.active === 'second-page'} animate={page.active === 'second-page' ? animations.enter : animations.exit} initial={{scale:0}}>
             {page.active === 'second-page' ? <PageContent switchPage={switchPage} path={page.path}/> : null}
           </Frame>
         </main>

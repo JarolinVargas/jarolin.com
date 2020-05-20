@@ -6,7 +6,7 @@
 
     h2 {
         margin: 0;
-        font-size: 1.50em;
+        font-size: 1.30em;
         font-weight: 500;
     }
 
@@ -32,13 +32,19 @@
 }
 
 /* layout column scale effect when hovered */
+$bannersTransitionDuration: .20s;
 .layouts.article-banners-hover-effect {
     overflow: visible;
+    padding: 15px;
+    column-gap: 15px;
+    row-gap: 15px;
+    background-color: #F7F7F9;
 
     > div {
+        padding: 15px;
         position: relative;
         transition-property: transform, box-shadow, border-radius;
-        transition-duration: .20s;
+        transition-duration: $bannersTransitionDuration;
         background-color: #FFF;
 
         &:hover {
@@ -65,7 +71,7 @@
             visibility: visible;
             opacity: 1;
             transition-property: opacity, visibility;
-            transition-duration: .20s;
+            transition-duration: $bannersTransitionDuration;
         }
     }
 }

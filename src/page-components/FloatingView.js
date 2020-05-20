@@ -6,7 +6,7 @@ const animations = {
     expand: {
         height: 'calc(100% - 20px)',
         width: 350,
-        borderRadius: 30,
+        borderRadius: 10,
         backgroundColor: '#000'
     },
     default: {
@@ -17,7 +17,7 @@ const animations = {
     }
 }
 
-export default function FloatingView() {
+export default function FloatingView(props) {
     const [active, setActive] = useState(0);
 
     function toggleActive() {
@@ -30,8 +30,8 @@ export default function FloatingView() {
     }
 
     return (
-        <Frame className="FloatingView" onClick={toggleActive} animate={!active ? animations.default : animations.expand }>
-            {!active && <span className="label">MORE</span>}
+        <Frame className="FloatingView" onClick={toggleActive} initial={{width:100, height:100}} animate={!active ? animations.default : animations.expand }>
+            <span className="label">{!active ? 'More' : `More ${props.label}`}</span>
         </Frame>
     )
 }

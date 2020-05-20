@@ -42,7 +42,7 @@ export function AboutMe() {
 export function Projects(props) {
   return (
     <React.Fragment>
-      <FloatingView></FloatingView>
+      <FloatingView label="Projects"></FloatingView>
       <div className="layouts layout-col-3-alt">
         <div className="col-1"><ItemBanner switchPage={props.switchPage} title="Luminal Website Builder &amp; HTML5 Template" url="https://whaaa"/></div>
         <div className="col-2"><ItemBanner switchPage={props.switchPage} title="ForceBrands Newsroom Blog" url="https://whaaa"/></div>
@@ -61,15 +61,12 @@ export function Projects(props) {
 export function Thoughts(props) {
   return (
     <React.Fragment>
-      <FloatingView></FloatingView>
-      <div className="layouts layout-col-4-alt padding-off col-separator-dash article-banners-hover-effect">
+      <FloatingView label="Writings"></FloatingView>
+      <div className="layouts layout-col-4-alt article-banners-hover-effect">
         <div className="col-1" style={{backgroundImage: `url(${articleIMGPlaceholder})`}}><ArticleBanner switchPage={props.switchPage}/></div>
         <div className="col-2" style={{backgroundImage: `url(${articleIMGPlaceholder})`}}><ArticleBanner switchPage={props.switchPage}/></div>
         <div className="col-3" style={{backgroundImage: `url(${articleIMGPlaceholder})`}}><ArticleBanner switchPage={props.switchPage}/></div>
         <div className="col-4" style={{backgroundImage: `url(${articleIMGPlaceholder})`}}><ArticleBanner switchPage={props.switchPage}/></div>
-      </div>
-      <div className="Background">
-        
       </div>
     </React.Fragment>
   )
@@ -80,8 +77,8 @@ export function Thoughts(props) {
 export function ProjectView() {
   return (
     <React.Fragment>
-      <FloatingView></FloatingView>
-      <div className="layouts layout-col-1 padding-off">
+      <FloatingView label="Projects"></FloatingView>
+      <div className="layouts layout-col-1 padding-off scroll-y">
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>
               <ArticleHeading height={400} button="https://link" colReversed/>
@@ -104,8 +101,8 @@ export function ProjectView() {
 export function ThoughtView() {
   return (
     <React.Fragment>
-      <FloatingView></FloatingView>
-      <div className="layouts layout-col-1 padding-off">
+      <FloatingView label="Writings"></FloatingView>
+      <div className="layouts layout-col-1 padding-off scroll-y">
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>
               <ArticleHeading image={articleIMGPlaceholder}/>
