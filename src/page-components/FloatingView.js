@@ -6,14 +6,12 @@ const animations = {
     expand: {
         height: 'calc(100% - 20px)',
         width: 350,
-        borderRadius: 10,
-        backgroundColor: '#000'
+        borderRadius: 30
     },
     default: {
         width: 100,
         height: 100,
-        borderRadius: '100%',
-        backgroundColor: '#000'
+        borderRadius: '100%'
     }
 }
 

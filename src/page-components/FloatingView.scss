@@ -4,29 +4,31 @@
     right: 10px;
     width: 100px;
     height: 100px;
-    overflow-y: scroll;
     max-width: calc(100% - 20px);
     border-bottom-right-radius: 0 !important;
     z-index: 1000;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,0.75) 0%, rgba(32,45,58,1) 81.3% );
 
     > .label {
         line-height: 100px;
         text-align: center;
-        color: #adb8d4;
+        color: #FFF;
         display: block;
     }
 }
 
 body.floating-view-active {
-    .FloatingView > .label {
-        line-height: 3.5;
-        text-transform: uppercase;
-        font-size: .85em;
-        font-weight: 500;
-        border-bottom: solid 1px #5d6881;
-        margin-left: 15px;
-        margin-right: 15px;
+    .FloatingView {
+        overflow-y: scroll;
+
+        > .label {
+            line-height: 2.8;
+            text-transform: uppercase;
+            font-size: .85em;
+            font-weight: 500;
+            //background-color: rgba(0, 0, 0, 0.1);
+            color: #adb8d4;
+        }
     }
 
     .page {

@@ -1,6 +1,5 @@
 import React from 'react';
 import './MyIntro.scss';
-import Button from './Button';
 
 export default function MyIntro() {
     return (

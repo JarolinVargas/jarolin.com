@@ -9,6 +9,22 @@
     z-index: -1;
 }
 
+/* GridLines */
+.GridLines {
+    -webkit-mask-image: linear-gradient(to left, transparent 0%, #FFF 20%);
+    mask-image: linear-gradient(to left, transparent 0%, #FFF 20%);
+}
+
+/* grid dots */
+.GridDots {
+    position: absolute;
+
+    &.centered-griddots {
+        left: 0px;
+        right: 0px;
+        margin: 0 auto;
+    }
+}
 
 /* circle */
 .Circle {
@@ -16,7 +32,6 @@
     position: absolute;
     background-color: #FFF;
 }
-
 
 /* image */
 .Image {

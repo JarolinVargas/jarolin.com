@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Frame } from "framer";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
-import { AboutMe, Projects, Thoughts, ProjectView, ThoughtView } from './pages';
+import { AboutMe, Projects, Writings, ProjectView, WritingsView } from './pages';
 import './App.scss';
 
 const transition = {duration: .500, ease: 'anticipate'}
@@ -87,7 +87,7 @@ export default function App() {
             <li className="nav-separator"></li>
             <li><NavLink to="/projects" onClick={(event) => switchPage('/projects', event)}>PORTFOLIO</NavLink></li>
             <li className="nav-separator"></li>
-            <li><NavLink to="/thoughts" onClick={(event) => switchPage('/thoughts', event)}>WRITINGS</NavLink></li>
+            <li><NavLink to="/writings" onClick={(event) => switchPage('/writings', event)}>WRITINGS</NavLink></li>
             <li className="nav-separator"></li>
           </ul>
         </nav>
@@ -111,9 +111,9 @@ function PageContent(props) {
       <Switch>
           <Route path="/" exact children={<AboutMe/>} />
           <Route path="/projects" exact children={<Projects switchPage={props.switchPage}/>} />
-          <Route path="/thoughts" exact children={<Thoughts switchPage={props.switchPage}/>}/>} />
+          <Route path="/writings" exact children={<Writings switchPage={props.switchPage}/>} />
           <Route path="/projects/:name" children={<ProjectView/>} />
-          <Route path="/thoughts/:id" children={<ThoughtView/>} />
+          <Route path="/writings/:id" children={<WritingsView/>} />
       </Switch>
   )
 }

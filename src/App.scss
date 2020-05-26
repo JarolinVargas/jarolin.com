@@ -10,7 +10,7 @@ $frameOutlineColor: #FFF;
   padding: 30px;
   position: relative;
   box-sizing: border-box;
-  font-size: 18px;
+  font-size: 17px;
   color: #2d3356bf;
 }
 
@@ -65,7 +65,7 @@ nav {
   margin-top: -26px;
   display: flex;
   z-index: 2;
-  /*mix-blend-mode: difference;*/
+  font-size: 1.05em;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -150,12 +150,19 @@ nav {
 
 
 /* media queries */
+@media screen and (max-width: 750px) {
+  .App {
+    font-size: 16px;
+  }
+}
+
 @media screen and (max-width: 575px) {
   .App {
     padding: 10px;
     padding-top: 20px;
     margin: initial;
     height: auto;
+    font-size: 14px;
   }
 
   .content {
