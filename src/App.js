@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Frame } from "framer";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
-import { AboutMe, Projects, Writings, ProjectView, WritingsView } from './pages';
+import { AboutMe, Portfolio, Writings, ProjectView, WritingsView } from './pages';
 import './App.scss';
 
 const transition = {duration: .500, ease: 'anticipate'}
@@ -85,7 +85,7 @@ export default function App() {
             <li className="nav-separator"></li>
             <li><NavLink to="/" exact onClick={(event) => switchPage('/', event)}>ABOUT ME</NavLink></li>
             <li className="nav-separator"></li>
-            <li><NavLink to="/projects" onClick={(event) => switchPage('/projects', event)}>PORTFOLIO</NavLink></li>
+            <li><NavLink to="/portfolio" onClick={(event) => switchPage('/portfolio', event)}>PORTFOLIO</NavLink></li>
             <li className="nav-separator"></li>
             <li><NavLink to="/writings" onClick={(event) => switchPage('/writings', event)}>WRITINGS</NavLink></li>
             <li className="nav-separator"></li>
@@ -110,9 +110,9 @@ function PageContent(props) {
   return (
       <Switch>
           <Route path="/" exact children={<AboutMe/>} />
-          <Route path="/projects" exact children={<Projects switchPage={props.switchPage}/>} />
+          <Route path="/portfolio" exact children={<Portfolio switchPage={props.switchPage}/>} />
           <Route path="/writings" exact children={<Writings switchPage={props.switchPage}/>} />
-          <Route path="/projects/:name" children={<ProjectView/>} />
+          <Route path="/portfolio/:name" children={<ProjectView/>} />
           <Route path="/writings/:id" children={<WritingsView/>} />
       </Switch>
   )

@@ -5,7 +5,7 @@ import ProjectButton from './ProjectButton';
 
 export default function ArticleHeading(props) {
     return (
-        <div className={`ArticleHeading${props.colReversed ? ' col-reversed' : ''}`} style={{height: props.height}}>
+        <div className={`ArticleHeading${props.projectHeading ? ' project-heading' : ''}`} style={{height: props.height}}>
             <div className="article-img">
                 {props.image && <img src={props.image} alt="#"/>}
                 {props.button && <ProjectButton/>}

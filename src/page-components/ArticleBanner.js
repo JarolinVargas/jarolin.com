@@ -6,7 +6,7 @@ export default function ArticleBanner(props) {
     return (
         <Link to="writings/sdof" className="ArticleBanner" onClick={() => props.switchPage('writings/sdfs')}>
             <h2 className="primary-color">This is the post title placeholder</h2>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+            <em>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</em>
             <ul className="article-meta secondary-color">
                 <li>July 24, 2020</li>
                 <li>UI/UX Design</li>

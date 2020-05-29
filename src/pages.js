@@ -1,11 +1,12 @@
 import React from 'react';
-import { projects } from './projects-case-studies.jsx';
+import { portfolio } from './portfolio-case-studies.jsx';
 import MyIntro from './page-components/MyIntro';
 import ItemBanner from './page-components/ItemBanner';
 import ArticleBanner from './page-components/ArticleBanner';
 import ArticleHeading from './page-components/ArticleHeading';
 import IconLinks from './page-components/IconLinks';
 import FloatingView from './page-components/FloatingView';
+import List from './page-components/List';
 import { GridLines, Circle, GridDots, Image } from './page-components/Background';
 import './page-components/Layouts.scss';
 
@@ -33,18 +34,22 @@ export function AboutMe() {
 
 
 
-export function Projects(props) {
+export function Portfolio(props) {
   return (
     <React.Fragment>
-      <FloatingView label="Projects"></FloatingView>
+      <FloatingView label="Portfolio">
+        <List switchPage={props.switchPage}>
+          {[
+            {label: 'Graphics Corrections Tool', link: 'portfolio/something'},
+            {label: 'Referral Service Landing Page', link: 'portfolio/something'}
+          ]}
+        </List>
+      </FloatingView>
       <div className="layouts layout-col-3-alt">
         <div className="col-1"><ItemBanner switchPage={props.switchPage} title="Luminal Website Builder &amp; HTML5 Template" url="https://whaaa"/></div>
         <div className="col-2"><ItemBanner switchPage={props.switchPage} title="ForceBrands Newsroom Blog" url="https://whaaa"/></div>
         <div className="col-3"><ItemBanner switchPage={props.switchPage} title="ForceBrands Client Job Board" url="https://whaaa"/></div>
         <div className="col-4"><ItemBanner switchPage={props.switchPage} title="Manhattan Bridge Capital" url="https://whaaa"/></div>
-      </div>
-      <div className="Background">
-        <GridDots width="100%" height="100%" bottom={0} right={0}/>
       </div>
     </React.Fragment>
   )
@@ -55,7 +60,14 @@ export function Projects(props) {
 export function Writings(props) {
   return (
     <React.Fragment>
-      <FloatingView label="Writings"></FloatingView>
+      <FloatingView label="Writings">
+        <List switchPage={props.switchPage}>
+          {[
+            {label: 'React Job Board app', link: 'writings/sdfoisdf'},
+            {label: 'React Job Board app', link: 'writings/sdfoisdf'}
+          ]}
+        </List>
+      </FloatingView>
       <div className="layouts layout-col-3-alt layout-reversed article-banners-hover-effect">
         <div className="col-1" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage}/></div>
         <div className="col-2" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage}/></div>
@@ -68,14 +80,21 @@ export function Writings(props) {
 
 
 
-export function ProjectView() {
+export function ProjectView(props) {
   return (
     <React.Fragment>
-      <FloatingView label="Projects"></FloatingView>
+      <FloatingView label="Portfolio">
+        <List switchPage={props.switchPage}>
+          {[
+            {label: 'React Job Board app', link: '/sodif'},
+            {label: 'React Job Board app', link: '/sodif'}
+          ]}
+        </List>
+      </FloatingView>
       <div className="layouts layout-col-1 padding-off scroll-y">
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>
-              <ArticleHeading height={400} button="https://link" colReversed/>
+              <ArticleHeading height={400} button="https://link" projectHeading/>
               <div className="article writings">
                 <p>Luminal Website Builder is part of a personal project I've been working on for a number of years. It allows users with little or no coding experience to build their personal or small business website with an easy-to-use interface. Similar to Wix and Squarespace website builders; users can create responsive and multi-purpose websites by dragging and dropping elements, editing text, changing colors, and changing options of individual elements without writing or editing code.</p> 
               </div>
@@ -92,10 +111,17 @@ export function ProjectView() {
 
 
 
-export function WritingsView() {
+export function WritingsView(props) {
   return (
     <React.Fragment>
-      <FloatingView label="Writings"></FloatingView>
+      <FloatingView label="Writings">
+        <List switchPage={props.switchPage}>
+          {[
+            {label: 'React Job Board app', link: '/writings/some'},
+            {label: 'React Job Board app', link: '/writings/some'}
+          ]}
+        </List>
+      </FloatingView>
       <div className="layouts layout-col-1 padding-off scroll-y">
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>

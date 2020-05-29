@@ -6,12 +6,14 @@ const animations = {
     expand: {
         height: 'calc(100% - 20px)',
         width: 350,
-        borderRadius: 30
+        borderRadius: 30,
+        overflowY: 'scroll'
     },
     default: {
         width: 100,
         height: 100,
-        borderRadius: '100%'
+        borderRadius: '100%',
+        overflowY: 'hidden'
     }
 }
 
@@ -30,6 +32,7 @@ export default function FloatingView(props) {
     return (
         <Frame className="FloatingView" onClick={toggleActive} initial={{width:100, height:100}} animate={!active ? animations.default : animations.expand }>
             <span className="label">{!active ? 'More' : `More ${props.label}`}</span>
+            {!active ? '' : props.children}
         </Frame>
     )
 }
