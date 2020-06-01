@@ -2,7 +2,6 @@
     width: 100%;
     margin: 0 auto;
     padding: 30px;
-    padding-left: 0;
     box-sizing: border-box;
     border-right: solid 1px #D7D7D9;
     display: flex;
@@ -44,12 +43,16 @@
             width: auto;
         }
     }
+
+    &:not(.project-heading) {
+        padding-left: 0;
+    }
 }
 
 
 @media screen and (max-width: 950px) {
     .ArticleHeading {
-        padding: 15px;
+        padding: 15px !important;
 
         .article-meta h1 {
             font-size: 2em;

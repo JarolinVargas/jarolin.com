@@ -11,7 +11,7 @@ export default function ArticleHeading(props) {
                 {props.button && <ProjectButton/>}
             </div>
             <div className="article-meta">
-                <h1 className="primary-color">This is the title of the post</h1>
+                <h1 className="primary-color">{props.title}</h1>
                 <ContentMeta/>
             </div>
         </div>

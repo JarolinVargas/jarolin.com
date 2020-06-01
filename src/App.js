@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Frame } from "framer";
-import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, NavLink, useLocation } from "react-router-dom";
 import { AboutMe, Portfolio, Writings, ProjectView, WritingsView } from './pages';
 import './App.scss';
 
@@ -107,13 +107,15 @@ export default function App() {
 
 
 function PageContent(props) {
+  const location = useLocation();
+  const itemKey = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
   return (
       <Switch>
           <Route path="/" exact children={<AboutMe/>} />
           <Route path="/portfolio" exact children={<Portfolio switchPage={props.switchPage}/>} />
           <Route path="/writings" exact children={<Writings switchPage={props.switchPage}/>} />
-          <Route path="/portfolio/:name" children={<ProjectView/>} />
-          <Route path="/writings/:id" children={<WritingsView/>} />
+          <Route path="/portfolio/:name" children={<ProjectView itemKey={itemKey} switchPage={props.switchPage}/>} />
+          <Route path="/writings/:id" children={<WritingsView itemKey={itemKey} switchPage={props.switchPage}/>} />
       </Switch>
   )
 }
