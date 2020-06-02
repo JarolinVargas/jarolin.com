@@ -8,11 +8,11 @@ export default function ArticleHeading(props) {
         <div className={`ArticleHeading${props.projectHeading ? ' project-heading' : ''}`} style={{height: props.height}}>
             <div className="article-img">
                 {props.image && <img src={props.image} alt="#"/>}
-                {props.button && <ProjectButton/>}
+                {props.buttonLink && <ProjectButton link={props.buttonLink}/>}
             </div>
             <div className="article-meta">
                 <h1 className="primary-color">{props.title}</h1>
-                <ContentMeta/>
+                <ContentMeta meta={props.meta}/>
             </div>
         </div>
     )

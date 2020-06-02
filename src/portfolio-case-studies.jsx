@@ -1,5 +1,7 @@
 import React from 'react';
 import './page-components/Article.scss';
+import luminalCoverIMG from './assets/portfolio-img/luminal-site-builder-cover.png';
+import luminalBannerCoverIMG from './assets/portfolio-img/luminal-site-builder.png';
 
 export const portfolio = {
     'luminal': {
@@ -7,10 +9,12 @@ export const portfolio = {
             title: 'Luminal Website Builder & Template',
             context: 'Personal Project',
             duration: 'June 2020 - May 2030',
-            role: 'Developer & Designer'
+            role: 'Developer & Designer',
+            link: 'https://luminaldev.com'
         },
         images: {
-            cover: ''
+            cover: luminalCoverIMG,
+            bannerCover: luminalBannerCoverIMG
         },
         jsx: (
             <React.Fragment>
@@ -25,10 +29,12 @@ export const portfolio = {
             title: 'ForceBrands Newsroom Blog',
             context: 'Personal Project',
             duration: 'June 2020 - May 2030',
-            role: 'Developer & Designer'
+            role: 'Developer & Designer',
+            link: 'https://jarolin.com'
         },
         images: {
-            cover: ''
+            cover: '',
+            bannerCover: ''
         },
         jsx: (
             <React.Fragment>
@@ -43,10 +49,12 @@ export const portfolio = {
             title: 'ForceBrands Job Board React App',
             context: 'Personal Project',
             duration: 'June 2020 - May 2030',
-            role: 'Developer & Designer'
+            role: 'Developer & Designer',
+            link: 'https://jarolin.com'
         },
         images: {
-            cover: ''
+            cover: '',
+            bannerCover: ''
         },
         jsx: (
             <React.Fragment>
@@ -61,10 +69,12 @@ export const portfolio = {
             title: 'Manhattan Bridge Capital',
             context: 'Personal Project',
             duration: 'June 2020 - May 2030',
-            role: 'Developer & Designer'
+            role: 'Developer & Designer',
+            link: 'https://jarolin.com'
         },
         images: {
-            cover: ''
+            cover: '',
+            bannerCover: ''
         },
         jsx: (
             <React.Fragment>
@@ -79,10 +89,12 @@ export const portfolio = {
             title: 'Graphics Corrections Tool',
             context: 'Personal Project',
             duration: 'June 2020 - May 2030',
-            role: 'Developer & Designer'
+            role: 'Developer & Designer',
+            link: 'https://jarolin.com'
         },
         images: {
-            cover: ''
+            cover: '',
+            bannerCover: ''
         },
         jsx: (
             <React.Fragment>
@@ -97,10 +109,12 @@ export const portfolio = {
             title: 'Referral Service Landing Page',
             context: 'Personal Project',
             duration: 'June 2020 - May 2030',
-            role: 'Developer & Designer'
+            role: 'Developer & Designer',
+            link: 'https://jarolin.com'
         },
         images: {
-            cover: ''
+            cover: '',
+            bannerCover: ''
         },
         jsx: (
             <React.Fragment>

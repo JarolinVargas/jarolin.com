@@ -47,10 +47,10 @@ export function Portfolio(props) {
         </List>
       </FloatingView>
       <div className="layouts layout-col-3-alt">
-        <div className="col-1"><ItemBanner switchPage={props.switchPage} title="Luminal Website Builder &amp; HTML5 Template" url="portfolio/luminal"/></div>
-        <div className="col-2"><ItemBanner switchPage={props.switchPage} title="ForceBrands Newsroom Blog" url="portfolio/forcebrands-newsroom"/></div>
-        <div className="col-3"><ItemBanner switchPage={props.switchPage} title="ForceBrands Client Job Board" url="portfolio/forcebrands-jobboard"/></div>
-        <div className="col-4"><ItemBanner switchPage={props.switchPage} title="Manhattan Bridge Capital" url="portfolio/manhattan-bridge-capital"/></div>
+        <div className="col-1"><ItemBanner switchPage={props.switchPage} title={portfolio['luminal'].meta.title} url="portfolio/luminal" cover={portfolio['luminal'].images.bannerCover}/></div>
+        <div className="col-2"><ItemBanner switchPage={props.switchPage} title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" cover={portfolio['forcebrands-newsroom'].images.bannerCover}/></div>
+        <div className="col-3"><ItemBanner switchPage={props.switchPage} title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" cover={portfolio['forcebrands-jobboard'].images.bannerCover}/></div>
+        <div className="col-4"><ItemBanner switchPage={props.switchPage} title={portfolio['manhattan-bridge-capital'].meta.title} url="portfolio/manhattan-bridge-capital" cover={portfolio['manhattan-bridge-capital'].images.bannerCover}/></div>
       </div>
     </React.Fragment>
   )
@@ -81,7 +81,7 @@ export function Writings(props) {
 
 
 
-export function ProjectView(props) {
+export function PortfolioView(props) {
   const item = portfolio[props.itemKey];
   return (
     <React.Fragment>
@@ -93,7 +93,13 @@ export function ProjectView(props) {
       <div className="layouts layout-col-1 padding-off scroll-y">
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>
-              <ArticleHeading title={item.meta.title} button="https://link" height={400} projectHeading/>
+              <ArticleHeading
+                title={item.meta.title}
+                buttonLink={item.meta.link}
+                meta={[{label: 'Context', value: item.meta.context},{label: 'Duration', value: item.meta.duration},{label: 'Role', value: item.meta.role}]}
+                height={400}
+                projectHeading
+              />
               <div className="article writings">
                 {item.jsx}
               </div>
@@ -102,7 +108,7 @@ export function ProjectView(props) {
       </div>
       <div className="Background">
         <GridDots width="1000" height="100%" left={0} centered={true}/>
-        <Image styles={{maxWidth: 1000, height: '100%', backgroundImage: `url(${process.env.PUBLIC_URL}/images/portfolio/luminal-site-builder-cover.png)`}} fade={true}></Image>
+        <Image styles={{maxWidth: 1000, height: '100%', backgroundImage: `url(${item.images.cover}`}} fade={true}></Image>
       </div>
     </React.Fragment>
   )

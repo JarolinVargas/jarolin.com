@@ -1,10 +1,10 @@
 import React from 'react';
 import './ProjectButton.scss';
 
-export default function ProjectButton() {
+export default function ProjectButton(props) {
     return(
         <div className="ProjectButton">
-            <a href="#">OPEN</a>
+            <a href={props.link}>OPEN</a>
         </div>
     )
 }

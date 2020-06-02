@@ -6,7 +6,7 @@ export default function ItemBanner(props) {
     return (
         <Link to={props.url} className="ItemBanner" onClick={() => props.switchPage('portfolio/luminal')}>
             <h2 className="primary-color">{props.title}</h2>
-            <div className="banner-image" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/portfolio/luminal-site-builder.png)`}}></div>
+            <div className="banner-image" style={{backgroundImage: `url(${props.cover})`}}></div>
         </Link>
     )
 }

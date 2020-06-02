@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Frame } from "framer";
 import { BrowserRouter as Router, Switch, Route, NavLink, useLocation } from "react-router-dom";
-import { AboutMe, Portfolio, Writings, ProjectView, WritingsView } from './pages';
+import { AboutMe, Portfolio, Writings, PortfolioView, WritingsView } from './pages';
 import './App.scss';
 
 const transition = {duration: .500, ease: 'anticipate'}
@@ -114,7 +114,7 @@ function PageContent(props) {
           <Route path="/" exact children={<AboutMe/>} />
           <Route path="/portfolio" exact children={<Portfolio switchPage={props.switchPage}/>} />
           <Route path="/writings" exact children={<Writings switchPage={props.switchPage}/>} />
-          <Route path="/portfolio/:name" children={<ProjectView itemKey={itemKey} switchPage={props.switchPage}/>} />
+          <Route path="/portfolio/:name" children={<PortfolioView itemKey={itemKey} switchPage={props.switchPage}/>} />
           <Route path="/writings/:id" children={<WritingsView itemKey={itemKey} switchPage={props.switchPage}/>} />
       </Switch>
   )
