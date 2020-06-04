@@ -115,7 +115,7 @@ function PageContent(props) {
           <Route path="/portfolio" exact children={<Portfolio switchPage={props.switchPage}/>} />
           <Route path="/writings" exact children={<Writings switchPage={props.switchPage}/>} />
           <Route path="/portfolio/:name" children={<PortfolioView itemKey={itemKey} switchPage={props.switchPage}/>} />
-          <Route path="/writings/:id" children={<WritingsView itemKey={itemKey} switchPage={props.switchPage}/>} />
+          <Route path="/writings/:id" children={<WritingsView writingKey={itemKey} switchPage={props.switchPage}/>} />
       </Switch>
   )
 }

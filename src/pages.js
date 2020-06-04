@@ -1,6 +1,6 @@
 import React from 'react';
-import { useLocation } from "react-router-dom";
 import { portfolio } from './portfolio-case-studies.jsx';
+import { writings } from './writings.jsx';
 import MyIntro from './page-components/MyIntro';
 import ItemBanner from './page-components/ItemBanner';
 import ArticleBanner from './page-components/ArticleBanner';
@@ -34,6 +34,7 @@ export function AboutMe() {
 }
 
 
+
 const floatingViewPortfolioList = [
   {label: 'Graphics Corrections Tool', link: 'portfolio/graphics-corrections-tool'},
   {label: 'Referral Service Landing Page', link: 'portfolio/referral-service-landing-page'}
@@ -51,29 +52,6 @@ export function Portfolio(props) {
         <div className="col-2"><ItemBanner switchPage={props.switchPage} title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" cover={portfolio['forcebrands-newsroom'].images.bannerCover}/></div>
         <div className="col-3"><ItemBanner switchPage={props.switchPage} title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" cover={portfolio['forcebrands-jobboard'].images.bannerCover}/></div>
         <div className="col-4"><ItemBanner switchPage={props.switchPage} title={portfolio['manhattan-bridge-capital'].meta.title} url="portfolio/manhattan-bridge-capital" cover={portfolio['manhattan-bridge-capital'].images.bannerCover}/></div>
-      </div>
-    </React.Fragment>
-  )
-}
-
-
-
-export function Writings(props) {
-  return (
-    <React.Fragment>
-      <FloatingView label="Writings">
-        <List switchPage={props.switchPage}>
-          {[
-            {label: 'React Job Board app', link: 'writings/sdfoisdf'},
-            {label: 'React Job Board app', link: 'writings/sdfoisdf'}
-          ]}
-        </List>
-      </FloatingView>
-      <div className="layouts layout-col-3-alt layout-reversed article-banners-hover-effect">
-        <div className="col-1" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage}/></div>
-        <div className="col-2" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage}/></div>
-        <div className="col-3" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage}/></div>
-        <div className="col-4" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage}/></div>
       </div>
     </React.Fragment>
   )
@@ -116,7 +94,35 @@ export function PortfolioView(props) {
 
 
 
+export function Writings(props) {
+  const getArticleMeta = (i, k) => {
+    return writings[Object.keys(writings)[i]].meta[k];
+  }
+
+  return (
+    <React.Fragment>
+      <FloatingView label="Writings">
+        <List switchPage={props.switchPage}>
+          {[
+            {label: 'React Job Board app', link: 'writings/sdfoisdf'},
+            {label: 'React Job Board app', link: 'writings/sdfoisdf'}
+          ]}
+        </List>
+      </FloatingView>
+      <div className="layouts layout-col-3-alt layout-reversed article-banners-hover-effect">
+        <div className="col-1" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'date')} category={getArticleMeta(0, 'category')} url={`writings/${getArticleMeta(0, 'slug')}`}/></div>
+        <div className="col-2" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(1, 'title')} summary={getArticleMeta(1, 'summary')} date={getArticleMeta(1, 'date')} category={getArticleMeta(1, 'category')} url={`writings/${getArticleMeta(1, 'slug')}`}/></div>
+        <div className="col-3" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'date')} category={getArticleMeta(0, 'category')} url={`writings/${getArticleMeta(0, 'slug')}`}/></div>
+        <div className="col-4" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'date')} category={getArticleMeta(0, 'category')} url={`writings/${getArticleMeta(0, 'slug')}`}/></div>
+      </div>
+    </React.Fragment>
+  )
+}
+
+
+
 export function WritingsView(props) {
+  const article = writings[props.writingKey];
   return (
     <React.Fragment>
       <FloatingView label="Writings">
@@ -130,9 +136,13 @@ export function WritingsView(props) {
       <div className="layouts layout-col-1 padding-off scroll-y">
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>
-              <ArticleHeading image={`${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}/>
+              <ArticleHeading 
+                title={article.meta.title}
+                meta={[{label: 'Published', value: article.meta.published},{label: 'Topic', value: article.meta.topic}]}
+                image={`${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}
+              />
               <div className="article writings">
-                <p>Luminal Website Builder is part of a personal project I've been working on for a number of years. It allows users with little or no coding experience to build their personal or small business website with an easy-to-use interface. Similar to Wix and Squarespace website builders; users can create responsive and multi-purpose websites by dragging and dropping elements, editing text, changing colors, and changing options of individual elements without writing or editing code.</p> 
+                {article.jsx}
               </div>
           </article>
         </div>

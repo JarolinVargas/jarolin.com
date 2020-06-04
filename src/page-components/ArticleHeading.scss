@@ -9,6 +9,7 @@
     .article-img {
         align-self: center;
         padding-right: 30px;
+        flex-shrink: 0;
 
         img {
             width: 350px;
