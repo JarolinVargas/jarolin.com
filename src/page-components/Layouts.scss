@@ -18,6 +18,12 @@
         > .col-1 {
             margin: 0 auto;
         }
+
+        &.border-right {
+            > .col-1 {
+                border-right: solid 1px #D7D7D9;
+            }
+        }
     }
 
     /* col 2 */

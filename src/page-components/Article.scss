@@ -1,4 +1,6 @@
 .article {
+    margin-bottom: 30px;
+
     &.project-article {
         margin-top: 250px;
     }
@@ -7,9 +9,7 @@
         padding: 60px 30px;
         box-sizing: border-box;
         border-top-left-radius: 30px;
-        height: 3000px;
-        border-right: solid 1px #D7D7D9;
-        border-bottom: 0;
+        border-bottom-left-radius: 30px;
         background-color: #FFF;
         box-shadow: -50px 0px 50px rgba(0,0,0,0.1);
     }

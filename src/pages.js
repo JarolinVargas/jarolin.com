@@ -58,17 +58,20 @@ export function Portfolio(props) {
 }
 
 
-
+const floatingViewPortfolioViewList = [
+  {label: 'Graphics Corrections Tool', link: 'portfolio/graphics-corrections-tool'},
+  {label: 'Referral Service Landing Page', link: 'portfolio/referral-service-landing-page'}
+]
 export function PortfolioView(props) {
   const item = portfolio[props.itemKey];
   return (
     <React.Fragment>
       <FloatingView label="Portfolio">
         <List switchPage={props.switchPage}>
-          {floatingViewPortfolioList}
+          {floatingViewPortfolioViewList}
         </List>
       </FloatingView>
-      <div className="layouts layout-col-1 padding-off scroll-y">
+      <div className="layouts layout-col-1 padding-off scroll-y border-right">
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>
               <ArticleHeading
@@ -110,10 +113,10 @@ export function Writings(props) {
         </List>
       </FloatingView>
       <div className="layouts layout-col-3-alt layout-reversed article-banners-hover-effect">
-        <div className="col-1" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'date')} category={getArticleMeta(0, 'category')} url={`writings/${getArticleMeta(0, 'slug')}`}/></div>
-        <div className="col-2" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(1, 'title')} summary={getArticleMeta(1, 'summary')} date={getArticleMeta(1, 'date')} category={getArticleMeta(1, 'category')} url={`writings/${getArticleMeta(1, 'slug')}`}/></div>
-        <div className="col-3" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'date')} category={getArticleMeta(0, 'category')} url={`writings/${getArticleMeta(0, 'slug')}`}/></div>
-        <div className="col-4" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'date')} category={getArticleMeta(0, 'category')} url={`writings/${getArticleMeta(0, 'slug')}`}/></div>
+        <div className="col-1" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></div>
+        <div className="col-2" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(1, 'title')} summary={getArticleMeta(1, 'summary')} date={getArticleMeta(1, 'published')} category={getArticleMeta(1, 'topic')} url={`writings/${getArticleMeta(1, 'slug')}`}/></div>
+        <div className="col-3" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></div>
+        <div className="col-4" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></div>
       </div>
     </React.Fragment>
   )
@@ -133,7 +136,7 @@ export function WritingsView(props) {
           ]}
         </List>
       </FloatingView>
-      <div className="layouts layout-col-1 padding-off scroll-y">
+      <div className="layouts layout-col-1 padding-off border-right scroll-y">
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>
               <ArticleHeading 
