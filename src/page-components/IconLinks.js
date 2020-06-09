@@ -8,8 +8,8 @@ export default function IconLinks() {
         <div className="IconLinks">
             <ul>
                 <li><a href="#"><FontAwesomeIcon icon={faDribbble} color="#EA4C89"/></a></li>
-                <li><a href="#"><FontAwesomeIcon icon={faGithub} color="#000000"/></a></li>
-                <li><a href="#"><FontAwesomeIcon icon={faCodepen} color="#000000"/></a></li>
+                <li><a href="#"><FontAwesomeIcon icon={faGithub} color="#FFF"/></a></li>
+                <li><a href="#"><FontAwesomeIcon icon={faCodepen} color="#FFF"/></a></li>
                 <li><a href="#"><FontAwesomeIcon icon={faLinkedin} color="#0274B3"/></a></li>
             </ul>
         </div>

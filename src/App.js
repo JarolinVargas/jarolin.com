@@ -93,12 +93,9 @@ export default function App() {
         </nav>
         <div className="frame"></div>
         <main className="content" ref={ref}>
-          <Frame className="page" data-active={page.active === 'first-page'} animate={page.active === 'first-page' ? animations.enter : animations.exit} initial={{scale:0}} style={{backgroundColor: '#FFF'}}>
-            {page.active === 'first-page' ? <PageContent switchPage={switchPage} path={page.path}/> : null}
-          </Frame>
-          <Frame className="page" data-active={page.active === 'second-page'} animate={page.active === 'second-page' ? animations.enter : animations.exit} initial={{scale:0}} style={{backgroundColor: '#FFF'}}>
-            {page.active === 'second-page' ? <PageContent switchPage={switchPage} path={page.path}/> : null}
-          </Frame>
+          <div className="page" data-active={window.location.pathname} style={{backgroundColor: 'rgba(255, 255, 255, 0.02)'}}>
+            <PageContent switchPage={switchPage} path={page.path}/>
+          </div>
         </main>
       </div>
     </Router>

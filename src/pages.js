@@ -14,7 +14,7 @@ import './page-components/Layouts.scss';
 export function AboutMe() {
   return (
     <React.Fragment>
-      <div className="layouts layout-col-2 scroll-y narrow-col-2">
+      <div className="layouts layout-col-2 narrow-col-2 scroll-y">
         <div>
           
         </div>
@@ -24,7 +24,7 @@ export function AboutMe() {
         </div>
       </div>
       <div className="Background">
-        <GridLines/>
+        {/*<GridLines/>*/}
         <Circle size={300} right={0} top={60} shadow="-50px -50px 50px rgba(0, 0, 0, 0.1)"/>
         <Circle size={300} right={-140} top={-140} shadow="0px 0px 50px rgba(0, 0, 0, 0.2)"/>
         <GridDots width={140} height={140} bottom={10} right={10}/>
@@ -47,7 +47,7 @@ export function Portfolio(props) {
           {floatingViewPortfolioList}
         </List>
       </FloatingView>
-      <div className="layouts layout-col-3-alt">
+      <div className="layouts layout-col-3-alt padding-off">
         <div className="col-1"><ItemBanner switchPage={props.switchPage} title={portfolio['luminal'].meta.title} url="portfolio/luminal" cover={portfolio['luminal'].images.bannerCover}/></div>
         <div className="col-2"><ItemBanner switchPage={props.switchPage} title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" cover={portfolio['forcebrands-newsroom'].images.bannerCover}/></div>
         <div className="col-3"><ItemBanner switchPage={props.switchPage} title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" cover={portfolio['forcebrands-jobboard'].images.bannerCover}/></div>
@@ -112,7 +112,7 @@ export function Writings(props) {
           ]}
         </List>
       </FloatingView>
-      <div className="layouts layout-col-3-alt layout-reversed article-banners-hover-effect">
+      <div className="layouts layout-col-3-alt layout-reversed article-banners-hover-effect padding-off">
         <div className="col-1" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></div>
         <div className="col-2" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(1, 'title')} summary={getArticleMeta(1, 'summary')} date={getArticleMeta(1, 'published')} category={getArticleMeta(1, 'topic')} url={`writings/${getArticleMeta(1, 'slug')}`}/></div>
         <div className="col-3" style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></div>

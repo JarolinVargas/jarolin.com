@@ -6,7 +6,7 @@ export default function ArticleBanner(props) {
     return (
         <Link to={props.url} className="ArticleBanner" onClick={() => props.switchPage('writings/sdfs')}>
             <h2 className="primary-color">{props.title}</h2>
-            <em>{props.summary}</em>
+            <em className="secondary-color">{props.summary}</em>
             <ul className="article-meta secondary-color">
                 <li>{props.date}</li>
                 <li>{props.category}</li>
