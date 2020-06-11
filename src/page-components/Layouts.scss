@@ -21,7 +21,7 @@
 
         &.border-right {
             > .col-1 {
-                border-right: solid 1px #D7D7D9;
+                border-right: solid 1px #2f2f2f;
             }
         }
     }
@@ -107,7 +107,7 @@
 
     /* scrollbar */
     &::-webkit-scrollbar {
-        width: 5px;
+        width: 1px;
         background-color: transparent;
     }
     

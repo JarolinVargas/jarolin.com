@@ -55,9 +55,13 @@ $bannersTransitionDuration: .20s;
         background-position: 50%;
         border: solid 1px;
         box-sizing: border-box;
-        border-radius: 20px;
-        border-bottom-left-radius: 0px;
+        /*border-radius: 20px;
+        border-top-right-radius: 0px;*/
         overflow: hidden;
+
+        &.col-3 {border-top-left-radius: 20px}
+        &.col-1 {border-top-right-radius: 20px; border-bottom-right-radius: 20px;}
+        &.col-2 {border-bottom-left-radius: 20px}
 
         > * {
             transition-property: opacity;
@@ -88,7 +92,7 @@ $bannersTransitionDuration: .20s;
             bottom: 0px;
             left: 0px;
             right: 0px;
-            background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,1));
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), black);
             visibility: visible;
             opacity: 1;
             transition-property: opacity, visibility;
