@@ -8,29 +8,28 @@
     border-bottom-right-radius: 0 !important;
     z-index: 1000;
     overflow-x: hidden;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, rgba(0, 162, 255, 0.8) 74%);
 
     > .label {
         line-height: 100px;
         text-align: center;
         color: #FFF;
         display: block;
-        border-bottom: solid 1px rgba(255, 255, 255, 0.20);
     }
 }
 
 body.floating-view-active {
     .FloatingView {
         overflow-y: scroll;
-        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,0.75) 0%, rgba(32,45,58,1) 81.3% );
 
         > .label {
             line-height: 2.8;
             text-transform: uppercase;
             font-size: .85em;
             font-weight: 500;
+            border-bottom: solid 1px rgba(255, 255, 255, 0.20);
             //background-color: rgba(0, 0, 0, 0.1);
-            color: #adb8d4;
         }
     }
 

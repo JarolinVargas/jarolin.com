@@ -3,6 +3,10 @@ import { Frame } from "framer";
 import './FloatingView.scss';
 
 const animations = {
+    initial: {
+        width: 0,
+        height: 0
+    },
     expand: {
         height: 'calc(100% - 20px)',
         width: 350,
@@ -30,7 +34,7 @@ export default function FloatingView(props) {
     }
 
     return (
-        <Frame className="FloatingView" onClick={toggleActive} initial={{width:100, height:100}} animate={!active ? animations.default : animations.expand }>
+        <Frame className="FloatingView" onClick={toggleActive} initial={{width:100, height:100}} animate={!active ? animations.default : animations.expand } initial={animations.initial}>
             <span className="label">{!active ? 'More' : `More ${props.label}`}</span>
             {!active ? '' : props.children}
         </Frame>

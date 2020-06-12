@@ -76,6 +76,9 @@ export default function App() {
     animations.enter.height = ref.current.offsetHeight;
   }
 
+  const pathname = window.location.pathname;
+  const itemKey = pathname.substring(pathname.lastIndexOf('/') + 1);
+
   return (
     <Router>
       <div className="App">
@@ -93,26 +96,17 @@ export default function App() {
         </nav>
         <div className="frame"></div>
         <main className="content" ref={ref}>
-          <div className="page" data-active={window.location.pathname} style={{backgroundColor: 'rgba(255, 255, 255, 0.02)'}}>
-            <PageContent switchPage={switchPage} path={page.path}/>
+          <div className="page" data-active={pathname} style={{backgroundColor: 'rgba(255, 255, 255, 0.02)'}}>
+            <Switch>
+              <Route path="/" exact children={<AboutMe/>} />
+              <Route path="/portfolio" exact children={<Portfolio switchPage={switchPage}/>} />
+              <Route path="/writings" exact children={<Writings switchPage={switchPage}/>} />
+              <Route path="/portfolio/:name" children={<PortfolioView itemKey={itemKey} switchPage={switchPage}/>} />
+              <Route path="/writings/:id" children={<WritingsView writingKey={itemKey} switchPage={switchPage}/>} />
+            </Switch>
           </div>
         </main>
       </div>
     </Router>
   );
-}
-
-
-function PageContent(props) {
-  const location = useLocation();
-  const itemKey = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
-  return (
-      <Switch>
-          <Route path="/" exact children={<AboutMe/>} />
-          <Route path="/portfolio" exact children={<Portfolio switchPage={props.switchPage}/>} />
-          <Route path="/writings" exact children={<Writings switchPage={props.switchPage}/>} />
-          <Route path="/portfolio/:name" children={<PortfolioView itemKey={itemKey} switchPage={props.switchPage}/>} />
-          <Route path="/writings/:id" children={<WritingsView writingKey={itemKey} switchPage={props.switchPage}/>} />
-      </Switch>
-  )
 }
