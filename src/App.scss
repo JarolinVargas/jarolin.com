@@ -45,6 +45,8 @@ $frameOutlineColor: #FFF;
     background-attachment: fixed;
     border: solid 1px #272727;
     box-shadow: 0px 0px 10px black;
+    transition-property: box-shadow, background-color;
+    transition-duration: .500s;
 
     > *:not(.FloatingView) {
       transition-property: transform, filter;

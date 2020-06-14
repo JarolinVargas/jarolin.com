@@ -18,6 +18,10 @@ const animations = {
         height: 100,
         borderRadius: '100%',
         overflowY: 'hidden'
+    },
+    exit: {
+        width: 0,
+        height: 0
     }
 }
 
@@ -34,7 +38,7 @@ export default function FloatingView(props) {
     }
 
     return (
-        <Frame className="FloatingView" onClick={toggleActive} initial={{width:100, height:100}} animate={!active ? animations.default : animations.expand } initial={animations.initial}>
+        <Frame className="FloatingView" onClick={toggleActive} initial={animations.initial} animate={!active ? animations.default : animations.expand } exit={animations.exit}>
             <span className="label">{!active ? 'More' : `More ${props.label}`}</span>
             {!active ? '' : props.children}
         </Frame>

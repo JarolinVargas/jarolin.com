@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from "framer";
 import './Background.scss';
 
 export function GridLines() {
@@ -15,6 +16,9 @@ export function GridLines() {
     )
 }
 
+
+
+
 export function GridDots(props) {
     return (
         <svg className={`GridDots${!props.centered ? '' : ' centered-griddots'}`} width={props.width} height={props.height} style={{right: props.right, bottom: props.bottom}}>
@@ -28,14 +32,30 @@ export function GridDots(props) {
     )
 }
 
+
+
 export function Circle(props) {
     return (
         <div className="Circle" style={{width: props.size, height: props.size, right: props.right, top: props.top, boxShadow: props.shadow}}></div>
     )
 }
 
+
+
+const ImageAnimations = {
+    initial: {
+        opacity: 0,
+    },
+    enter: {
+        opacity: 1,
+    },
+    exit: {
+        opacity: 0,
+    }
+}
+
 export function Image(props) {
     return (
-        <div className={`Image${props.fade ? ' fade' : ''}`} style={props.styles}></div>
+        <motion.div className={`Image${props.fade ? ' fade' : ''}`} initial="initial" animate="enter" exit="exit" variants={ImageAnimations} style={props.styles}></motion.div>
     )
 }

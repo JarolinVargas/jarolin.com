@@ -1,7 +1,23 @@
 import React from 'react';
+import { motion } from "framer";
 import './ArticleHeading.scss';
 import ContentMeta from './ContentMeta.js';
 import ProjectButton from './ProjectButton';
+
+const animations = {
+    initial: {
+      x: -200,
+      opacity: 0
+    },
+    enter: {
+      x: 0,
+      opacity: 1
+    },
+    exit: {
+      x: 200,
+      opacity: 0
+    }
+}
 
 export default function ArticleHeading(props) {
     return (
@@ -10,10 +26,10 @@ export default function ArticleHeading(props) {
                 {props.image && <img src={props.image} alt="#"/>}
                 {props.buttonLink && <ProjectButton link={props.buttonLink}/>}
             </div>
-            <div className="article-meta">
+            <motion.div className="article-meta" initial="initial" animate="enter" exit="exit" variants={animations}>
                 <h1 className="primary-color">{props.title}</h1>
                 <ContentMeta meta={props.meta}/>
-            </div>
+            </motion.div>
         </div>
     )
 }

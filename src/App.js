@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Frame } from "framer";
+import { Frame, AnimatePresence } from "framer";
 import { BrowserRouter as Router, Switch, Route, NavLink, useLocation } from "react-router-dom";
 import { AboutMe, Portfolio, Writings, PortfolioView, WritingsView } from './pages';
 import './App.scss';
@@ -97,13 +97,17 @@ export default function App() {
         <div className="frame"></div>
         <main className="content" ref={ref}>
           <div className="page" data-active={pathname} style={{backgroundColor: 'rgba(255, 255, 255, 0.02)'}}>
-            <Switch>
-              <Route path="/" exact children={<AboutMe/>} />
-              <Route path="/portfolio" exact children={<Portfolio switchPage={switchPage}/>} />
-              <Route path="/writings" exact children={<Writings switchPage={switchPage}/>} />
-              <Route path="/portfolio/:name" children={<PortfolioView itemKey={itemKey} switchPage={switchPage}/>} />
-              <Route path="/writings/:id" children={<WritingsView writingKey={itemKey} switchPage={switchPage}/>} />
-            </Switch>
+              <Route render={({location}) => (
+                <AnimatePresence exitBeforeEnter initial={false}>
+                  <Switch location={location} key={location.pathname}>
+                    <Route path="/" exact children={<AboutMe/>} />
+                    <Route path="/portfolio" exact children={<Portfolio switchPage={switchPage}/>} />
+                    <Route path="/writings" exact children={<Writings switchPage={switchPage}/>} />
+                    <Route path="/portfolio/:name" children={<PortfolioView itemKey={itemKey} switchPage={switchPage}/>} />
+                    <Route path="/writings/:id" children={<WritingsView writingKey={itemKey} switchPage={switchPage}/>} />
+                  </Switch>
+                </AnimatePresence>
+              )}/>
           </div>
         </main>
       </div>
