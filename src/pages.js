@@ -6,6 +6,7 @@ import MyIntro from './page-components/MyIntro';
 import ItemBanner from './page-components/ItemBanner';
 import ArticleBanner from './page-components/ArticleBanner';
 import ArticleHeading from './page-components/ArticleHeading';
+import Article from './page-components/Article';
 import IconLinks from './page-components/IconLinks';
 import FloatingView from './page-components/FloatingView';
 import List from './page-components/List';
@@ -60,12 +61,12 @@ export function Portfolio(props) {
           {floatingViewPortfolioList}
         </List>
       </FloatingView>
-      <motion.div className="layouts layout-col-3-alt padding-off" initial="initial" animate="enter" exit="exit" variants={animations}>
-        <div className="col-1"><ItemBanner switchPage={props.switchPage} title={portfolio['luminal'].meta.title} url="portfolio/luminal" cover={portfolio['luminal'].images.bannerCover}/></div>
-        <div className="col-2"><ItemBanner switchPage={props.switchPage} title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" cover={portfolio['forcebrands-newsroom'].images.bannerCover}/></div>
-        <div className="col-3"><ItemBanner switchPage={props.switchPage} title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" cover={portfolio['forcebrands-jobboard'].images.bannerCover}/></div>
-        <div className="col-4"><ItemBanner switchPage={props.switchPage} title={portfolio['manhattan-bridge-capital'].meta.title} url="portfolio/manhattan-bridge-capital" cover={portfolio['manhattan-bridge-capital'].images.bannerCover}/></div>
-      </motion.div>
+      <div className="layouts layout-col-3-alt padding-off">
+        <div className="col-1"><ItemBanner switchPage={props.switchPage} title={portfolio['luminal'].meta.title} url="portfolio/luminal" cover={portfolio['luminal'].images.bannerCover} animDelay={.20}/></div>
+        <div className="col-2"><ItemBanner switchPage={props.switchPage} title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" cover={portfolio['forcebrands-newsroom'].images.bannerCover} animDelay={.25}/></div>
+        <div className="col-3"><ItemBanner switchPage={props.switchPage} title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" cover={portfolio['forcebrands-jobboard'].images.bannerCover} animDelay={.30}/></div>
+        <div className="col-4"><ItemBanner switchPage={props.switchPage} title={portfolio['manhattan-bridge-capital'].meta.title} url="portfolio/manhattan-bridge-capital" cover={portfolio['manhattan-bridge-capital'].images.bannerCover} animDelay={.35}/></div>
+      </div>
     </React.Fragment>
   )
 }
@@ -94,9 +95,9 @@ export function PortfolioView(props) {
                 height={400}
                 projectHeading
               />
-              <div className="article writings">
+              <Article>
                 {item.jsx}
-              </div>
+              </Article>
           </article>
         </div>
       </div>
@@ -111,17 +112,16 @@ export function PortfolioView(props) {
 
 const writingsAnimations = {
   initial: {
-    width: 0,
-    padding: 0
+    x: -100,
+    opacity: 0
   },
   enter: {
-    width: '100%',
-    padding: 15
+    x: 0,
+    opacity: 1
   },
   exit: {
-    width: 0,
-    padding: 0,
-    border: 'none'
+    x: 100,
+    opacity: 0
   }
 }
 
@@ -141,10 +141,10 @@ export function Writings(props) {
         </List>
       </FloatingView>
       <div className="layouts layout-col-3-alt layout-reversed article-banners-hover-effect padding-off">
-        <motion.div className="col-1" initial="initial" animate="enter" exit="exit" variants={writingsAnimations} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></motion.div>
-        <motion.div className="col-2" initial="initial" animate="enter" exit="exit" variants={writingsAnimations} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(1, 'title')} summary={getArticleMeta(1, 'summary')} date={getArticleMeta(1, 'published')} category={getArticleMeta(1, 'topic')} url={`writings/${getArticleMeta(1, 'slug')}`}/></motion.div>
-        <motion.div className="col-3" initial="initial" animate="enter" exit="exit" variants={writingsAnimations} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></motion.div>
-        <motion.div className="col-4" initial="initial" animate="enter" exit="exit" variants={writingsAnimations} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></motion.div>
+        <motion.div className="col-1" initial="initial" animate="enter" exit="exit" variants={writingsAnimations} transition={{delay: .30}} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></motion.div>
+        <motion.div className="col-2" initial="initial" animate="enter" exit="exit" variants={writingsAnimations} transition={{delay: .20}} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(1, 'title')} summary={getArticleMeta(1, 'summary')} date={getArticleMeta(1, 'published')} category={getArticleMeta(1, 'topic')} url={`writings/${getArticleMeta(1, 'slug')}`}/></motion.div>
+        <motion.div className="col-3" initial="initial" animate="enter" exit="exit" variants={writingsAnimations} transition={{delay: .25}} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></motion.div>
+        <motion.div className="col-4" initial="initial" animate="enter" exit="exit" variants={writingsAnimations} transition={{delay: .35}} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner switchPage={props.switchPage} title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></motion.div>
       </div>
     </React.Fragment>
   )
@@ -172,9 +172,9 @@ export function WritingsView(props) {
                 meta={[{label: 'Published', value: article.meta.published},{label: 'Topic', value: article.meta.topic}]}
                 image={`${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}
               />
-              <motion.div className="article writings" initial={{height: 0, paddingTop: 0, paddingBottom: 0}} animate={{height: 'auto', paddingTop: 60, paddingBottom: 60}} exit={{height: 0, paddingTop: 0, paddingBottom: 0}}>
+              <Article>
                 {article.jsx}
-              </motion.div>
+              </Article>
           </article>
         </div>
       </div>

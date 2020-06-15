@@ -14,7 +14,7 @@ const animations = {
         opacity: 1
     },
     exit: {
-        x: 200,
+        x: -200,
         opacity: 0
     }
 }
@@ -22,7 +22,7 @@ const animations = {
 export default function IconLinks() {
     return (
         <div className="IconLinks">
-            <motion.ul initial="initial" animate="enter" exit="exit" variants={animations}>
+            <motion.ul initial="initial" animate="enter" exit="exit" variants={animations} transition={{delay: .15}}>
                 <li><a href="#"><FontAwesomeIcon icon={faDribbble} color="#EA4C89"/></a></li>
                 <li><a href="#"><FontAwesomeIcon icon={faGithub} color="#FFF"/></a></li>
                 <li><a href="#"><FontAwesomeIcon icon={faCodepen} color="#FFF"/></a></li>

@@ -23,7 +23,7 @@ export default function ArticleHeading(props) {
     return (
         <div className={`ArticleHeading${props.projectHeading ? ' project-heading' : ''}`} style={{height: props.height}}>
             <div className="article-img">
-                {props.image && <img src={props.image} alt="#"/>}
+                {props.image && <motion.img src={props.image} alt="#" initial={{scale: 0}} animate={{scale: 1}} exit={{scale: 0}}/>}
                 {props.buttonLink && <ProjectButton link={props.buttonLink}/>}
             </div>
             <motion.div className="article-meta" initial="initial" animate="enter" exit="exit" variants={animations}>

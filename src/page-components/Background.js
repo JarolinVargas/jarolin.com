@@ -19,16 +19,28 @@ export function GridLines() {
 
 
 
+const DotsAnimations = {
+    initial: {
+        opacity: 0,
+    },
+    enter: {
+        opacity: 1,
+    },
+    exit: {
+        opacity: 0,
+    }
+}
+
 export function GridDots(props) {
     return (
-        <svg className={`GridDots${!props.centered ? '' : ' centered-griddots'}`} width={props.width} height={props.height} style={{right: props.right, bottom: props.bottom}}>
+        <motion.svg className={`GridDots${!props.centered ? '' : ' centered-griddots'}`} width={props.width} height={props.height} initial="initial" animate="enter" exit="exit" variants={DotsAnimations} style={{right: props.right, bottom: props.bottom}}>
             <defs>
                 <pattern id="grid-dots" x="10" y="10" width="20" height="20" patternUnits="userSpaceOnUse" >
                     <circle cx="1" cy="1" r="1" style={{stroke: "none", fill: "#BCBCBC"}} />
                 </pattern>
             </defs>
             <rect width={props.width} height={props.height} style={{fill: "url(#grid-dots)"}} />
-        </svg>
+        </motion.svg>
     )
 }
 
