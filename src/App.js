@@ -35,25 +35,13 @@ let animations = {
 
 export default function App() {
   const [ref, navRef] = [useRef(null), useRef(null)];
-  const [page, setPage] = useState({
-    active: 'second-page',
-    path: ''
-  });
 
   useEffect(() => {
-    switchPage();
+    repositionActiveTabIndicator();
     window.addEventListener('popstate', (event) => {
       repositionActiveTabIndicator();
     });
   }, []);
-
-  const switchPage = (pathName, event) => {
-    setPage({
-      active: page.active === 'first-page' ? 'second-page' : 'first-page',
-      path: pathName
-    });
-    repositionActiveTabIndicator(event);
-  }
 
   const repositionActiveTabIndicator = (clickedLink) => {
     if( navRef.current ) {
@@ -86,28 +74,28 @@ export default function App() {
           <span className="nav-active-page-indicator"></span>
           <ul>
             <li className="nav-separator"></li>
-            <li><NavLink to="/" exact onClick={(event) => switchPage('/', event)}>ABOUT ME</NavLink></li>
+            <li><NavLink to="/" exact onClick={repositionActiveTabIndicator}>ABOUT ME</NavLink></li>
             <li className="nav-separator"></li>
-            <li><NavLink to="/portfolio" onClick={(event) => switchPage('/portfolio', event)}>PORTFOLIO</NavLink></li>
+            <li><NavLink to="/portfolio" onClick={repositionActiveTabIndicator}>PORTFOLIO</NavLink></li>
             <li className="nav-separator"></li>
-            <li><NavLink to="/writings" onClick={(event) => switchPage('/writings', event)}>WRITINGS</NavLink></li>
+            <li><NavLink to="/writings" onClick={repositionActiveTabIndicator}>WRITINGS</NavLink></li>
             <li className="nav-separator"></li>
           </ul>
         </nav>
         <div className="frame"></div>
         <main className="content" ref={ref}>
-          <div className="page" data-active={pathname} style={{backgroundColor: 'rgba(255, 255, 255, 0.02)'}}>
-              <Route render={({location}) => (
-                <AnimatePresence exitBeforeEnter initial={false}>
-                  <Switch location={location} key={location.pathname}>
-                    <Route path="/" exact children={<AboutMe/>} />
-                    <Route path="/portfolio" exact children={<Portfolio switchPage={switchPage}/>} />
-                    <Route path="/writings" exact children={<Writings switchPage={switchPage}/>} />
-                    <Route path="/portfolio/:name" children={<PortfolioView itemKey={itemKey} switchPage={switchPage}/>} />
-                    <Route path="/writings/:id" children={<WritingsView writingKey={itemKey} switchPage={switchPage}/>} />
-                  </Switch>
-                </AnimatePresence>
-              )}/>
+          <div className="page">
+            <Route render={({location}) => (
+              <AnimatePresence exitBeforeEnter initial={false}>
+                <Switch location={location} key={location.pathname}>
+                  <Route path="/" exact children={<AboutMe/>} />
+                  <Route path="/portfolio" exact children={<Portfolio/>} />
+                  <Route path="/writings" exact children={<Writings/>} />
+                  <Route path="/portfolio/:name" children={<PortfolioView itemKey={itemKey}/>} />
+                  <Route path="/writings/:id" children={<WritingsView writingKey={itemKey}/>} />
+                </Switch>
+              </AnimatePresence>
+            )}/>
           </div>
         </main>
       </div>

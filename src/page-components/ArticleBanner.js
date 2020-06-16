@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react
 
 export default function ArticleBanner(props) {
     return (
-        <Link to={props.url} className="ArticleBanner" onClick={() => props.switchPage('writings/sdfs')}>
+        <Link to={props.url} className="ArticleBanner">
             <h2 className="primary-color">{props.title}</h2>
             <em className="secondary-color">{props.summary}</em>
             <ul className="article-meta secondary-color">

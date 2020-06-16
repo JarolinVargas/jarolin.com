@@ -21,7 +21,7 @@ const animations = {
 export default function ItemBanner(props) {
     return (
         <motion.div className="ItemBanner" initial="initial" animate="enter" exit="exit" variants={animations} transition={{delay: props.animDelay}}>
-            <Link to={props.url} onClick={() => props.switchPage('portfolio/luminal')}>
+            <Link to={props.url}>
                 <h2 className="primary-color">{props.title}</h2>
                 <div className="banner-image" style={{backgroundImage: `url(${props.cover})`}}></div>
             </Link>
