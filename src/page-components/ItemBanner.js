@@ -5,16 +5,13 @@ import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react
 
 const animations = {
     initial: {
-        height: 0,
-        opacity: 0
+        height: 0
     },
     enter: {
-        height: '100%',
-        opacity: 1
+        height: '100%'
     },
     exit: {
-        height: 0,
-        opacity: 0
+        height: 0
     }
 }
 

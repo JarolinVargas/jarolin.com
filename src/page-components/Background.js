@@ -19,7 +19,7 @@ export function GridLines() {
 
 
 
-const DotsAnimations = {
+const DotsAnim = {
     initial: {
         opacity: 0,
     },
@@ -33,7 +33,7 @@ const DotsAnimations = {
 
 export function GridDots(props) {
     return (
-        <motion.svg className={`GridDots${!props.centered ? '' : ' centered-griddots'}`} width={props.width} height={props.height} initial="initial" animate="enter" exit="exit" variants={DotsAnimations} style={{right: props.right, bottom: props.bottom}}>
+        <motion.svg className={`GridDots${!props.centered ? '' : ' centered-griddots'}`} width={props.width} height={props.height} initial="initial" animate="enter" exit="exit" variants={DotsAnim} style={{right: props.right, bottom: props.bottom}}>
             <defs>
                 <pattern id="grid-dots" x="10" y="10" width="20" height="20" patternUnits="userSpaceOnUse" >
                     <circle cx="1" cy="1" r="1" style={{stroke: "none", fill: "#BCBCBC"}} />
@@ -46,9 +46,20 @@ export function GridDots(props) {
 
 
 
+const circleAnim = {
+    initial: {
+        opacity: 0
+    },
+    enter: {
+        opacity: 1
+    },
+    exit: {
+        opacity: 0
+    }
+}
 export function Circle(props) {
     return (
-        <div className="Circle" style={{width: props.size, height: props.size, right: props.right, top: props.top, boxShadow: props.shadow}}></div>
+        <motion.div className="Circle" style={{width: props.size, height: props.size, right: props.right, top: props.top, boxShadow: props.shadow}} initial="initial" animate="enter" exit="exit" variants={circleAnim}></motion.div>
     )
 }
 
@@ -69,5 +80,15 @@ const ImageAnimations = {
 export function Image(props) {
     return (
         <motion.div className={`Image${props.fade ? ' fade' : ''}`} initial="initial" animate="enter" exit="exit" variants={ImageAnimations} style={props.styles}></motion.div>
+    )
+}
+
+
+
+export default function Background(props) {
+    return (
+        <div className="Background">
+            {props.children}
+        </div>
     )
 }

@@ -9,6 +9,7 @@
     transition-property: transform, box-shadow;
     transition-duration: .15s;
     box-sizing: border-box;
+    position: relative;
 
     > a {
         display: block;
@@ -39,7 +40,7 @@
         z-index: 0;
         background-repeat: no-repeat;
         background-position: 50%;
-        -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+        //-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
     }
 }
 
