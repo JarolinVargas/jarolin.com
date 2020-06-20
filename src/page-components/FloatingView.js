@@ -10,18 +10,14 @@ const animations = {
     expand: {
         height: 'calc(100% - 20px)',
         width: 350,
-        borderRadius: 30,
+        borderRadius: '30px',
         overflowY: 'scroll'
     },
     default: {
         width: 100,
         height: 100,
-        borderRadius: '100%',
+        borderRadius: 350,
         overflowY: 'hidden'
-    },
-    exit: {
-        width: 0,
-        height: 0
     }
 }
 
@@ -38,7 +34,7 @@ export default function FloatingView(props) {
     }
 
     return (
-        <Frame className="FloatingView" onClick={toggleActive} initial={animations.initial} animate={!active ? animations.default : animations.expand } exit={animations.exit}>
+        <Frame className="FloatingView" onClick={toggleActive} style={{backgroundImage: props.pageGradient}} initial="initial" animate={!active ? "default" : "expand" } exit="initial" variants={animations}>
             <span className="label">{!active ? 'More' : `More ${props.label}`}</span>
             {!active ? '' : props.children}
         </Frame>

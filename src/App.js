@@ -7,7 +7,7 @@ import './App.scss';
 const pageGradients = {
   '/': 'linear-gradient(to right, #3af4f5, #164dfe)',
   '/portfolio': 'linear-gradient(to right, #ffff18, #25cbd7)',
-  '/writings': 'linear-gradient(to right, #56ab2f, #a8e063)'
+  '/writings': 'linear-gradient(to right, #ff615c, #a800fe)'
 }
 
 export default function App() {
@@ -44,7 +44,7 @@ export default function App() {
 
   return (
     <Router>
-      <div className="App">
+      <div className="App" data-path={path}>
         <nav ref={navRef}>
           <motion.span className="nav-active-page-indicator" animate={{backgroundImage: pageGradients[path]}}></motion.span>
           <ul>
@@ -63,11 +63,11 @@ export default function App() {
             <Route render={({location}) => (
               <AnimatePresence exitBeforeEnter initial={false}>
                 <Switch location={location} key={location.pathname}>
-                  <Route path="/" exact children={<AboutMe/>} />
-                  <Route path="/portfolio" exact children={<Portfolio/>} />
-                  <Route path="/writings" exact children={<Writings/>} />
-                  <Route path="/portfolio/:name" children={<PortfolioView/>} />
-                  <Route path="/writings/:id" children={<WritingsView/>} />
+                  <Route path="/" exact children={<AboutMe pageGradient={pageGradients['/']}/>} />
+                  <Route path="/portfolio" exact children={<Portfolio pageGradient={pageGradients['/portfolio']}/>} />
+                  <Route path="/writings" exact children={<Writings pageGradient={pageGradients['/writings']}/>} />
+                  <Route path="/portfolio/:name" children={<PortfolioView pageGradient={pageGradients['/portfolio']}/>} />
+                  <Route path="/writings/:id" children={<WritingsView pageGradient={pageGradients['/writings']}/>} />
                 </Switch>
               </AnimatePresence>
             )}/>

@@ -55,7 +55,7 @@ const floatingViewPortfolioList = [
 export function Portfolio(props) {
   return (
     <React.Fragment>
-      <FloatingView label="Portfolio">
+      <FloatingView label="Portfolio" pageGradient={props.pageGradient}>
         <List>
           {floatingViewPortfolioList}
         </List>
@@ -75,13 +75,13 @@ const floatingViewPortfolioViewList = [
   {label: 'Graphics Corrections Tool', link: 'portfolio/graphics-corrections-tool'},
   {label: 'Referral Service Landing Page', link: 'portfolio/referral-service-landing-page'}
 ]
-export function PortfolioView() {
+export function PortfolioView(props) {
   const pathname = window.location.pathname;
   const itemKey = pathname.substring(pathname.lastIndexOf('/') + 1);
   const item = portfolio[itemKey];
   return (
     <React.Fragment>
-      <FloatingView label="Portfolio">
+      <FloatingView label="Portfolio" pageGradient={props.pageGradient}>
         <List>
           {floatingViewPortfolioViewList}
         </List>
@@ -134,7 +134,7 @@ export function Writings(props) {
 
   return (
     <React.Fragment>
-      <FloatingView label="Writings">
+      <FloatingView label="Writings" pageGradient={props.pageGradient}>
         <List>
           {[
             {label: 'React Job Board app', link: 'writings/sdfoisdf'},
@@ -154,13 +154,13 @@ export function Writings(props) {
 
 
 
-export function WritingsView() {
+export function WritingsView(props) {
   const pathname = window.location.pathname;
   const articleKey = pathname.substring(pathname.lastIndexOf('/') + 1);
   const article = writings[articleKey];
   return (
     <React.Fragment>
-      <FloatingView label="Writings">
+      <FloatingView label="Writings" pageGradient={props.pageGradient}>
         <List>
           {[
             {label: 'React Job Board app', link: '/writings/some'},
