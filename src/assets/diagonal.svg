@@ -2,5 +2,5 @@
   <rect width='50' height='50'/>
   <path d='M-1,1 l2,-2
            M0,50 l50,-50
-           M9,120 l2,-2' stroke='#212121' stroke-width='1'/>
+           M9,120 l2,-2' stroke='rgba(255, 255, 255, 0.04)' stroke-width='1'/>
 </svg>

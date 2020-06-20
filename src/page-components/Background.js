@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from "framer";
 import './Background.scss';
 
-export function GridLines() {
+export function GridLines(props) {
     return (
-        <svg className="GridLines" width="50%" height="100%" style={{position: "absolute", left: "0px", top: "0px"}}>
+        <svg className="GridLines" width={props.width} height={props.height} style={{position: "absolute", left: "0px", top: "0px"}}>
             <defs>
                 <pattern id="grid-lines" x="10" y="10" width="20" height="20" patternUnits="userSpaceOnUse" >
                     <line x1="0" y1="0" x2="0" y2="20" style={{stroke: "rgba(255,255,255,0.08)", strokeWidth:2}} />

@@ -1,16 +1,23 @@
-import React, { useRef, useEffect } from 'react';
-import { AnimatePresence } from "framer";
+import React, { useState, useRef, useEffect } from 'react';
+import { AnimatePresence, motion } from "framer";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import { AboutMe, Portfolio, Writings, PortfolioView, WritingsView } from './pages';
 import './App.scss';
 
+const pageGradients = {
+  '/': 'linear-gradient(to right, #3af4f5, #164dfe)',
+  '/portfolio': 'linear-gradient(to right, #ffff18, #25cbd7)',
+  '/writings': 'linear-gradient(to right, #56ab2f, #a8e063)'
+}
+
 export default function App() {
   const navRef = useRef(null);
+  const [path, setPath] = useState(window.location.pathname);
 
   useEffect(() => {
     repositionActiveTabIndicator();
     window.addEventListener('popstate', (event) => {
-      repositionActiveTabIndicator();
+      updatePath();
     });
   }, []);
 
@@ -20,6 +27,11 @@ export default function App() {
       const [activeTabPos, activeTabWidth] = [activeTabEl.offsetLeft, activeTabEl.offsetWidth]
       indicator.style.left = `${activeTabPos + (activeTabWidth / 2) - 3.5}px`;
     }
+  }
+
+  const updatePath = (event) => {
+    repositionActiveTabIndicator(event);
+    setPath(!event ? window.location.pathname : event.target.getAttribute('href'));
   }
 
   let resizeEnd;
@@ -34,18 +46,18 @@ export default function App() {
     <Router>
       <div className="App">
         <nav ref={navRef}>
-          <span className="nav-active-page-indicator" style={{backgroundImage: 'linear-gradient(to right, #3af4f5, #164dfe)'}}></span>
+          <motion.span className="nav-active-page-indicator" animate={{backgroundImage: pageGradients[path]}}></motion.span>
           <ul>
-            <li className="nav-separator" style={{backgroundImage: 'linear-gradient(to right, #3af4f5, #164dfe)'}}></li>
-            <li><NavLink to="/" exact onClick={repositionActiveTabIndicator}>ABOUT ME</NavLink></li>
-            <li className="nav-separator" style={{backgroundImage: 'linear-gradient(to right, #3af4f5, #164dfe)'}}></li>
-            <li><NavLink to="/portfolio" onClick={repositionActiveTabIndicator}>PORTFOLIO</NavLink></li>
-            <li className="nav-separator" style={{backgroundImage: 'linear-gradient(to right, #3af4f5, #164dfe)'}}></li>
-            <li><NavLink to="/writings" onClick={repositionActiveTabIndicator}>WRITINGS</NavLink></li>
-            <li className="nav-separator" style={{backgroundImage: 'linear-gradient(to right, #3af4f5, #164dfe)'}}></li>
+            <motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}}></motion.li>
+            <li><NavLink to="/" exact onClick={updatePath}>ABOUT ME</NavLink></li>
+            <motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}}></motion.li>
+            <li><NavLink to="/portfolio" onClick={updatePath}>PORTFOLIO</NavLink></li>
+            <motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}}></motion.li>
+            <li><NavLink to="/writings" onClick={updatePath}>WRITINGS</NavLink></li>
+            <motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}}></motion.li>
           </ul>
         </nav>
-        <div className="frame" style={{borderImageSource: 'linear-gradient(to right, #3af4f5, #164dfe)'}}></div>
+        <motion.div className="frame" animate={{borderImageSource: pageGradients[path]}}></motion.div>
         <main className="content">
           <div className="page">
             <Route render={({location}) => (

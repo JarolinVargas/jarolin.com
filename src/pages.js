@@ -10,7 +10,7 @@ import Article from './page-components/Article';
 import IconLinks from './page-components/IconLinks';
 import FloatingView from './page-components/FloatingView';
 import List from './page-components/List';
-import Background, { Circle, GridDots, Image } from './page-components/Background';
+import Background, { Circle, GridDots, Image, GridLines } from './page-components/Background';
 import './page-components/Layouts.scss';
 
 const animations = {
@@ -103,7 +103,8 @@ export function PortfolioView() {
         </div>
       </motion.div>
       <Background>
-        <GridDots width="1000" height="100%" left={0} centered={true}/>
+        {/*<GridDots width="1000" height="100%" left={0} centered={true}/>*/}
+        <GridLines width="1000" height="100%"></GridLines>
         <Image styles={{maxWidth: 1000, height: '100%', backgroundImage: `url(${item.images.cover}`}} fade={true}></Image>
       </Background>
     </React.Fragment>
