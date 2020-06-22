@@ -1,58 +1,28 @@
 import React from 'react';
-import './BlogList.scss';
 import { Link } from "react-router-dom";
+import placeholder from '../assets/writings-img/placeholder.jpg'
+import './BlogList.scss';
 
-export default function BlogList() {
+export default function BlogList(props) {
+    console.log(props.list)
     return (
     <ul className="BlogList">
-        <li>
-            <Link to="thoughts/3434">
-                <h1 className="secondaryFont">Lorem Ipsum Dolor Sit Amet Contenteur</h1>
-                <span>JULY 24, 2020</span>
-            </Link>
-        </li>
-        <li>
-            <Link to="thoughts/3434">
-                <h1 className="secondaryFont">Lorem Ipsum Dolor Sit Amet Contenteur</h1>
-                <span>JULY 24, 2020</span>
-            </Link>
-        </li>
-        <li>
-            <Link to="thoughts/3434">
-                <h1 className="secondaryFont">Lorem Ipsum Dolor Sit Amet Contenteur</h1>
-                <span>JULY 24, 2020</span>
-            </Link>
-        </li>
-        <li>
-            <Link to="thoughts/3434">
-                <h1 className="secondaryFont">Lorem Ipsum Dolor Sit Amet Contenteur</h1>
-                <span>JULY 24, 2020</span>
-            </Link>
-        </li>
-        <li>
-            <Link to="thoughts/3434">
-                <h1 className="secondaryFont">Lorem Ipsum Dolor Sit Amet Contenteur</h1>
-                <span>JULY 24, 2020</span>
-            </Link>
-        </li>
-        <li>
-            <Link to="thoughts/3434">
-                <h1 className="secondaryFont">Lorem Ipsum Dolor Sit Amet Contenteur</h1>
-                <span>JULY 24, 2020</span>
-            </Link>
-        </li>
-        <li>
-            <Link to="thoughts/3434">
-                <h1 className="secondaryFont">Lorem Ipsum Dolor Sit Amet Contenteur</h1>
-                <span>JULY 24, 2020</span>
-            </Link>
-        </li>
-        <li>
-            <Link to="thoughts/3434">
-                <h1 className="secondaryFont">Lorem Ipsum Dolor Sit Amet Contenteur</h1>
-                <span>JULY 24, 2020</span>
-            </Link>
-        </li>
+        {
+            props.list.map((l, i) => {
+                return (
+                    <li key={i}>
+                        <Link to={`writings/${l.slug}`}>
+                            <h1 className="secondaryFont writings-gradient">{l.title}</h1>
+                            <ul className="writing-meta">
+                                <li>{l.published}</li>
+                                <li>{l.topic}</li>
+                            </ul>
+                            <img src={placeholder} alt="image"/>
+                        </Link>
+                    </li>
+                )
+            })
+        }
       </ul>
     )
 }

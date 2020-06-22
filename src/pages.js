@@ -10,6 +10,7 @@ import Article from './page-components/Article';
 import IconLinks from './page-components/IconLinks';
 import FloatingView from './page-components/FloatingView';
 import List from './page-components/List';
+import BlogList from './page-components/BlogList';
 import Background, { Circle, GridDots, Image, GridLines } from './page-components/Background';
 import './page-components/Layouts.scss';
 
@@ -127,9 +128,18 @@ const writingsAnimations = {
   }
 }
 
+let writingsList = [];
 export function Writings(props) {
-  const getArticleMeta = (i, k) => {
-    return writings[Object.keys(writings)[i]].meta[k];
+  if( !writingsList.length ) {
+    for( const property in writings ) {
+      const w = writings[property];
+      writingsList.push({
+        title: w.meta['title'],
+        published: w.meta['published'],
+        topic: w.meta['topic'],
+        slug: w.meta['slug']
+      });
+    }
   }
 
   return (
@@ -142,12 +152,11 @@ export function Writings(props) {
           ]}
         </List>
       </FloatingView>
-      <div className="layouts layout-col-3-alt layout-reversed article-banners-hover-effect padding-off effects-off">
-        <motion.div className="col-1" initial="initial" animate="enter" exit="exit" variants={writingsAnimations} transition={{delay: .20}} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></motion.div>
-        <motion.div className="col-2" initial="initial" animate="enter" exit="exit" variants={writingsAnimations} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner title={getArticleMeta(1, 'title')} summary={getArticleMeta(1, 'summary')} date={getArticleMeta(1, 'published')} category={getArticleMeta(1, 'topic')} url={`writings/${getArticleMeta(1, 'slug')}`}/></motion.div>
-        <motion.div className="col-3" initial="initial" animate="enter" exit="exit" variants={writingsAnimations} transition={{delay: .10}} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></motion.div>
-        <motion.div className="col-4" initial="initial" animate="enter" exit="exit" variants={writingsAnimations} transition={{delay: .30}} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}}><ArticleBanner title={getArticleMeta(0, 'title')} summary={getArticleMeta(0, 'summary')} date={getArticleMeta(0, 'published')} category={getArticleMeta(0, 'topic')} url={`writings/${getArticleMeta(0, 'slug')}`}/></motion.div>
-      </div>
+      <motion.div className="layouts layout-col-1 scroll-y padding-off" initial="initial" animate="enter" exit="exit" variants={animations}>
+        <div className="col-1">
+          <BlogList pageGradient={props.pageGradient} list={writingsList}></BlogList>
+        </div>
+      </motion.div>
     </React.Fragment>
   )
 }

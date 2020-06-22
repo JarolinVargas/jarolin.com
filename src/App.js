@@ -21,17 +21,17 @@ export default function App() {
     });
   }, []);
 
+  const updatePath = (event) => {
+    repositionActiveTabIndicator(event);
+    setPath(!event ? window.location.pathname : event.target.getAttribute('href'));
+  }
+
   const repositionActiveTabIndicator = (clickedLink) => {
     if( navRef.current ) {
       const [activeTabEl, indicator] = [!clickedLink ? navRef.current.querySelector('a.active') : clickedLink.target, navRef.current.querySelector('.nav-active-page-indicator')];
       const [activeTabPos, activeTabWidth] = [activeTabEl.offsetLeft, activeTabEl.offsetWidth]
       indicator.style.left = `${activeTabPos + (activeTabWidth / 2) - 3.5}px`;
     }
-  }
-
-  const updatePath = (event) => {
-    repositionActiveTabIndicator(event);
-    setPath(!event ? window.location.pathname : event.target.getAttribute('href'));
   }
 
   let resizeEnd;

@@ -128,7 +128,7 @@ nav {
 }
 
 
-.primary-color {
+.aboutme-gradient {
   color: #557CFF;
   background: -webkit-gradient(linear, left top, right top, from(#3af4f5), to(#164dfe));
   background: -webkit-linear-gradient(left, #3af4f5 0%, #164dfe 50%);
@@ -138,8 +138,14 @@ nav {
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
-.secondary-color {
-  color: #6a85b6;
+.writings-gradient {
+  color: #557CFF;
+  background: -webkit-gradient(linear, left top, right top, from(#ff615c), to(#a800fe));
+  background: -webkit-linear-gradient(left, #ff615c 0%, #a800fe 50%);
+  background: -o-linear-gradient(left, #ff615c 0%, #a800fe 50%);
+  background: linear-gradient(to right, #ff615c 0%, #a800fe 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
 .bolder-color {

@@ -4,17 +4,43 @@
     padding: 0;
     box-sizing: border-box;
 
-    li:not(:last-child) {
-        border-bottom: dashed 1px #D7D7D9;
+    > li {
+        border-bottom: solid 2px #ffffff08;
     }
 
     a {
-        padding: 60px 30px;
+        padding: 60px 30px 60px 250px;
         display: block;
+        position: relative;
+        overflow: hidden;
     }
 
     h1 {
         margin: 0 0 10px 0;
-        font-weight: 400;
+    }
+
+    img {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        width: 300px;
+        margin: auto;
+        vertical-align: top;
+        z-index: -1;
+        -webkit-mask-image: linear-gradient(to left, transparent 0%, #FFF 75%);
+        mask-image: linear-gradient(to left, transparent 0%, #FFF 75%);
+    }
+
+    .writing-meta {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: #FFF;
+
+        > li {
+            display: inline-block;
+            margin-right: 20px;
+        }
     }
 }
