@@ -46,6 +46,7 @@ $frameOutlineColor: #3af4f5;
       box-shadow: 0px 0px 30px black;
       border-radius: 20px;
       box-sizing: border-box;
+      background-color: rgba(255, 255, 255, 0.005);
     }
 
     > *:not(.FloatingView) {
@@ -139,11 +140,21 @@ nav {
 }
 
 .writings-gradient {
-  color: #557CFF;
+  color: #a800fe;
   background: -webkit-gradient(linear, left top, right top, from(#ff615c), to(#a800fe));
   background: -webkit-linear-gradient(left, #ff615c 0%, #a800fe 50%);
   background: -o-linear-gradient(left, #ff615c 0%, #a800fe 50%);
   background: linear-gradient(to right, #ff615c 0%, #a800fe 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+.portfolio-gradient {
+  color: #25cbd7;
+  background: -webkit-gradient(linear, left top, right top, from(#ffff18), to(#25cbd7));
+  background: -webkit-linear-gradient(left, #ffff18 0%, #25cbd7 50%);
+  background: -o-linear-gradient(left, #ffff18 0%, #25cbd7 50%);
+  background: linear-gradient(to right, #ffff18 0%, #25cbd7 50%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
