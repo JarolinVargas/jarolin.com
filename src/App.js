@@ -57,22 +57,23 @@ export default function App() {
             <motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}}></motion.li>
           </ul>
         </nav>
-        <motion.div className="frame" animate={{borderImageSource: pageGradients[path]}}></motion.div>
-        <main className="content">
-          <div className="page">
-            <Route render={({location}) => (
-              <AnimatePresence exitBeforeEnter initial={false}>
-                <Switch location={location} key={location.pathname}>
-                  <Route path="/" exact children={<AboutMe pageGradient={pageGradients['/']}/>} />
-                  <Route path="/portfolio" exact children={<Portfolio pageGradient={pageGradients['/portfolio']}/>} />
-                  <Route path="/writings" exact children={<Writings pageGradient={pageGradients['/writings']}/>} />
-                  <Route path="/portfolio/:name" children={<PortfolioView pageGradient={pageGradients['/portfolio']}/>} />
-                  <Route path="/writings/:id" children={<WritingsView pageGradient={pageGradients['/writings']}/>} />
-                </Switch>
-              </AnimatePresence>
-            )}/>
-          </div>
-        </main>
+        <motion.div className="frame" animate={{borderImageSource: pageGradients[path]}}>
+			<main className="content">
+			<div className="page">
+				<Route render={({location}) => (
+				<AnimatePresence exitBeforeEnter initial={false}>
+					<Switch location={location} key={location.pathname}>
+					<Route path="/" exact children={<AboutMe pageGradient={pageGradients['/']}/>} />
+					<Route path="/portfolio" exact children={<Portfolio pageGradient={pageGradients['/portfolio']}/>} />
+					<Route path="/writings" exact children={<Writings pageGradient={pageGradients['/writings']}/>} />
+					<Route path="/portfolio/:name" children={<PortfolioView pageGradient={pageGradients['/portfolio']}/>} />
+					<Route path="/writings/:id" children={<WritingsView pageGradient={pageGradients['/writings']}/>} />
+					</Switch>
+				</AnimatePresence>
+				)}/>
+			</div>
+			</main>
+		</motion.div>
       </div>
     </Router>
   );

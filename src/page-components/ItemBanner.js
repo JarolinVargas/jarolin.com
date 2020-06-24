@@ -23,7 +23,7 @@ export default function ItemBanner(props) {
                 <div><span>ForceBrands</span></div>
                 <div><h2 className="portfolio-gradient">{props.title}</h2></div>
                 <div><span>July 24, 2020</span></div>
-                <img src={props.cover} alt="sdfs"/>
+                <img src={props.cover} alt=""/>
             </Link>
         </motion.div>
     )

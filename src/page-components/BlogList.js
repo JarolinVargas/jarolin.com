@@ -16,7 +16,7 @@ export default function BlogList(props) {
                                     <li>{l.published}</li>
                                     <li>{l.topic}</li>
                                 </ul>
-                                <img src={placeholder} alt="image"/>
+                                <img src={placeholder}/>
                             </Link>
                         </li>
                     )

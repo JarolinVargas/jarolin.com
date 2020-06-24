@@ -87,7 +87,7 @@ export function PortfolioView(props) {
           {floatingViewPortfolioViewList}
         </List>
       </FloatingView>
-      <motion.div className="layouts layout-col-1 padding-off scroll-y border-right" initial="initial" animate="enter" exit="exit" variants={animations}>
+      <motion.div className="layouts layout-col-1 padding-off scroll-y" initial="initial" animate="enter" exit="exit" variants={animations}>
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>
               <ArticleHeading
@@ -96,6 +96,7 @@ export function PortfolioView(props) {
                 meta={[{label: 'Context', value: item.meta.context},{label: 'Duration', value: item.meta.duration},{label: 'Role', value: item.meta.role}]}
                 height={400}
                 projectHeading
+                gradientClass="portfolio-gradient"
               />
               <Article>
                 {item.jsx}
@@ -105,7 +106,6 @@ export function PortfolioView(props) {
       </motion.div>
       <Background>
         {/*<GridDots width="1000" height="100%" left={0} centered={true}/>*/}
-        <GridLines width="1000" height="100%"></GridLines>
         <Image styles={{maxWidth: 1000, height: '100%', backgroundImage: `url(${item.images.cover}`}} fade={true}></Image>
       </Background>
     </React.Fragment>
@@ -177,13 +177,14 @@ export function WritingsView(props) {
           ]}
         </List>
       </FloatingView>
-      <motion.div className="layouts layout-col-1 padding-off border-right scroll-y" initial="initial" animate="enter" exit="exit" variants={animations}>
+      <motion.div className="layouts layout-col-1 padding-off scroll-y" initial="initial" animate="enter" exit="exit" variants={animations}>
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>
             <ArticleHeading 
               title={article.meta.title}
               meta={[{label: 'Published', value: article.meta.published},{label: 'Topic', value: article.meta.topic}]}
               image={`${process.env.PUBLIC_URL}/images/writings/placeholder.jpg`}
+              gradientClass="writings-gradient"
             />
             <Article>
               {article.jsx}

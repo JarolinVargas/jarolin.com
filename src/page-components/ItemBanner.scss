@@ -40,8 +40,9 @@
         top: 0px;
         left: 0px;
         z-index: -1;
-        -webkit-mask-image: linear-gradient(51deg, rgba(255, 255, 255, 0) 62%, white 113%);
         opacity: 0.4;
+        transition: opacity .30s;
+        -webkit-mask-image: linear-gradient(51deg, rgba(255, 255, 255, 0) 62%, #000 113%);
     }
 
     &:hover {

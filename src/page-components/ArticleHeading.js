@@ -27,7 +27,7 @@ export default function ArticleHeading(props) {
                 {props.buttonLink && <ProjectButton link={props.buttonLink}/>}
             </div>
             <motion.div className="article-meta" initial="initial" animate="enter" exit="exit" variants={animations}>
-                <h1 className="primary-color">{props.title}</h1>
+                <h1 className={props.gradientClass}>{props.title}</h1>
                 <ContentMeta meta={props.meta}/>
             </motion.div>
         </div>
