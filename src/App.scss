@@ -1,6 +1,5 @@
 $frameOutlineColor: #3af4f5;
 
-/* frame */
 .App {
   width: 1450px;
   height: 800px;
@@ -136,6 +135,7 @@ nav {
   background: -o-linear-gradient(left, #3af4f5 0%, #164dfe 50%);
   background: linear-gradient(to right, #3af4f5 0%, #164dfe 50%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
@@ -146,6 +146,7 @@ nav {
   background: -o-linear-gradient(left, #ff615c 0%, #a800fe 50%);
   background: linear-gradient(to right, #ff615c 0%, #a800fe 50%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
@@ -156,6 +157,7 @@ nav {
   background: -o-linear-gradient(left, #ffff18 0%, #25cbd7 50%);
   background: linear-gradient(to right, #ffff18 0%, #25cbd7 50%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 

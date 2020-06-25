@@ -61,15 +61,15 @@ export default function App() {
 			<main className="content">
 			<div className="page">
 				<Route render={({location}) => (
-				<AnimatePresence exitBeforeEnter initial={false}>
-					<Switch location={location} key={location.pathname}>
-					<Route path="/" exact children={<AboutMe pageGradient={pageGradients['/']}/>} />
-					<Route path="/portfolio" exact children={<Portfolio pageGradient={pageGradients['/portfolio']}/>} />
-					<Route path="/writings" exact children={<Writings pageGradient={pageGradients['/writings']}/>} />
-					<Route path="/portfolio/:name" children={<PortfolioView pageGradient={pageGradients['/portfolio']}/>} />
-					<Route path="/writings/:id" children={<WritingsView pageGradient={pageGradients['/writings']}/>} />
-					</Switch>
-				</AnimatePresence>
+					<AnimatePresence exitBeforeEnter initial={false}>
+						<Switch location={location} key={location.pathname}>
+							<Route path="/" exact children={<AboutMe pageGradient={pageGradients['/']}/>} />
+							<Route path="/portfolio" exact children={<Portfolio pageGradient={pageGradients['/portfolio']}/>} />
+							<Route path="/writings" exact children={<Writings pageGradient={pageGradients['/writings']}/>} />
+							<Route path="/portfolio/:name" children={<PortfolioView pageGradient={pageGradients['/portfolio']}/>} />
+							<Route path="/writings/:id" children={<WritingsView pageGradient={pageGradients['/writings']}/>} />
+						</Switch>
+					</AnimatePresence>
 				)}/>
 			</div>
 			</main>

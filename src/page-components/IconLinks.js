@@ -6,15 +6,15 @@ import { faDribbble, faGithub, faCodepen, faLinkedin } from '@fortawesome/free-b
 
 const animations = {
     initial: {
-        x: 200,
+        y: 400,
         opacity: 0
     },
     enter: {
-        x: 0,
+        y: 0,
         opacity: 1
     },
     exit: {
-        x: -200,
+        y: -400,
         opacity: 0
     }
 }
@@ -22,7 +22,7 @@ const animations = {
 export default function IconLinks() {
     return (
         <div className="IconLinks">
-            <motion.ul initial="initial" animate="enter" exit="exit" variants={animations} transition={{delay: .15}}>
+            <motion.ul variants={animations}>
                 <li><a href="#"><FontAwesomeIcon icon={faDribbble} color="#EA4C89"/></a></li>
                 <li><a href="#"><FontAwesomeIcon icon={faGithub} color="#FFF"/></a></li>
                 <li><a href="#"><FontAwesomeIcon icon={faCodepen} color="#FFF"/></a></li>

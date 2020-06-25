@@ -4,27 +4,15 @@ import './ItemBanner.scss';
 import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react-router-dom";
 import placeholder from '../assets/writings-img/placeholder.jpg'
 
-const animations = {
-    initial: {
-        height: 0
-    },
-    enter: {
-        height: '100%'
-    },
-    exit: {
-        height: 0
-    }
-}
-
 export default function ItemBanner(props) {
     return (
-        <motion.div className="ItemBanner" initial="initial" animate="enter" exit="exit" variants={animations} transition={{delay: props.animDelay}}>
+        <div className="ItemBanner">
             <Link to={props.url}>
-                <div><span>ForceBrands</span></div>
+                <div style={{height: 0}}></div>
                 <div><h2 className="portfolio-gradient">{props.title}</h2></div>
-                <div><span>July 24, 2020</span></div>
+                <div><span>July 24, 2020 - ForceBrands</span></div>
                 <img src={props.cover} alt=""/>
             </Link>
-        </motion.div>
+        </div>
     )
 }

@@ -4,14 +4,16 @@ import './Article.scss';
 
 const animations = {
     initial: {
-        height: 0
+        opacity: 0,
+        y: 300
     },
     enter: {
-        height: 'auto'
+        opacity: 1,
+        y: 0
     },
     exit: {
-        height: 0,
-        opacity: 0
+        opacity: 0,
+        y: 300
     }
 }
 

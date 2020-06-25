@@ -4,15 +4,33 @@ import { portfolio } from './portfolio-case-studies.jsx';
 import { writings } from './writings.jsx';
 import MyIntro from './page-components/MyIntro';
 import ItemBanner from './page-components/ItemBanner';
-import ArticleBanner from './page-components/ArticleBanner';
 import ArticleHeading from './page-components/ArticleHeading';
 import Article from './page-components/Article';
-import IconLinks from './page-components/IconLinks';
 import FloatingView from './page-components/FloatingView';
 import List from './page-components/List';
 import BlogList from './page-components/BlogList';
 import Background, { Circle, GridDots, Image, GridLines } from './page-components/Background';
 import './page-components/Layouts.scss';
+
+
+const layoutsAnimation = {
+  initial: {
+    boxShadow: '0px 0px 0px #000',
+    borderColor: 'rgba(255, 255, 255, 0)',
+    backgroundColor: 'rgba(255, 255, 255, 0)'
+  },
+  enter: {
+    boxShadow: '0px 0px 30px #000',
+    borderColor: 'rgba(255, 255, 255, 0.03)',
+    backgroundColor: 'rgba(255, 255, 255, 0.005)'
+  },
+  exit: {
+    boxShadow: '0px 0px 0px #000',
+    borderColor: 'rgba(255, 255, 255, 0)',
+    backgroundColor: 'rgba(255, 255, 255, 0)'
+  }
+}
+
 
 const animations = {
   initial: {
@@ -29,13 +47,12 @@ const animations = {
 export function AboutMe() {
   return (
     <React.Fragment>
-      <motion.div className="layouts layout-col-2 narrow-col-2 scroll-y" initial="initial" animate="enter" exit="exit" variants={animations}>
+      <motion.div className="layouts layout-col-2 narrow-col-2 scroll-y" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
         <div>
           
         </div>
         <div className="center-col">
           <MyIntro/>
-          <IconLinks/>
         </div>
       </motion.div>
       <Background>
@@ -53,6 +70,32 @@ const floatingViewPortfolioList = [
   {label: 'Graphics Corrections Tool', link: 'portfolio/graphics-corrections-tool'},
   {label: 'Referral Service Landing Page', link: 'portfolio/referral-service-landing-page'}
 ]
+const staggerAnimation = {
+  enter: {
+    transition: {
+        staggerChildren: 0.1
+    }
+},
+exit: {
+    transition: {
+        staggerChildren: 0.1
+    }
+}
+}
+const layoutColAnimation = {
+  initial: {
+    y: -200,
+    opacity: 0
+  },
+  enter: {
+    y: 0,
+        opacity: 1
+  },
+  exit: {
+    y: -100,
+        opacity: 0
+  }
+}
 export function Portfolio(props) {
   return (
     <React.Fragment>
@@ -61,12 +104,12 @@ export function Portfolio(props) {
           {floatingViewPortfolioList}
         </List>
       </FloatingView>
-      <div className="layouts layout-col-3-alt padding-off effects-off">
-        <div className="col-1"><ItemBanner title={portfolio['luminal'].meta.title} url="portfolio/luminal" cover={portfolio['luminal'].images.bannerCover}/></div>
-        <div className="col-2"><ItemBanner title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" cover={portfolio['forcebrands-newsroom'].images.bannerCover} animDelay={.10}/></div>
-        <div className="col-3"><ItemBanner title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" cover={portfolio['forcebrands-jobboard'].images.bannerCover} animDelay={.20}/></div>
-        <div className="col-4"><ItemBanner title={portfolio['manhattan-bridge-capital'].meta.title} url="portfolio/manhattan-bridge-capital" cover={portfolio['manhattan-bridge-capital'].images.bannerCover} animDelay={.30}/></div>
-      </div>
+      <motion.div className="layouts layout-col-3-alt padding-off effects-off" initial="exit" animate="enter" exit="exit" variants={staggerAnimation}>
+        <motion.div className="col-1" variants={layoutColAnimation}><ItemBanner title={portfolio['luminal'].meta.title} url="portfolio/luminal" cover={portfolio['luminal'].images.bannerCover}/></motion.div>
+        <motion.div className="col-2" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" cover={portfolio['forcebrands-newsroom'].images.bannerCover} animDelay={.10}/></motion.div>
+        <motion.div className="col-3" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" cover={portfolio['forcebrands-jobboard'].images.bannerCover} animDelay={.20}/></motion.div>
+        <motion.div className="col-4" variants={layoutColAnimation}><ItemBanner title={portfolio['manhattan-bridge-capital'].meta.title} url="portfolio/manhattan-bridge-capital" cover={portfolio['manhattan-bridge-capital'].images.bannerCover} animDelay={.30}/></motion.div>
+      </motion.div>
     </React.Fragment>
   )
 }
@@ -87,7 +130,7 @@ export function PortfolioView(props) {
           {floatingViewPortfolioViewList}
         </List>
       </FloatingView>
-      <motion.div className="layouts layout-col-1 padding-off scroll-y" initial="initial" animate="enter" exit="exit" variants={animations}>
+      <motion.div className="layouts layout-col-1 padding-off scroll-y border-right" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>
               <ArticleHeading
@@ -113,20 +156,6 @@ export function PortfolioView(props) {
 }
 
 
-const writingsAnimations = {
-  initial: {
-    x: -100,
-    opacity: 0
-  },
-  enter: {
-    x: 0,
-    opacity: 1
-  },
-  exit: {
-    x: 100,
-    opacity: 0
-  }
-}
 
 let writingsList = [];
 export function Writings(props) {
@@ -152,7 +181,7 @@ export function Writings(props) {
           ]}
         </List>
       </FloatingView>
-      <motion.div className="layouts layout-col-1 scroll-y padding-off" initial="initial" animate="enter" exit="exit" variants={animations}>
+      <motion.div className="layouts layout-col-1 scroll-y padding-off" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
         <div className="col-1">
           <BlogList pageGradient={props.pageGradient} list={writingsList}></BlogList>
         </div>
@@ -177,7 +206,7 @@ export function WritingsView(props) {
           ]}
         </List>
       </FloatingView>
-      <motion.div className="layouts layout-col-1 padding-off scroll-y" initial="initial" animate="enter" exit="exit" variants={animations}>
+      <motion.div className="layouts layout-col-1 padding-off scroll-y border-right" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
         <div className="col-1" style={{maxWidth: 1000}}>
           <article>
             <ArticleHeading 
