@@ -41,6 +41,7 @@
         opacity: 0.4;
         transition: opacity .30s;
         -webkit-mask-image: linear-gradient(51deg, rgba(255, 255, 255, 0) 66%, #000 113%);
+        mask-image: linear-gradient(51deg, rgba(255, 255, 255, 0) 66%, #000 113%);
     }
 
     span:not(:last-child) {

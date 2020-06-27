@@ -15,8 +15,9 @@
         overflow: hidden;
     }
 
-    h1 {
+    h2 {
         margin: 0 0 10px 0;
+        font-size: 2em;
     }
 
     img {
@@ -28,6 +29,7 @@
         margin: auto;
         vertical-align: top;
         z-index: -1;
+        transition: opacity 0.30s;
         -webkit-mask-image: linear-gradient(to left, transparent 0%, #FFF 75%);
         mask-image: linear-gradient(to left, transparent 0%, #FFF 75%);
     }
@@ -41,6 +43,30 @@
         > li {
             display: inline-block;
             margin-right: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 897px) {
+    .BlogList {
+        > li {
+            &:hover {
+                img {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        a {
+            padding-left: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        img {
+            opacity: 0.3;
         }
     }
 }

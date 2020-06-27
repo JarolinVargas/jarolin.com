@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { motion } from "framer";
-import placeholder from '../assets/writings-img/placeholder.jpg'
 import './BlogList.scss';
 
 const list = {
@@ -28,7 +27,10 @@ const listItems = {
     },
     exit: {
         x: 500,
-        opacity: 0
+        opacity: 0,
+        transition: {
+            ease: 'easeOut'
+        }
     }
 }
 
@@ -40,12 +42,12 @@ export default function BlogList(props) {
                     return (
                         <motion.li key={i} variants={listItems} initial="initial" whileHover={{scale: 1.02, boxShadow: '0px 0px 30px rgba(0,0,0,0.4)'}}>
                             <Link to={`writings/${l.slug}`}>
-                                <h1 className="secondaryFont writings-gradient">{l.title}</h1>
+                                <h2 className="secondaryFont writings-gradient">{l.title}</h2>
                                 <ul className="writing-meta">
                                     <li>{l.published}</li>
                                     <li>{l.topic}</li>
                                 </ul>
-                                <img src={placeholder}/>
+                                <img src={l.cover}/>
                             </Link>
                         </motion.li>
                     )

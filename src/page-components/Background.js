@@ -67,19 +67,19 @@ export function Circle(props) {
 
 const ImageAnimations = {
     initial: {
-        opacity: 0,
+        width: '0%'
     },
     enter: {
-        opacity: 1,
+        width: '100%'
     },
     exit: {
-        opacity: 0,
+        width: '0%'
     }
 }
 
 export function Image(props) {
     return (
-        <motion.div className={`Image${props.fade ? ' fade' : ''}`} initial="initial" animate="enter" exit="exit" variants={ImageAnimations} style={props.styles}></motion.div>
+        <motion.div className={`Image${props.fade ? ' fade' : ''}`} initial="initial" animate="enter" exit="exit" variants={ImageAnimations} transition={{duration: .60, ease: 'easeOut'}} style={props.styles}></motion.div>
     )
 }
 

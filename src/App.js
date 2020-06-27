@@ -12,7 +12,7 @@ const pageGradients = {
 
 export default function App() {
   const navRef = useRef(null);
-  const [path, setPath] = useState(window.location.pathname);
+  const [path, setPath] = useState('/' + window.location.pathname.split('/')[1]);
 
   useEffect(() => {
     repositionActiveTabIndicator();
@@ -44,37 +44,37 @@ export default function App() {
 
   return (
     <Router>
-      <div className="App" data-path={path}>
-        <nav ref={navRef}>
-          <motion.span className="nav-active-page-indicator" animate={{backgroundImage: pageGradients[path]}}></motion.span>
-          <ul>
-            <motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}}></motion.li>
-            <li><NavLink to="/" exact onClick={updatePath}>ABOUT ME</NavLink></li>
-            <motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}}></motion.li>
-            <li><NavLink to="/portfolio" onClick={updatePath}>PORTFOLIO</NavLink></li>
-            <motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}}></motion.li>
-            <li><NavLink to="/writings" onClick={updatePath}>WRITINGS</NavLink></li>
-            <motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}}></motion.li>
-          </ul>
-        </nav>
-        <motion.div className="frame" animate={{borderImageSource: pageGradients[path]}}>
-			<main className="content">
-			<div className="page">
-				<Route render={({location}) => (
-					<AnimatePresence exitBeforeEnter initial={false}>
-						<Switch location={location} key={location.pathname}>
-							<Route path="/" exact children={<AboutMe pageGradient={pageGradients['/']}/>} />
-							<Route path="/portfolio" exact children={<Portfolio pageGradient={pageGradients['/portfolio']}/>} />
-							<Route path="/writings" exact children={<Writings pageGradient={pageGradients['/writings']}/>} />
-							<Route path="/portfolio/:name" children={<PortfolioView pageGradient={pageGradients['/portfolio']}/>} />
-							<Route path="/writings/:id" children={<WritingsView pageGradient={pageGradients['/writings']}/>} />
-						</Switch>
-					</AnimatePresence>
-				)}/>
-			</div>
-			</main>
-		</motion.div>
-      </div>
+    	<div className="App" data-path={path}>
+			<nav ref={navRef}>
+			<motion.span className="nav-active-page-indicator" animate={{backgroundImage: pageGradients[path]}} transition={{duration: 2}}></motion.span>
+			<ul>
+				<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}} transition={{duration: 2}}></motion.li>
+				<li><NavLink to="/" exact onClick={updatePath}>ABOUT ME</NavLink></li>
+				<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}} transition={{duration: 2}}></motion.li>
+				<li><NavLink to="/portfolio" onClick={updatePath}>PORTFOLIO</NavLink></li>
+				<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}} transition={{duration: 2}}></motion.li>
+				<li><NavLink to="/writings" onClick={updatePath}>WRITINGS</NavLink></li>
+				<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}} transition={{duration: 2}}></motion.li>
+			</ul>
+			</nav>
+			<motion.div className="frame" animate={{borderImageSource: pageGradients[path]}} transition={{duration: 2}}>
+				<main className="content">
+				<div className="page">
+					<Route render={({location}) => (
+						<AnimatePresence exitBeforeEnter initial={false}>
+							<Switch location={location} key={location.pathname}>
+								<Route path="/" exact children={<AboutMe pageGradient={pageGradients['/']}/>} />
+								<Route path="/portfolio" exact children={<Portfolio pageGradient={pageGradients['/portfolio']}/>} />
+								<Route path="/writings" exact children={<Writings pageGradient={pageGradients['/writings']}/>} />
+								<Route path="/portfolio/:name" children={<PortfolioView pageGradient={pageGradients['/portfolio']}/>} />
+								<Route path="/writings/:id" children={<WritingsView pageGradient={pageGradients['/writings']}/>} />
+							</Switch>
+						</AnimatePresence>
+					)}/>
+				</div>
+				</main>
+			</motion.div>
+    	</div>
     </Router>
   );
 }

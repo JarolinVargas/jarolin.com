@@ -5,7 +5,7 @@ import './Article.scss';
 const animations = {
     initial: {
         opacity: 0,
-        y: 300
+        y: -200
     },
     enter: {
         opacity: 1,
@@ -13,7 +13,10 @@ const animations = {
     },
     exit: {
         opacity: 0,
-        y: 300
+        y: 500,
+        transition: {
+            ease: 'easeOut'
+        }
     }
 }
 

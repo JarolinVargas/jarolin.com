@@ -1,5 +1,7 @@
 import React from 'react';
 import './page-components/Article.scss';
+import placeholder from './assets/writings-img/placeholder.jpg';
+import placeholder2 from './assets/writings-img/1461.jpg';
 
 export const writings = {
     'this-is-the-slug-and-key': {
@@ -11,7 +13,7 @@ export const writings = {
             slug: 'this-is-the-slug-and-key'
         },
         images: {
-            cover: ''
+            cover: placeholder
         },
         jsx: (
             <React.Fragment>
@@ -30,7 +32,7 @@ export const writings = {
             slug: 'this-is-another-article'
         },
         images: {
-            cover: ''
+            cover: placeholder2
         },
         jsx: (
             <React.Fragment>
@@ -49,7 +51,7 @@ export const writings = {
             slug: 'this-is-the-slug-and-key'
         },
         images: {
-            cover: ''
+            cover: placeholder
         },
         jsx: (
             <React.Fragment>
@@ -68,7 +70,7 @@ export const writings = {
             slug: 'this-is-another-article'
         },
         images: {
-            cover: ''
+            cover: placeholder
         },
         jsx: (
             <React.Fragment>

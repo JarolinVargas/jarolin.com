@@ -4,23 +4,30 @@ import './ProjectButton.scss';
 
 const animations = {
     initial: {
-        scale: 0,
+        y: -200,
         opacity: 0
     },
     enter: {
-        scale: 1,
-        opacity: 1
+        y: 0,
+        opacity: 1,
+        transition: {
+            delay: .10
+        }
     },
     exit: {
-        scale: 0,
-        opacity: 0
+        y: 500,
+        opacity: 0,
+        transition: {
+            ease: 'easeOut',
+            delay: .10
+        }
     }
 }
 
 export default function ProjectButton(props) {
     return(
-        <motion.div className="ProjectButton" initial="initial" animate="enter" exit="exit" variants={animations}>
+        <div className="ProjectButton">
             <a href={props.link} target="_blank">OPEN</a>
-        </motion.div>
+        </div>
     )
 }

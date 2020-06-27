@@ -18,16 +18,19 @@ const variants = {
 
 const animations = {
     initial: {
-	  y: 400,
+	  x: 400,
 	  opacity: 0
     },
     enter: {
-	  y: 0,
+	  x: 0,
 	  opacity: 1
     },
     exit: {
-	  y: -400,
-	  opacity: 0
+	  x: -400,
+	  opacity: 0,
+	  transition: {
+		  ease: 'easeOut'
+	  }
     }
 }
 
