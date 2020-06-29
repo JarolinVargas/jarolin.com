@@ -154,6 +154,14 @@
                     grid-row: 2;
                 }
             }
+
+            /* item banner border radius */
+            > div {
+                &.col-1 > .ItemBanner {border-top-left-radius: 20px; border-bottom-left-radius: 0px;}
+                &.col-3 > .ItemBanner {border-top-right-radius: 20px;}
+                &.col-2 > .ItemBanner {border-bottom-left-radius: 20px; border-bottom-right-radius: 0px;}
+                &.col-4 > .ItemBanner {border-top-right-radius: 0px; border-bottom-right-radius: 20px;}
+            }
         }
     }
 }
@@ -194,6 +202,15 @@
                     grid-row: 4;
                     grid-column: 1;
                 }
+            }
+
+            /* item banner border radius */
+            > div {
+                 > .ItemBanner {
+                    border-radius: 0 !important;
+                }
+                &.col-1 > .ItemBanner {border-top-left-radius: 30px !important; border-top-right-radius: 30px !important;}
+                &.col-4 > .ItemBanner {border-bottom-left-radius: 30px !important; border-bottom-right-radius: 30px !important;}
             }
         }
     }

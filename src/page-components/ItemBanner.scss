@@ -52,8 +52,8 @@
 /* layout itembanner container */
 .layout-col-3-alt {
     > div {
-        &.col-1 > .ItemBanner {border-top-left-radius: 20px; border-bottom-left-radius: 20px;}
-        &.col-4 > .ItemBanner {border-top-right-radius: 20px;}
-        &.col-2 > .ItemBanner {border-bottom-right-radius: 20px;}
+        &.col-1 > .ItemBanner {border-top-left-radius: 30px; border-bottom-left-radius: 30px;}
+        &.col-4 > .ItemBanner {border-top-right-radius: 30px;}
+        &.col-2 > .ItemBanner {border-bottom-right-radius: 30px;}
     }
 }

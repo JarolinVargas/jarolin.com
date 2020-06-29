@@ -20,7 +20,8 @@ export const portfolio = {
             context: 'Personal Project',
             duration: 'June 2020 - May 2030',
             role: 'Developer & Designer',
-            link: 'https://luminaldev.com'
+            link: 'https://luminaldev.com',
+            slug: 'luminal'
         },
         images: {
             cover: luminalCoverIMG,
@@ -42,7 +43,8 @@ export const portfolio = {
             context: 'ForceBrands',
             duration: 'July 2019 - August 2019',
             role: 'Front-End/Back-end Developer & Designer',
-            link: 'https://forcebrands.com/blog'
+            link: 'https://forcebrands.com/blog',
+            slug: 'forcebrands-newsroom'
         },
         images: {
             cover: NewsroomCoverIMG,
@@ -60,7 +62,8 @@ export const portfolio = {
             context: 'ForceBrands',
             duration: 'November 2019 - January 2020',
             role: 'Front-End Developer & Designer',
-            link: 'https://careers.afventures.vc/'
+            link: 'https://careers.afventures.vc/',
+            slug: 'forcebrands-jobboard'
         },
         images: {
             cover: JobBoardCoverIMG,
@@ -78,7 +81,8 @@ export const portfolio = {
             context: 'Jwiz Marketing Solutions',
             duration: 'June 2018 - August 2018',
             role: 'Front-End/Back-end Developer & Designer',
-            link: 'https://jarolin.com'
+            link: 'https://jarolin.com',
+            slug: 'manhattan-bridge-capital'
         },
         images: {
             cover: MbcCoverIMG,
@@ -96,7 +100,8 @@ export const portfolio = {
             context: 'Jwiz Marketing Solutions',
             duration: 'March 2018 - April 2018',
             role: 'Front-End/Back-end Developer & Designer',
-            link: 'http://jarolin.com/demo/jwiz-corrections-tool'
+            link: 'http://jarolin.com/demo/jwiz-corrections-tool',
+            slug: 'graphics-corrections-tool'
         },
         images: {
             cover: GraphicsCorrectionsCoverIMG,
@@ -114,7 +119,8 @@ export const portfolio = {
             context: 'Jwiz Marketing Solutions',
             duration: 'April 2018 - April 2018',
             role: 'Front-End/Back-end Developer & Designer',
-            link: 'https://jwiz.com/jewish_referral/catering'
+            link: 'https://jwiz.com/jewish_referral/catering',
+            slug: 'referral-service-landing-page'
         },
         images: {
             cover: ReferralCoverIMG,

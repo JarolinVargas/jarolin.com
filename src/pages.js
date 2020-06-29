@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from "framer";
-import { portfolio } from './portfolio-case-studies.jsx';
+import { portfolio } from './portfolio.jsx';
 import { writings } from './writings.jsx';
 import MyIntro from './page-components/MyIntro';
 import ItemBanner from './page-components/ItemBanner';
@@ -72,27 +72,25 @@ export function AboutMe() {
 
 
 
-const floatingViewPortfolioList = [
-	{label: 'Graphics Corrections Tool', link: 'portfolio/graphics-corrections-tool'},
-	{label: 'Referral Service Landing Page', link: 'portfolio/referral-service-landing-page'}
-]
-const staggerAnimation = {
-	enter: {transition: {staggerChildren: 0.1}},
-	exit: {transition: {staggerChildren: 0.1}}
+const floatingViewPortfolioList = [];
+for( const property in portfolio ) {
+	const p = portfolio[property];
+	floatingViewPortfolioList.push({label: p.meta.title, link: `portfolio/${p.meta.slug}`});
 }
+
 export function Portfolio(props) {
 	return (
 		<React.Fragment>
-			<FloatingView label="Portfolio" pageGradient={props.pageGradient}>
+			<FloatingView label="More" labelExpanded="More Portfolio" pageGradient={props.pageGradient}>
 				<List>
-					{floatingViewPortfolioList}
+					{floatingViewPortfolioList.slice(4)}
 				</List>
 			</FloatingView>
-			<motion.div className="layouts layout-col-3-alt padding-off effects-off" initial="initial" animate="enter" exit="exit" variants={staggerAnimation}>
-				<motion.div className="col-1" variants={layoutColAnimation}><ItemBanner title={portfolio['luminal'].meta.title} url="portfolio/luminal" cover={portfolio['luminal'].images.bannerCover}/></motion.div>
-				<motion.div className="col-2" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" cover={portfolio['forcebrands-newsroom'].images.bannerCover} animDelay={.10}/></motion.div>
-				<motion.div className="col-3" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" cover={portfolio['forcebrands-jobboard'].images.bannerCover} animDelay={.20}/></motion.div>
-				<motion.div className="col-4" variants={layoutColAnimation}><ItemBanner title={portfolio['manhattan-bridge-capital'].meta.title} url="portfolio/manhattan-bridge-capital" cover={portfolio['manhattan-bridge-capital'].images.bannerCover} animDelay={.30}/></motion.div>
+			<motion.div className="layouts layout-col-3-alt padding-off effects-off" initial="initial" animate="enter" exit="exit" variants={{enter: {transition: {staggerChildren: 0.1}}, exit: {transition: {staggerChildren: 0.1}}}}>
+				<motion.div className="col-1" variants={layoutColAnimation}><ItemBanner title={portfolio['luminal'].meta.title} url={`portfolio/luminal`} cover={portfolio['luminal'].images.bannerCover} duration={portfolio['luminal'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
+				<motion.div className="col-2" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" cover={portfolio['forcebrands-newsroom'].images.bannerCover} duration={portfolio['forcebrands-newsroom'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
+				<motion.div className="col-3" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" cover={portfolio['forcebrands-jobboard'].images.bannerCover} duration={portfolio['forcebrands-jobboard'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
+				<motion.div className="col-4" variants={layoutColAnimation}><ItemBanner title={portfolio['manhattan-bridge-capital'].meta.title} url="portfolio/manhattan-bridge-capital" cover={portfolio['manhattan-bridge-capital'].images.bannerCover} duration={portfolio['manhattan-bridge-capital'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
 			</motion.div>
 		</React.Fragment>
 	)
@@ -100,19 +98,15 @@ export function Portfolio(props) {
 
 
 
-const floatingViewPortfolioViewList = [
-	{label: 'Graphics Corrections Tool', link: 'portfolio/graphics-corrections-tool'},
-	{label: 'Referral Service Landing Page', link: 'portfolio/referral-service-landing-page'}
-]
 export function PortfolioView(props) {
 	const pathname = window.location.pathname;
 	const itemKey = pathname.substring(pathname.lastIndexOf('/') + 1);
 	const item = portfolio[itemKey];
 	return (
 		<React.Fragment>
-			<FloatingView label="Portfolio" pageGradient={props.pageGradient}>
+			<FloatingView label="More" labelExpanded="More Portfolio" pageGradient={props.pageGradient}>
 				<List>
-					{floatingViewPortfolioViewList}
+					{floatingViewPortfolioList}
 				</List>
 			</FloatingView>
 			<motion.div className="layouts layout-col-1 padding-off scroll-y border-right" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
@@ -141,31 +135,22 @@ export function PortfolioView(props) {
 
 
 
-let writingsList = [];
-export function Writings(props) {
-	if( !writingsList.length ) {
-		for( const property in writings ) {
-			const w = writings[property];
-			writingsList.push({
-				title: w.meta['title'],
-				published: w.meta['published'],
-				topic: w.meta['topic'],
-				slug: w.meta['slug'],
-				cover: w.images.cover
-			});
-		}
-	}
+let [writingsList, floatingViewWritingsList] = [[],[]];
+for( const property in writings ) {
+	const w = writings[property];
+	writingsList.push({
+		title: w.meta['title'],
+		published: w.meta['published'],
+		topic: w.meta['topic'],
+		slug: w.meta['slug'],
+		cover: w.images.cover
+	});
+	floatingViewWritingsList.push({label: w.meta.title, link: `writings/${w.meta.slug}`})
+}
 
+export function Writings(props) {
 	return (
 		<React.Fragment>
-			<FloatingView label="Writings" pageGradient={props.pageGradient}>
-				<List>
-					{[
-						{label: 'React Job Board app', link: 'writings/sdfoisdf'},
-						{label: 'React Job Board app', link: 'writings/sdfoisdf'}
-					]}
-				</List>
-			</FloatingView>
 			<motion.div className="layouts layout-col-1 scroll-y padding-off" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
 				<div className="col-1">
 					<BlogList pageGradient={props.pageGradient} list={writingsList}></BlogList>
@@ -183,12 +168,9 @@ export function WritingsView(props) {
 	const article = writings[articleKey];
 	return (
 		<React.Fragment>
-			<FloatingView label="Writings" pageGradient={props.pageGradient}>
+			<FloatingView label="More" labelExpanded="More Writings" pageGradient={props.pageGradient}>
 				<List>
-					{[
-						{label: 'React Job Board app', link: '/writings/some'},
-						{label: 'React Job Board app', link: '/writings/some'}
-					]}
+					{floatingViewWritingsList}
 				</List>
 			</FloatingView>
 			<motion.div className="layouts layout-col-1 padding-off scroll-y border-right" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>

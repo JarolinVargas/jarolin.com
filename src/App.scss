@@ -43,7 +43,7 @@ $frameOutlineColor: #3af4f5;
     > .layouts:not(.effects-off) {
       border:  solid 5px #ffffff08;
       box-shadow: 0px 0px 30px black;
-      border-radius: 20px;
+      border-radius: 30px;
       box-sizing: border-box;
       background-color: rgba(255, 255, 255, 0.005);
     }
@@ -249,6 +249,10 @@ nav {
   .FloatingView {
     right: -10px;
     bottom: -10px;
+  }
+
+  .article {
+    padding: 30px 15px;
   }
 }
 
