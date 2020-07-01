@@ -40,12 +40,20 @@
         z-index: -1;
         opacity: 0.4;
         transition: opacity .30s;
-        -webkit-mask-image: linear-gradient(51deg, rgba(255, 255, 255, 0) 66%, #000 113%);
-        mask-image: linear-gradient(51deg, rgba(255, 255, 255, 0) 66%, #000 113%);
+        -webkit-mask-image: linear-gradient(50deg, rgba(255, 255, 255, 0) 50%, #FFF 100%);
+        mask-image: linear-gradient(50deg, rgba(255, 255, 255, 0) 50%, #FFF 100%);
     }
 
-    span:not(:last-child) {
-        margin-right: 20px;
+    .item-count {
+        font-weight: 700;
+        color: #47464e;
+        line-height: 1;
+    }
+
+    &:hover {
+        img {
+            opacity: 1;
+        }
     }
 }
 

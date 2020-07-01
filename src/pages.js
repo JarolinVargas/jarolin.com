@@ -10,6 +10,7 @@ import FloatingView from './page-components/FloatingView';
 import List from './page-components/List';
 import BlogList from './page-components/BlogList';
 import Background, { Circle, GridDots, Image, GridLines } from './page-components/Background';
+import JarolinVargas from './assets/jarolin-vargas.svg';
 import './page-components/Layouts.scss';
 
 const layoutsAnimation = {
@@ -54,17 +55,14 @@ export function AboutMe() {
 	return (
 		<React.Fragment>
 			<motion.div className="layouts layout-col-2 narrow-col-2 scroll-y" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
-				<div>
-					
-				</div>
-				<div className="center-col">
-					<MyIntro/>
-				</div>
+				<div></div>
+				<div className="center-col"><MyIntro/></div>
 			</motion.div>
 			<Background>
+				<img className="my-portrait" src={JarolinVargas} alt="Jarolin Vargas"/>
 				<Circle size={300} right={0} top={60} shadow="-50px -50px 50px rgba(0, 0, 0, 0.1)"/>
 				<Circle size={300} right={-140} top={-140} shadow="0px 0px 50px rgba(0, 0, 0, 0.2)"/>
-				<GridDots width={140} height={140} bottom={10} right={10}/>
+				<GridDots width={140} height={140} bottom={15} right={15}/>
 			</Background>
 		</React.Fragment>
 	)
@@ -87,10 +85,10 @@ export function Portfolio(props) {
 				</List>
 			</FloatingView>
 			<motion.div className="layouts layout-col-3-alt padding-off effects-off" initial="initial" animate="enter" exit="exit" variants={{enter: {transition: {staggerChildren: 0.1}}, exit: {transition: {staggerChildren: 0.1}}}}>
-				<motion.div className="col-1" variants={layoutColAnimation}><ItemBanner title={portfolio['luminal'].meta.title} url={`portfolio/luminal`} cover={portfolio['luminal'].images.bannerCover} duration={portfolio['luminal'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
-				<motion.div className="col-2" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" cover={portfolio['forcebrands-newsroom'].images.bannerCover} duration={portfolio['forcebrands-newsroom'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
-				<motion.div className="col-3" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" cover={portfolio['forcebrands-jobboard'].images.bannerCover} duration={portfolio['forcebrands-jobboard'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
-				<motion.div className="col-4" variants={layoutColAnimation}><ItemBanner title={portfolio['manhattan-bridge-capital'].meta.title} url="portfolio/manhattan-bridge-capital" cover={portfolio['manhattan-bridge-capital'].images.bannerCover} duration={portfolio['manhattan-bridge-capital'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
+				<motion.div className="col-1" variants={layoutColAnimation}><ItemBanner title={portfolio['luminal'].meta.title} url={`portfolio/luminal`} count="01" cover={portfolio['luminal'].images.bannerCover} duration={portfolio['luminal'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
+				<motion.div className="col-2" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" count="03" cover={portfolio['forcebrands-newsroom'].images.bannerCover} duration={portfolio['forcebrands-newsroom'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
+				<motion.div className="col-3" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" count="02" cover={portfolio['forcebrands-jobboard'].images.bannerCover} duration={portfolio['forcebrands-jobboard'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
+				<motion.div className="col-4" variants={layoutColAnimation}><ItemBanner title={portfolio['manhattan-bridge-capital'].meta.title} url="portfolio/manhattan-bridge-capital" count="04" cover={portfolio['manhattan-bridge-capital'].images.bannerCover} duration={portfolio['manhattan-bridge-capital'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
 			</motion.div>
 		</React.Fragment>
 	)

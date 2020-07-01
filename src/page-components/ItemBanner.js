@@ -8,7 +8,7 @@ export default function ItemBanner(props) {
     return (
         <motion.div className="ItemBanner">
             <Link to={props.url}>
-                <div style={{height: 0}}></div>
+                <div><span className="item-count">{props.count}</span></div>
                 <div><h2 className="portfolio-gradient">{props.title}</h2></div>
                 <div><span>{props.duration.split('-')[1].trim()} - {props.context}</span></div>
                 <img src={props.cover} alt=""/>

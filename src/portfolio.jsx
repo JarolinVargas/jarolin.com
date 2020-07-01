@@ -2,16 +2,14 @@ import React from 'react';
 import './page-components/Article.scss';
 import luminalCoverIMG from './assets/portfolio-img/luminal-site-builder-cover.png';
 import luminalBannerCoverIMG from './assets/portfolio-img/luminal-site-builder.png';
-import JobBoardCoverIMG from './assets/portfolio-img/job-board.jpg';
-import JobBoardBannerCoverIMG from './assets/portfolio-img/job-board.jpg';
-import NewsroomCoverIMG from './assets/portfolio-img/newsroom-billboard.jpg';
-import NewsroomBannerCoverIMG from './assets/portfolio-img/newsroom-billboard.jpg';
-import MbcCoverIMG from './assets/portfolio-img/mbc-bg.png';
-import MbcBannerCoverIMG from './assets/portfolio-img/mbc-bg.png';
-import GraphicsCorrectionsCoverIMG from './assets/portfolio-img/jdigital-bg.png';
-import GraphicsCorrectionsBannerCoverIMG from './assets/portfolio-img/jdigital-bg.png';
-import ReferralCoverIMG from './assets/portfolio-img/jdigital-bg.png';
-import ReferralBannerCoverIMG from './assets/portfolio-img/jdigital-bg.png';
+import jobboard from './assets/portfolio-img/job-board.png';
+import jobboardBanner from './assets/portfolio-img/job-board-banner.png';
+import newsroom from './assets/portfolio-img/newsroom.png';
+import newsroomBanner from './assets/portfolio-img/newsroom-banner.png';
+import mbc from './assets/portfolio-img/mbc.png';
+import mbcBanner from './assets/portfolio-img/mbc-banner.png';
+import jdigital from './assets/portfolio-img/jdigital.png';
+import referralService from './assets/portfolio-img/referral-service.png';
 
 export const portfolio = {
     'luminal': {
@@ -47,8 +45,8 @@ export const portfolio = {
             slug: 'forcebrands-newsroom'
         },
         images: {
-            cover: NewsroomCoverIMG,
-            bannerCover: NewsroomBannerCoverIMG
+            cover: newsroom,
+            bannerCover: newsroomBanner
         },
         jsx: (
             <React.Fragment>
@@ -66,8 +64,8 @@ export const portfolio = {
             slug: 'forcebrands-jobboard'
         },
         images: {
-            cover: JobBoardCoverIMG,
-            bannerCover: JobBoardBannerCoverIMG
+            cover: jobboard,
+            bannerCover: jobboardBanner
         },
         jsx: (
             <React.Fragment>
@@ -85,8 +83,8 @@ export const portfolio = {
             slug: 'manhattan-bridge-capital'
         },
         images: {
-            cover: MbcCoverIMG,
-            bannerCover: MbcCoverIMG
+            cover: mbc,
+            bannerCover: mbcBanner
         },
         jsx: (
             <React.Fragment>
@@ -104,8 +102,8 @@ export const portfolio = {
             slug: 'graphics-corrections-tool'
         },
         images: {
-            cover: GraphicsCorrectionsCoverIMG,
-            bannerCover: GraphicsCorrectionsBannerCoverIMG
+            cover: jdigital,
+            bannerCover: ''
         },
         jsx: (
             <React.Fragment>
@@ -123,8 +121,8 @@ export const portfolio = {
             slug: 'referral-service-landing-page'
         },
         images: {
-            cover: ReferralCoverIMG,
-            bannerCover: ReferralBannerCoverIMG
+            cover: referralService,
+            bannerCover: ''
         },
         jsx: (
             <React.Fragment>
