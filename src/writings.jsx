@@ -1,82 +1,25 @@
 import React from 'react';
 import './page-components/Article.scss';
-import placeholder from './assets/writings-img/placeholder.jpg';
-import placeholder2 from './assets/writings-img/1461.jpg';
+import jarolinVargas from './assets/writings-img/jarolinvargas.png';
+import jarolinVargasBanner from './assets/writings-img/jarolinvargas-banner.png';
+
 
 export const writings = {
-    'this-is-the-slug-and-key': {
+    'this-is-my-new-website-welcome': {
         meta: {
-            title: 'Designing and building applications',
-            summary: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem.',
-            published: 'July 24, 2020',
-            topic: 'Design',
-            slug: 'this-is-the-slug-and-key'
+            title: 'This is my new website. welcome!',
+            published: 'July 5, 2020',
+            topic: 'Development & Design',
+            slug: 'this-is-my-new-website-welcome'
         },
         images: {
-            cover: placeholder
+            cover: jarolinVargas,
+            bannerCover: jarolinVargasBanner
         },
         jsx: (
             <React.Fragment>
-                <p>Luminal Website Builder is part of a personal project I’ve been working on for a number of years. It allows users with little or no coding experience to build their personal or small business website with an easy-to-use interface. Similar to Wix and Squarespace website builders; users can create responsive and multi-purpose websites by dragging and dropping elements, editing text, changing colors, and changing options of individual elements without writing or editing code.</p>
-                <h2 className="heading primary-color">Goal</h2>
-                <p>Whether or not I could design and build a website builder on my own was one of the many questions I asked myself when I started this project. The initial goal was to create a customizable HTML template with great design, browser support, and customization options. The idea of being able to customize the template without editing or writing code was tempting. I decided to bundle a website builder with the template that would make customization faster and easier; and would also serve as a personal challenge to test and improve my design and development skills.</p>
-            </React.Fragment>
-        )
-    },
-    'this-is-another-article': {
-        meta: {
-            title: 'This is another article',
-            summary: 'oasidjf aosidfjaosidfja sdoifj asdiofj asdf',
-            published: 'July 4, 2020',
-            topic: 'Development',
-            slug: 'this-is-another-article'
-        },
-        images: {
-            cover: placeholder2
-        },
-        jsx: (
-            <React.Fragment>
-                <p>Luminal Website Builder is part of a personal project I’ve been working on for a number of years. It allows users with little or no coding experience to build their personal or small business website with an easy-to-use interface. Similar to Wix and Squarespace website builders; users can create responsive and multi-purpose websites by dragging and dropping elements, editing text, changing colors, and changing options of individual elements without writing or editing code.</p>
-                <h2 className="heading primary-color">Goal</h2>
-                <p>Whether or not I could design and build a website builder on my own was one of the many questions I asked myself when I started this project. The initial goal was to create a customizable HTML template with great design, browser support, and customization options. The idea of being able to customize the template without editing or writing code was tempting. I decided to bundle a website builder with the template that would make customization faster and easier; and would also serve as a personal challenge to test and improve my design and development skills.</p>
-            </React.Fragment>
-        )
-    },
-    'this-is-the-slug-andsd-key': {
-        meta: {
-            title: 'Designing and building applications',
-            summary: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem.',
-            published: 'July 24, 2020',
-            topic: 'Design',
-            slug: 'this-is-the-slug-and-key'
-        },
-        images: {
-            cover: placeholder
-        },
-        jsx: (
-            <React.Fragment>
-                <p>Luminal Website Builder is part of a personal project I’ve been working on for a number of years. It allows users with little or no coding experience to build their personal or small business website with an easy-to-use interface. Similar to Wix and Squarespace website builders; users can create responsive and multi-purpose websites by dragging and dropping elements, editing text, changing colors, and changing options of individual elements without writing or editing code.</p>
-                <h2 className="heading primary-color">Goal</h2>
-                <p>Whether or not I could design and build a website builder on my own was one of the many questions I asked myself when I started this project. The initial goal was to create a customizable HTML template with great design, browser support, and customization options. The idea of being able to customize the template without editing or writing code was tempting. I decided to bundle a website builder with the template that would make customization faster and easier; and would also serve as a personal challenge to test and improve my design and development skills.</p>
-            </React.Fragment>
-        )
-    },
-    'this-is-another-articless': {
-        meta: {
-            title: 'This is another article',
-            summary: 'oasidjf aosidfjaosidfja sdoifj asdiofj asdf',
-            published: 'July 4, 2020',
-            topic: 'Development',
-            slug: 'this-is-another-article'
-        },
-        images: {
-            cover: placeholder
-        },
-        jsx: (
-            <React.Fragment>
-                <p>Luminal Website Builder is part of a personal project I’ve been working on for a number of years. It allows users with little or no coding experience to build their personal or small business website with an easy-to-use interface. Similar to Wix and Squarespace website builders; users can create responsive and multi-purpose websites by dragging and dropping elements, editing text, changing colors, and changing options of individual elements without writing or editing code.</p>
-                <h2 className="heading primary-color">Goal</h2>
-                <p>Whether or not I could design and build a website builder on my own was one of the many questions I asked myself when I started this project. The initial goal was to create a customizable HTML template with great design, browser support, and customization options. The idea of being able to customize the template without editing or writing code was tempting. I decided to bundle a website builder with the template that would make customization faster and easier; and would also serve as a personal challenge to test and improve my design and development skills.</p>
+                <p>I finally got around to redesigning my personal website, and you're on it. To be honest, I only wrote this post to fill this page up with something; but hope that having a 'blog' page on my website will encourage me to write more and share some thoughts and opinions. I might expand on this post later on to include details on my design and development process. There's still work to do, but I made the source code available on Github for educational/inspirational purpose: <a href="https://github.com/JarolinVargas/jarolin.com" target="_blank" rel="noopener noreferrer">Jarolin.com Github Repo</a>.</p>
+                <p>Shout out to <a href="https://dribbble.com/ndumisonyoni" target="_blank" rel="noopener noreferrer">Ndumiso Nyoni</a> for the awesome portrait illustration.</p>
             </React.Fragment>
         )
     }

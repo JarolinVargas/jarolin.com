@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from "framer";
 import './ItemBanner.scss';
-import { BrowserRouter as Router, Switch, Route, Link, useLocation } from "react-router-dom";
-import placeholder from '../assets/writings-img/placeholder.jpg'
+import { Link } from "react-router-dom";
 
 export default function ItemBanner(props) {
     return (

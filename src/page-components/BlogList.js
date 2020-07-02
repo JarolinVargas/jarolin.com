@@ -47,7 +47,7 @@ export default function BlogList(props) {
                                     <li>{l.published}</li>
                                     <li>{l.topic}</li>
                                 </ul>
-                                <img src={l.cover}/>
+                                <img src={l.bannerCover} alt={l.slug}/>
                             </Link>
                         </motion.li>
                     )

@@ -1,7 +1,7 @@
 import React from 'react';
 import './page-components/Article.scss';
-import luminalCoverIMG from './assets/portfolio-img/luminal-site-builder-cover.png';
-import luminalBannerCoverIMG from './assets/portfolio-img/luminal-site-builder.png';
+import luminal from './assets/portfolio-img/luminal.png';
+import luminalBanner from './assets/portfolio-img/luminal-banner.png';
 import jobboard from './assets/portfolio-img/job-board.png';
 import jobboardBanner from './assets/portfolio-img/job-board-banner.png';
 import newsroom from './assets/portfolio-img/newsroom.png';
@@ -14,16 +14,16 @@ import referralService from './assets/portfolio-img/referral-service.png';
 export const portfolio = {
     'luminal': {
         meta: {
-            title: 'Luminal Website Builder & Template',
+            title: 'Luminal Website Builder & HTML Template',
             context: 'Personal Project',
-            duration: 'June 2020 - May 2030',
+            duration: 'April 2014 - December 2018',
             role: 'Developer & Designer',
             link: 'https://luminaldev.com',
             slug: 'luminal'
         },
         images: {
-            cover: luminalCoverIMG,
-            bannerCover: luminalBannerCoverIMG
+            cover: luminal,
+            bannerCover: luminalBanner
         },
         jsx: (
             <React.Fragment>

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from "framer";
 import { portfolio } from './portfolio.jsx';
 import { writings } from './writings.jsx';
+import ReactGA from 'react-ga';
 import MyIntro from './page-components/MyIntro';
 import ItemBanner from './page-components/ItemBanner';
 import ArticleHeading from './page-components/ArticleHeading';
@@ -9,7 +10,7 @@ import Article from './page-components/Article';
 import FloatingView from './page-components/FloatingView';
 import List from './page-components/List';
 import BlogList from './page-components/BlogList';
-import Background, { Circle, GridDots, Image, GridLines } from './page-components/Background';
+import Background, { Circle, GridDots, Image } from './page-components/Background';
 import JarolinVargas from './assets/jarolin-vargas.svg';
 import './page-components/Layouts.scss';
 
@@ -52,6 +53,7 @@ const layoutColAnimation = {
 
 
 export function AboutMe() {
+	ReactGA.pageview(window.location.pathname);
 	return (
 		<React.Fragment>
 			<motion.div className="layouts layout-col-2 narrow-col-2 scroll-y" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
@@ -77,6 +79,7 @@ for( const property in portfolio ) {
 }
 
 export function Portfolio(props) {
+	ReactGA.pageview(window.location.pathname);
 	return (
 		<React.Fragment>
 			<FloatingView label="More" labelExpanded="More Portfolio" pageGradient={props.pageGradient}>
@@ -84,7 +87,7 @@ export function Portfolio(props) {
 					{floatingViewPortfolioList.slice(4)}
 				</List>
 			</FloatingView>
-			<motion.div className="layouts layout-col-3-alt padding-off effects-off" initial="initial" animate="enter" exit="exit" variants={{enter: {transition: {staggerChildren: 0.1}}, exit: {transition: {staggerChildren: 0.1}}}}>
+			<motion.div className="layouts layout-col-3-alt padding-off effects-off scroll-y" initial="initial" animate="enter" exit="exit" variants={{enter: {transition: {staggerChildren: 0.1}}, exit: {overflow: 'hidden', transition: {staggerChildren: 0.1}}}}>
 				<motion.div className="col-1" variants={layoutColAnimation}><ItemBanner title={portfolio['luminal'].meta.title} url={`portfolio/luminal`} count="01" cover={portfolio['luminal'].images.bannerCover} duration={portfolio['luminal'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
 				<motion.div className="col-2" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" count="03" cover={portfolio['forcebrands-newsroom'].images.bannerCover} duration={portfolio['forcebrands-newsroom'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
 				<motion.div className="col-3" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" count="02" cover={portfolio['forcebrands-jobboard'].images.bannerCover} duration={portfolio['forcebrands-jobboard'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
@@ -100,6 +103,7 @@ export function PortfolioView(props) {
 	const pathname = window.location.pathname;
 	const itemKey = pathname.substring(pathname.lastIndexOf('/') + 1);
 	const item = portfolio[itemKey];
+	ReactGA.pageview(window.location.pathname);
 	return (
 		<React.Fragment>
 			<FloatingView label="More" labelExpanded="More Portfolio" pageGradient={props.pageGradient}>
@@ -141,12 +145,14 @@ for( const property in writings ) {
 		published: w.meta['published'],
 		topic: w.meta['topic'],
 		slug: w.meta['slug'],
-		cover: w.images.cover
+		cover: w.images.cover,
+		bannerCover: w.images.bannerCover
 	});
 	floatingViewWritingsList.push({label: w.meta.title, link: `writings/${w.meta.slug}`})
 }
 
 export function Writings(props) {
+	ReactGA.pageview(window.location.pathname);
 	return (
 		<React.Fragment>
 			<motion.div className="layouts layout-col-1 scroll-y padding-off" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
@@ -164,6 +170,7 @@ export function WritingsView(props) {
 	const pathname = window.location.pathname;
 	const articleKey = pathname.substring(pathname.lastIndexOf('/') + 1);
 	const article = writings[articleKey];
+	ReactGA.pageview(window.location.pathname);
 	return (
 		<React.Fragment>
 			<FloatingView label="More" labelExpanded="More Writings" pageGradient={props.pageGradient}>
@@ -177,8 +184,8 @@ export function WritingsView(props) {
 						<ArticleHeading 
 							title={article.meta.title}
 							meta={[{label: 'Published', value: article.meta.published},{label: 'Topic', value: article.meta.topic}]}
-							image={article.images.cover}
 							gradientClass="writings-gradient"
+							height={400}
 						/>
 						<Article>
 							{article.jsx}
@@ -186,6 +193,9 @@ export function WritingsView(props) {
 					</article>
 				</div>
 			</motion.div>
+			<Background>
+				<Image styles={{maxWidth: 1000, height: '100%', backgroundImage: `url(${article.images.cover}`}} fade={true}></Image>
+			</Background>
 		</React.Fragment>
 	)
 }
