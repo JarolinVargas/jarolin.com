@@ -27,11 +27,10 @@ export const portfolio = {
         },
         jsx: (
             <React.Fragment>
+                <h3 className="heading primary-color" style={{marginTop: 0}}>Luminal Website Builder</h3>
                 <p>Luminal Website Builder is part of a personal project I’ve been working on for a number of years. It allows users with little or no coding experience to build their personal or small business website with an easy-to-use interface. Similar to Wix and Squarespace website builders; users can create responsive and multi-purpose websites by dragging and dropping elements, editing text, changing colors, and changing options of individual elements without writing or editing code.</p>
-                <h2 className="heading primary-color">Goal</h2>
-                <p>Whether or not I could design and build a website builder on my own was one of the many questions I asked myself when I started this project. The initial goal was to create a customizable HTML template with great design, browser support, and customization options. The idea of being able to customize the template without editing or writing code was tempting. I decided to bundle a website builder with the template that would make customization faster and easier; and would also serve as a personal challenge to test and improve my design and development skills.</p>
-                <h2 className="heading primary-color">Colors Feature</h2>
-                <p>The colors feature gives the user control over individual colors across their website. Most builders provide a combination of colors that change the overall theme of the website in its entirety. I wanted users to easily change colors individually and create any combination of available colors with a simple interface. I took some time to contemplate which route to take when implementing the colors feature. I came up with two solutions that would give varying levels of control to the user, and varying levels of complexity and time needed to implement.</p>
+                <h3 className="heading primary-color">Luminal HTML Template</h3>
+                <p>Luminal Template is part of the Luminal personal project. It's a highly customizable, multi-purpose, responsive HTML5 template with excellent browser compatibility; and can be easily customized without writing or editing code using the Luminal Website Builder. I focused on using a component-based system when designing and building the template to let users place and reuse components in many ways without hassle.</p>
             </React.Fragment>
         )
     },
@@ -54,14 +53,14 @@ export const portfolio = {
             </React.Fragment>
         )
     },
-    'forcebrands-jobboard': {
+    'job-board-react-app': {
         meta: {
-            title: 'ForceBrands Job Board React App',
+            title: 'Job Board React App',
             context: 'ForceBrands',
             duration: 'November 2019 - January 2020',
             role: 'Front-End Developer & Designer',
             link: 'https://careers.afventures.vc/',
-            slug: 'forcebrands-jobboard'
+            slug: 'job-board-react-app'
         },
         images: {
             cover: jobboard,
@@ -79,7 +78,7 @@ export const portfolio = {
             context: 'Jwiz Marketing Solutions',
             duration: 'June 2018 - August 2018',
             role: 'Front-End/Back-end Developer & Designer',
-            link: 'https://jarolin.com',
+            link: 'http://manhattanbridgecapital.com/',
             slug: 'manhattan-bridge-capital'
         },
         images: {

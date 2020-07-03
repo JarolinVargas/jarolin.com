@@ -14,7 +14,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// cursor
+/* cursor
 const cursorEl = document.querySelector('#cursor');
 window.addEventListener('mousemove', function(event) {
   cursorEl.style.left = `${event.clientX}px`;
@@ -33,7 +33,7 @@ function updateClickables() {
     });
   }
 }
-updateClickables();
+updateClickables();*/
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

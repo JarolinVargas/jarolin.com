@@ -9,8 +9,13 @@ export default function ItemBanner(props) {
             <Link to={props.url}>
                 <div><span className="item-count">{props.count}</span></div>
                 <div><h2 className="portfolio-gradient">{props.title}</h2></div>
-                <div><span>{props.duration.split('-')[1].trim()} - {props.context}</span></div>
-                <img src={props.cover} alt=""/>
+                <div>
+                    <ul className="item-meta">
+                        <li>{props.context}</li>
+                        <li>{props.duration.split('-')[1].trim()}</li>
+                    </ul>
+                </div>
+                <img src={props.cover} alt={props.title}/>
             </Link>
         </motion.div>
     )

@@ -31,7 +31,7 @@ export default function ArticleHeading(props) {
 	return (
 		<motion.div className={`ArticleHeading${props.projectHeading ? ' project-heading' : ''}`} initial="initial" animate="enter" exit="exit"  variants={staggerAnimation} style={{height: props.height}}>
 			<motion.div className="article-img" variants={animations}>
-				{props.image && <img src={props.image} alt="#"/>}
+				{props.image && <img src={props.image} alt={props.title}/>}
 				{props.buttonLink && <ProjectButton link={props.buttonLink}/>}
 			</motion.div>
 			<motion.div className="article-meta" variants={animations}>

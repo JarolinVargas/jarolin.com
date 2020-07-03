@@ -5,12 +5,12 @@ import jarolinVargasBanner from './assets/writings-img/jarolinvargas-banner.png'
 
 
 export const writings = {
-    'this-is-my-new-website-welcome': {
+    'check-out-my-new-site': {
         meta: {
-            title: 'This is my new website. welcome!',
+            title: 'Check out my new site!',
             published: 'July 5, 2020',
             topic: 'Development & Design',
-            slug: 'this-is-my-new-website-welcome'
+            slug: 'check-out-my-new-site'
         },
         images: {
             cover: jarolinVargas,

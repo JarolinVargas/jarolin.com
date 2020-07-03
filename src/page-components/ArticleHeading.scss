@@ -71,6 +71,12 @@
             margin-bottom: 30px;
         }
 
+        .ProjectButton a {
+            width: 150px;
+            height: 150px;
+            line-height: 150px;
+        }
+
         .article-meta {
             padding-right: 0 !important;
         }
@@ -80,7 +86,11 @@
         }
 
         .content-meta {
-            font-size: .80em;
+            li {
+                display: block;
+                margin-right: 0;
+                margin-top: 10px;
+            }
         }
     }
 }

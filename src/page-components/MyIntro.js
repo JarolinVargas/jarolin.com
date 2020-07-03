@@ -39,7 +39,7 @@ export default function MyIntro() {
         <motion.div className="MyIntro" variants={variants}>
             <motion.h1 className="my-name aboutme-gradient" variants={animations}>Jarolin Vargas</motion.h1>
             <motion.h3 className="my-title aboutme-gradient" variants={animations}>Front-End Developer &amp; UI/UX Designer</motion.h3>
-            <motion.p className="my-bio" variants={animations}>Hi! I'm a Front-End Developer with experience in UI, UX, and Product Design. I place lots of focus on the small details of every project I work on, which often results in a greater overall experience and outcome.</motion.p>
+            <motion.p className="my-bio" variants={animations}>Hi! I'm a Front-End Developer who's also good at UI, UX, &amp; Product Design. You'll sometimes find me on the more challenging, but satisfying and ambitious paths of application development and design. I specialize in the user-facing aspects of app development, and during the last 7 years; have built some really cool stuff.</motion.p>
 			<IconLinks/>
         </motion.div>
     )

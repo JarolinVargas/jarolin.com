@@ -27,6 +27,7 @@
 body.floating-view-active {
     .FloatingView {
         overflow-y: scroll;
+        cursor: default;
 
         > .label {
             line-height: 2.8;

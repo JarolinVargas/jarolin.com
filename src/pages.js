@@ -61,7 +61,7 @@ export function AboutMe() {
 				<div className="center-col"><MyIntro/></div>
 			</motion.div>
 			<Background>
-				<img className="my-portrait" src={JarolinVargas} alt="Jarolin Vargas"/>
+				<motion.img className="my-portrait" src={JarolinVargas} alt="Jarolin Vargas" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}/>
 				<Circle size={300} right={0} top={60} shadow="-50px -50px 50px rgba(0, 0, 0, 0.1)"/>
 				<Circle size={300} right={-140} top={-140} shadow="0px 0px 50px rgba(0, 0, 0, 0.2)"/>
 				<GridDots width={140} height={140} bottom={15} right={15}/>
@@ -89,9 +89,9 @@ export function Portfolio(props) {
 			</FloatingView>
 			<motion.div className="layouts layout-col-3-alt padding-off effects-off scroll-y" initial="initial" animate="enter" exit="exit" variants={{enter: {transition: {staggerChildren: 0.1}}, exit: {overflow: 'hidden', transition: {staggerChildren: 0.1}}}}>
 				<motion.div className="col-1" variants={layoutColAnimation}><ItemBanner title={portfolio['luminal'].meta.title} url={`portfolio/luminal`} count="01" cover={portfolio['luminal'].images.bannerCover} duration={portfolio['luminal'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
-				<motion.div className="col-2" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" count="03" cover={portfolio['forcebrands-newsroom'].images.bannerCover} duration={portfolio['forcebrands-newsroom'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
-				<motion.div className="col-3" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-jobboard'].meta.title} url="portfolio/forcebrands-jobboard" count="02" cover={portfolio['forcebrands-jobboard'].images.bannerCover} duration={portfolio['forcebrands-jobboard'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
-				<motion.div className="col-4" variants={layoutColAnimation}><ItemBanner title={portfolio['manhattan-bridge-capital'].meta.title} url="portfolio/manhattan-bridge-capital" count="04" cover={portfolio['manhattan-bridge-capital'].images.bannerCover} duration={portfolio['manhattan-bridge-capital'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
+				<motion.div className="col-2" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" count="03" cover={portfolio['forcebrands-newsroom'].images.bannerCover} duration={portfolio['forcebrands-newsroom'].meta.duration} context={portfolio['forcebrands-newsroom'].meta.context}/></motion.div>
+				<motion.div className="col-3" variants={layoutColAnimation}><ItemBanner title={portfolio['job-board-react-app'].meta.title} url="portfolio/job-board-react-app" count="02" cover={portfolio['job-board-react-app'].images.bannerCover} duration={portfolio['job-board-react-app'].meta.duration} context={portfolio['job-board-react-app'].meta.context}/></motion.div>
+				<motion.div className="col-4" variants={layoutColAnimation}><ItemBanner title={portfolio['manhattan-bridge-capital'].meta.title} url="portfolio/manhattan-bridge-capital" count="04" cover={portfolio['manhattan-bridge-capital'].images.bannerCover} duration={portfolio['manhattan-bridge-capital'].meta.duration} context={portfolio['manhattan-bridge-capital'].meta.context}/></motion.div>
 			</motion.div>
 		</React.Fragment>
 	)

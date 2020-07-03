@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState , useEffect} from 'react';
 import { Frame } from "framer";
 import './FloatingView.scss';
 
@@ -22,7 +22,15 @@ const animations = {
 }
 
 export default function FloatingView(props) {
-    const [active, setActive] = useState(0);
+    const [active, setActive] = useState(false);
+
+    useEffect(() => {
+		window.addEventListener('popstate', (event) => {
+            if( document.body.classList.contains('floating-view-active') ) {
+                document.body.classList.remove('floating-view-active');
+            }
+		});
+	}, []);
 
     function toggleActive() {
         setActive(!active ? true : false);

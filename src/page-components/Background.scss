@@ -39,13 +39,12 @@
 .Image {
     width: 100%;
     height: 500px;
-    background-color: #F7F7F9;
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
 
     &.fade {
-        -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(255, 255, 255, 0.7) 100%);
-        mask-image: linear-gradient(to left, transparent 0%, rgba(255, 255, 255, 0.7) 100%);
+        -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+        mask-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
     }
 }

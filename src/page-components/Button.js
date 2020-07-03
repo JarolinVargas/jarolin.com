@@ -6,7 +6,7 @@ export default function Button() {
     return (
         <div className="button btn-style-1">
             <a href="#">
-                {<img src={dotsGrid} alt="dots"/>}
+                {<img src={dotsGrid} alt="dots grid"/>}
                 <span>Resume</span>
             </a>
         </div>
