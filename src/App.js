@@ -6,58 +6,63 @@ import './App.scss';
 
 const pageGradients = {
 	'/': 'linear-gradient(to right, #3af4f5, #164dfe)',
-	'/portfolio': 'linear-gradient(to right, #ffff18, #25cbd7)',
-	'/writings': 'linear-gradient(to right, #ff615c, #a800fe)'
+	'/portfolio': 'linear-gradient(to right, #10d48f, #8ad725)',
+	'/writings': 'linear-gradient(to right, #ff615c, #f0de72)'
 }
 
 export default function App() {
 	const navRef = useRef(null);
-	const [path, setPath] = useState(`/${window.location.pathname.split('/')[1]}`);
+	const [path, setPath] = useState({
+		path: `/${window.location.pathname.split('/')[1]}`,
+		activePageIndicatorPos: '90.5px'
+	});
 
 	useEffect(() => {
-		repositionActiveTabIndicator();
+		updatePath();
 		window.addEventListener('popstate', (event) => {
 			updatePath();
+		});
+
+		let resizeEnd;
+		window.addEventListener('resize', function() {
+			clearTimeout(resizeEnd);
+			resizeEnd = this.setTimeout(function() {
+				updatePath();
+			}, 300);
 		});
 	}, []);
 
 	const updatePath = (event) => {
-		repositionActiveTabIndicator(event);
-		setPath(!event ? `/${window.location.pathname.split('/')[1]}` : event.target.getAttribute('href'));
+		setPath({
+			path: !event ? `/${window.location.pathname.split('/')[1]}` : event.target.getAttribute('href'),
+			activePageIndicatorPos: repositionActiveTabIndicator(event)
+		})
 	}
 
 	const repositionActiveTabIndicator = (clickedLink) => {
 		if( navRef.current ) {
-			const [activeTabEl, indicator] = [!clickedLink ? navRef.current.querySelector('a.active') : clickedLink.target, navRef.current.querySelector('.nav-active-page-indicator')];
+			const activeTabEl = !clickedLink ? navRef.current.querySelector('a.active') : clickedLink.target;
 			const [activeTabPos, activeTabWidth] = [activeTabEl.offsetLeft, activeTabEl.offsetWidth]
-			indicator.style.left = `${activeTabPos + (activeTabWidth / 2) - 3.5}px`;
+			return `${activeTabPos + (activeTabWidth / 2) - 3.5}px`;
 		}
 	}
 
-	let resizeEnd;
-	window.addEventListener('resize', function() {
-		clearTimeout(resizeEnd);
-		resizeEnd = this.setTimeout(function() {
-		repositionActiveTabIndicator();
-		}, 250);
-	});
-
 	return (
 		<Router>
-			<div className="App" data-path={path}>
+			<div className="App" data-path={path.path}>
 				<nav ref={navRef}>
-					<motion.span className="nav-active-page-indicator" animate={{backgroundImage: pageGradients[path]}} transition={{duration: 2}}></motion.span>
+					<motion.span className="nav-active-page-indicator" style={{left: path.activePageIndicatorPos}} animate={{backgroundImage: pageGradients[path.path]}} transition={{duration: 2}}></motion.span>
 					<ul>
-						<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path.path]}} transition={{duration: 2}}></motion.li>
 						<li><NavLink to="/" exact onClick={updatePath}>ABOUT ME</NavLink></li>
-						<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path.path]}} transition={{duration: 2}}></motion.li>
 						<li><NavLink to="/portfolio" onClick={updatePath}>PORTFOLIO</NavLink></li>
-						<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path.path]}} transition={{duration: 2}}></motion.li>
 						<li><NavLink to="/writings" onClick={updatePath}>WRITINGS</NavLink></li>
-						<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path.path]}} transition={{duration: 2}}></motion.li>
 					</ul>
 				</nav>
-				<motion.div className="frame" animate={{borderImageSource: pageGradients[path]}} transition={{duration: 2}}>
+				<motion.div className="frame" animate={{borderImageSource: pageGradients[path.path]}} transition={{duration: 2}}>
 					<main className="content">
 						<div className="page">
 							<Route render={({location}) => (

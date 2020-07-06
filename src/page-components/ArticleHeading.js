@@ -30,10 +30,10 @@ const staggerAnimation = {
 export default function ArticleHeading(props) {
 	return (
 		<motion.div className={`ArticleHeading${props.projectHeading ? ' project-heading' : ''}`} initial="initial" animate="enter" exit="exit"  variants={staggerAnimation} style={{height: props.height}}>
-			<motion.div className="article-img" variants={animations}>
+			{props.image || props.buttonLink && <motion.div className="article-img" variants={animations}>
 				{props.image && <img src={props.image} alt={props.title}/>}
 				{props.buttonLink && <ProjectButton link={props.buttonLink}/>}
-			</motion.div>
+			</motion.div>}
 			<motion.div className="article-meta" variants={animations}>
 				<h1 className={props.gradientClass}>{props.title}</h1>
 				<ContentMeta meta={props.meta}/>

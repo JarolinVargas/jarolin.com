@@ -18,7 +18,6 @@ export function GridLines(props) {
 
 
 
-
 const DotsAnim = {
     initial: {
         opacity: 0,

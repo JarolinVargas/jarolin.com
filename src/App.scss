@@ -1,5 +1,3 @@
-$frameOutlineColor: #3af4f5;
-
 .App {
   width: 1450px;
   height: 800px;
@@ -57,10 +55,10 @@ $frameOutlineColor: #3af4f5;
 
 .my-portrait {
   position: absolute;
-  bottom: 0px;
-  left: -30px;
-  width: 638px;
-  max-height: 100%;
+  top: 0px;
+  left: -80px;
+  height: 110%;
+  min-height: 500px;
 }
 
 
@@ -74,6 +72,7 @@ nav {
   z-index: 2;
   font-size: 1.05em;
   -webkit-user-select: none;
+  -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 
@@ -147,35 +146,37 @@ nav {
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
-.writings-gradient, .App[data-path="/writings"] .article a {
-  color: #a800fe;
-  background: -webkit-gradient(linear, left top, right top, from(#ff615c), to(#a800fe));
-  background: -webkit-linear-gradient(left, #ff615c 0%, #a800fe 50%);
-  background: -o-linear-gradient(left, #ff615c 0%, #a800fe 50%);
-  background: linear-gradient(to right, #ff615c 0%, #a800fe 50%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
-}
-
 .portfolio-gradient, .App[data-path="/portfolio"] .article a {
   color: #25cbd7;
-  background: -webkit-gradient(linear, left top, right top, from(#ffff18), to(#25cbd7));
-  background: -webkit-linear-gradient(left, #ffff18 0%, #25cbd7 50%);
-  background: -o-linear-gradient(left, #ffff18 0%, #25cbd7 50%);
-  background: linear-gradient(to right, #ffff18 0%, #25cbd7 50%);
+  background: -webkit-gradient(linear, left top, right top, from(#10d48f), to(#8ad725));
+  background: -webkit-linear-gradient(left, #10d48f 0%, #8ad725 50%);
+  background: -o-linear-gradient(left, #10d48f 0%, #8ad725 50%);
+  background: linear-gradient(to right, #10d48f 0%, #8ad725 50%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
-.bolder-color {
-  border-color: #D7D7D9;
+.writings-gradient, .App[data-path="/writings"] .article a {
+  color: #a800fe;
+  background: -webkit-gradient(linear, left top, right top, from(#ff615c), to(#f0de72));
+  background: -webkit-linear-gradient(left, #ff615c 0%, #f0de72 50%);
+  background: -o-linear-gradient(left, #ff615c 0%, #f0de72 50%);
+  background: linear-gradient(to right, #ff615c 0%, #f0de72 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
 
 
 /* media queries */
+@media screen and (max-width: 1115px) {
+  img.my-portrait {
+    height: 103%;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .App {
     font-size: 16px;
@@ -260,5 +261,11 @@ nav {
 @media screen and (max-width: 430px) {
   nav ul li {
     font-size: .76em;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  img.my-portrait {
+    left: -100px;
   }
 }

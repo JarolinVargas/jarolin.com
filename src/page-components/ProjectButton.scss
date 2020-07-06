@@ -12,12 +12,15 @@
         margin: 0 auto;
         align-self: center;
         display: block;
-        background-image: linear-gradient(to right, #f6fd2f 0%, #27cbd7 100%);
         background-attachment: fixed;
         color: #FFF;
         text-align: center;
-        //box-shadow: 0 0 0 .5em rgba(0, 0, 0, 0.05), 0 0 0 1.1em rgba(0, 0, 0, 0.1), 0 0 0 1.9em rgba(0, 0, 0, .05);
+        text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
         transition: border-radius .10s;
+        background: -webkit-gradient(linear, left top, right top, from(#10d48f), to(#8ad725));
+        background: -webkit-linear-gradient(left, #10d48f 0%, #8ad725 50%);
+        background: -o-linear-gradient(left, #10d48f 0%, #8ad725 50%);
+        background: linear-gradient(to right, #10d48f 0%, #8ad725 50%);
 
         &:hover {
             border-top-right-radius: 2px;

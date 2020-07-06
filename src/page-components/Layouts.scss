@@ -169,14 +169,30 @@
         }
     }
 
+    /* about me my intro */
+    .MyIntro {
+        .my-bio {
+            margin: 15px 0px;
+        }
+    }
+
     /* about-me portrait */
     img.my-portrait {
-        top: 0px;
+        top: -50px;
         right: 0px;
         left: auto;
-        max-width: 100%;
-        -webkit-mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #FFF 100%);
-        mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #FFF 100%);
+        max-width: initial;
+        height: 400px !important;
+        margin: 0 auto;
+        -webkit-mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 20%, #FFF 100%);
+        mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 20%, #FFF 100%);
+    }
+
+    /* Background */
+    .Background {
+        .Circle, .GridDots {
+            display: none;
+        }
     }
 }
 

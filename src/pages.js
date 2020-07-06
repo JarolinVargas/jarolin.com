@@ -57,7 +57,7 @@ export function AboutMe() {
 	return (
 		<React.Fragment>
 			<motion.div className="layouts layout-col-2 narrow-col-2 scroll-y" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
-				<div></div>
+				<div style={{height: '200px'}}></div>
 				<div className="center-col"><MyIntro/></div>
 			</motion.div>
 			<Background>

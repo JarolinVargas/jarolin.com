@@ -78,7 +78,7 @@ export const portfolio = {
             context: 'Jwiz Marketing Solutions',
             duration: 'June 2018 - August 2018',
             role: 'Front-End/Back-end Developer & Designer',
-            link: 'http://manhattanbridgecapital.com/',
+            link: 'https://manhattanbridgecapital.com',
             slug: 'manhattan-bridge-capital'
         },
         images: {
@@ -97,7 +97,7 @@ export const portfolio = {
             context: 'Jwiz Marketing Solutions',
             duration: 'March 2018 - April 2018',
             role: 'Front-End/Back-end Developer & Designer',
-            link: 'http://jarolin.com/demo/jwiz-corrections-tool',
+            link: 'https://jarolin.com/demo/jwiz-corrections-tool',
             slug: 'graphics-corrections-tool'
         },
         images: {

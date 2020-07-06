@@ -81,7 +81,7 @@ body:not(:hover) {
   left: 0px;
   background-image: url('../src/assets/diagonal.svg');
 
-  &:before {
+  /*&:before {
     content: "";
     width: 50%;
     height: 100%;
@@ -89,5 +89,5 @@ body:not(:hover) {
     position: absolute;
     top: 0px;
     left: 0px;
-  }
+  }*/
 }
