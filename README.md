@@ -1,5 +1,7 @@
-My personal website (in development)<br/>
-License: FOR EDUCATIONAL/SHARING PURPOSES ONLY. DO NOT RE-USE/COPY/RE-DESTRIBUTE
+My personal website. (work in progress)<br/>
+FOR EDUCATIONAL/INSPIRATIONAL PURPOSES ONLY. PLEASE DO NOT RE-USE/COPY/RE-DESTRIBUTE.
+
+![Jarolin.com](https://repository-images.githubusercontent.com/254998762/62ad3080-bf8e-11ea-9459-a042a6392201)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
