@@ -170,7 +170,7 @@ export function WritingsView(props) {
 	const pathname = window.location.pathname;
 	const articleKey = pathname.substring(pathname.lastIndexOf('/') + 1);
 	const article = writings[articleKey];
-	ReactGA.pageview(window.location.pathname);
+	ReactGA.pageview(pathname);
 	return (
 		<React.Fragment>
 			<FloatingView label="More" labelExpanded="More Writings" pageGradient={props.pageGradient}>

@@ -147,7 +147,7 @@ nav {
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
-.portfolio-gradient, .App[data-path="/portfolio"] .article a {
+.portfolio-gradient {
   color: #25cbd7;
   background: -webkit-gradient(linear, left top, right top, from(#10d48f), to(#8ad725));
   background: -webkit-linear-gradient(left, #10d48f 0%, #8ad725 50%);
@@ -157,8 +157,9 @@ nav {
   background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
+.App[data-path="/portfolio"] .article a {color: #10d48f}
 
-.writings-gradient, .App[data-path="/writings"] .article a {
+.writings-gradient {
   color: #a800fe;
   background: -webkit-gradient(linear, left top, right top, from(#ff615c), to(#f0de72));
   background: -webkit-linear-gradient(left, #ff615c 0%, #f0de72 50%);
@@ -168,6 +169,7 @@ nav {
   background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
+.App[data-path="/writings"] .article a {color: #ff615c}
 
 
 
