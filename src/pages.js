@@ -87,7 +87,7 @@ export function Portfolio(props) {
 					{floatingViewPortfolioList.slice(4)}
 				</List>
 			</FloatingView>
-			<motion.div className="layouts layout-col-3-alt padding-off effects-off scroll-y" initial="initial" animate="enter" exit="exit" variants={{enter: {transition: {staggerChildren: 0.1}}, exit: {overflow: 'hidden', transition: {staggerChildren: 0.1}}}}>
+			<motion.div className="layouts layout-col-3-alt padding-off effects-off scroll-y" initial="initial" animate="enter" exit="exit" variants={{enter: {transition: {staggerChildren: 0.1}}, exit: {overflow: 'visible', transition: {staggerChildren: 0.1}}}}>
 				<motion.div className="col-1" variants={layoutColAnimation}><ItemBanner title={portfolio['luminal'].meta.title} url={`portfolio/luminal`} count="01" cover={portfolio['luminal'].images.bannerCover} duration={portfolio['luminal'].meta.duration} context={portfolio['luminal'].meta.context}/></motion.div>
 				<motion.div className="col-2" variants={layoutColAnimation}><ItemBanner title={portfolio['forcebrands-newsroom'].meta.title} url="portfolio/forcebrands-newsroom" count="03" cover={portfolio['forcebrands-newsroom'].images.bannerCover} duration={portfolio['forcebrands-newsroom'].meta.duration} context={portfolio['forcebrands-newsroom'].meta.context}/></motion.div>
 				<motion.div className="col-3" variants={layoutColAnimation}><ItemBanner title={portfolio['job-board-react-app'].meta.title} url="portfolio/job-board-react-app" count="02" cover={portfolio['job-board-react-app'].images.bannerCover} duration={portfolio['job-board-react-app'].meta.duration} context={portfolio['job-board-react-app'].meta.context}/></motion.div>
