@@ -82,7 +82,7 @@ export function Portfolio(props) {
 	ReactGA.pageview(window.location.pathname);
 	return (
 		<React.Fragment>
-			<FloatingView label="More" labelExpanded="More Portfolio" pageGradient={props.pageGradient}>
+			<FloatingView label="More" labelExpanded="More Portfolio" gradient={props.floatingViewGradient}>
 				<List>
 					{floatingViewPortfolioList.slice(4)}
 				</List>
@@ -106,7 +106,7 @@ export function PortfolioView(props) {
 	ReactGA.pageview(window.location.pathname);
 	return (
 		<React.Fragment>
-			<FloatingView label="More" labelExpanded="More Portfolio" pageGradient={props.pageGradient}>
+			<FloatingView label="More" labelExpanded="More Portfolio" gradient={props.floatingViewGradient}>
 				<List>
 					{floatingViewPortfolioList}
 				</List>
@@ -173,7 +173,7 @@ export function WritingsView(props) {
 	ReactGA.pageview(pathname);
 	return (
 		<React.Fragment>
-			<FloatingView label="More" labelExpanded="More Writings" pageGradient={props.pageGradient}>
+			<FloatingView label="More" labelExpanded="More Writings" gradient={props.floatingViewGradient}>
 				<List>
 					{floatingViewWritingsList}
 				</List>

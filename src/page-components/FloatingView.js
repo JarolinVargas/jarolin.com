@@ -43,7 +43,7 @@ export default function FloatingView(props) {
 
     return (
         <React.Fragment>
-            <Frame className="FloatingView" onClick={toggleActive} style={{backgroundImage: props.pageGradient}} initial="initial" animate={!active ? "default" : "expand" } exit="initial" variants={animations}>
+            <Frame className="FloatingView" onClick={toggleActive} style={{backgroundImage: props.gradient}} initial="initial" animate={!active ? "default" : "expand" } exit="initial" variants={animations}>
                 <span className="label">{!active ? props.label : props.labelExpanded}</span>
                 {!active ? '' : props.children}
             </Frame>

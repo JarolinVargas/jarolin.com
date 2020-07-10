@@ -17,7 +17,11 @@ const animations = {
 }
 
 const staggerAnimation = {
-	enter: {transition: {staggerChildren: 0.1}}
+	enter: {
+        transition: {
+            staggerChildren: 0.1
+        }
+    }
 }
 
 export default function List(props) {

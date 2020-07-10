@@ -4,10 +4,17 @@ import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-do
 import { AboutMe, Portfolio, Writings, PortfolioView, WritingsView } from './pages';
 import './App.scss';
 
-const pageGradients = {
-	'/': 'linear-gradient(to right, #3af4f5, #164dfe)',
-	'/portfolio': 'linear-gradient(to right, #10d48f, #8ad725)',
-	'/writings': 'linear-gradient(to right, #ff615c, #f0de72)'
+const gradients = {
+	pages: {
+		'/': 'linear-gradient(to right, #3af4f5, #164dfe)',
+		'/portfolio': 'linear-gradient(to right, #10d48f, #8ad725)',
+		'/writings': 'linear-gradient(to right, #ff615c, #f0de72)'
+	},
+	floatingView: {
+		'/': 'linear-gradient(326deg, #3af4f5 0%, #164dfe 74%)',
+		'/portfolio': 'linear-gradient(326deg, #7bc121 0%, #0fbe80 74%)',
+		'/writings': 'linear-gradient(to right, #ff615c, #f0de72)'
+	}
 }
 
 export default function App() {
@@ -51,28 +58,28 @@ export default function App() {
 		<Router>
 			<div className="App" data-path={path.path}>
 				<nav ref={navRef}>
-					<motion.span className="nav-active-page-indicator" style={{left: path.activePageIndicatorPos}} animate={{backgroundImage: pageGradients[path.path]}} transition={{duration: 2}}></motion.span>
+					<motion.span className="nav-active-page-indicator" style={{left: path.activePageIndicatorPos}} animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.span>
 					<ul>
-						<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path.path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.li>
 						<li><NavLink to="/" exact onClick={updatePath}>ABOUT ME</NavLink></li>
-						<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path.path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.li>
 						<li><NavLink to="/portfolio" onClick={updatePath}>PORTFOLIO</NavLink></li>
-						<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path.path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.li>
 						<li><NavLink to="/writings" onClick={updatePath}>WRITINGS</NavLink></li>
-						<motion.li className="nav-separator" animate={{backgroundImage: pageGradients[path.path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.li>
 					</ul>
 				</nav>
-				<motion.div className="frame" animate={{borderImageSource: pageGradients[path.path]}} transition={{duration: 2}}>
+				<motion.div className="frame" animate={{borderImageSource: gradients.pages[path.path]}} transition={{duration: 2}}>
 					<main className="content">
 						<div className="page">
 							<Route render={({location}) => (
 								<AnimatePresence exitBeforeEnter initial={false}>
 									<Switch location={location} key={location.pathname}>
-										<Route path="/" exact children={<AboutMe pageGradient={pageGradients['/']}/>} />
-										<Route path="/portfolio" exact children={<Portfolio pageGradient={pageGradients['/portfolio']}/>} />
-										<Route path="/writings" exact children={<Writings pageGradient={pageGradients['/writings']}/>} />
-										<Route path="/portfolio/:name" children={<PortfolioView pageGradient={pageGradients['/portfolio']}/>} />
-										<Route path="/writings/:id" children={<WritingsView pageGradient={pageGradients['/writings']}/>} />
+										<Route path="/" exact children={<AboutMe pageGradient={gradients.pages['/']} floatingViewGradient={gradients.floatingView['/']}/>} />
+										<Route path="/portfolio" exact children={<Portfolio pageGradient={gradients.pages['/portfolio']} floatingViewGradient={gradients.floatingView['/portfolio']}/>} />
+										<Route path="/writings" exact children={<Writings pageGradient={gradients.pages['/writings']} floatingViewGradient={gradients.floatingView['/writings']}/>} />
+										<Route path="/portfolio/:name" children={<PortfolioView pageGradient={gradients.pages['/portfolio']} floatingViewGradient={gradients.floatingView['/portfolio']}/>} />
+										<Route path="/writings/:id" children={<WritingsView pageGradient={gradients.pages['/writings']} floatingViewGradient={gradients.floatingView['/writings']}/>} />
 									</Switch>
 								</AnimatePresence>
 							)}/>
