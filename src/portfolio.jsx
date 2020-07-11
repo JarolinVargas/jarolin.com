@@ -97,7 +97,7 @@ export const portfolio = {
             context: 'Jwiz Marketing Solutions',
             duration: 'March 2018 - April 2018',
             role: 'Front-End/Back-end Developer & Designer',
-            link: 'https://jarolin.com/demo/jwiz-corrections-tool',
+            link: `${process.env.PUBLIC_URL}/jwiz-corrections-tool/index.html`,
             slug: 'graphics-corrections-tool'
         },
         images: {

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="author" content="Jwiz ~ Jarolin Vargas">
+        <title>JWiz Ads Process</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+        <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="#" onClick="alert('This is a demo.')">Archive</a></li>  
+                    <li><a href="#" onClick="alert('This is a demo.')">Upload/Edit Ads</a></li>
+                </ul>
+            </nav>
+            <form action="#" style="display: none;">
+                <input type="hidden" name="edition_number">
+            </form>
+        </aside>
+        <main style="position:initial !important;" class="note-canvas-mode-page">
+            <div id="editor-container">
+                <div id="tools">
+                    <div id="rectangle-tool" class="function-tool active-tool"><i class="icon ion-ios-photos-outline"></i></div>
+                    <div id="show-all-highlights-tool" class="function-tool"><i class="icon ion-ios-eye-outline"></i></div>
+                    <div id="real-size-tool" class="function-tool"><i class="icon ion-ios-search"></i></div>
+                    <div id="page" class="canvas-img-btn active-tool" data-canvas-img-name="493A.jpg">Page</div><div id="coupon" class="canvas-img-btn" data-canvas-img-name="493-COUPON.jpg">Coupon</div><div id="banner" class="canvas-img-btn" data-canvas-img-name="493-banner.gif">Banner</div>                    
+                    <div id="save" class="status-color-blue-bg" style="margin: 50px 0px;"><i class="icon ion-ios-cloud-upload"></i></div>
+                    <div id="delete"><a href="#" onClick="alert('This is a demo.')" class="icon ion-ios-compose-outline"></a></div>
+                </div>
+                <div id="canvas-container">
+                    <div id="corrections-editor-top-content">
+                        <h1 id="corrections-page-adnumber">56-493</h1>
+                        <div class="search-input-container">
+                            <form action="#" method="GET">
+                                <input type="number" name="search" placeholder="Search Ads By #" style="height:40px; width:160px !important; margin-top:14px; margin-left:13px;">
+                            </form>
+                        </div>
+                        <a onClick="alert('This is a demo.')" href="#" class="icon ion-ios-arrow-thin-left"></a>
+                        <a onClick="alert('This is a demo.')" href="#" class="icon ion-ios-arrow-thin-right"></a>
+                    </div>
+                    <canvas id="canvas" width="705px" height="935px" style="background-image: url(img/493A.jpg)"></canvas>
+                    <img id="real-size-image" src="img/493A.jpg" alt="normal-size">
+                </div>
+                <div id="corrections" data-saved-corrections-json="[{&quot;canvasMode&quot;:&quot;page&quot;,&quot;rectPosX&quot;:422,&quot;rectPosY&quot;:655,&quot;rectWidth&quot;:257,&quot;rectHeight&quot;:261,&quot;noteText&quot;:&quot;Replace this image with the one client sent.&quot;},{&quot;canvasMode&quot;:&quot;banner&quot;,&quot;rectPosX&quot;:41,&quot;rectPosY&quot;:249,&quot;rectWidth&quot;:650,&quot;rectHeight&quot;:106,&quot;noteText&quot;:&quot;303-632-8786&quot;,&quot;noteStatus&quot;:&quot;check&quot;},{&quot;canvasMode&quot;:&quot;page&quot;,&quot;rectPosX&quot;:40,&quot;rectPosY&quot;:416,&quot;rectWidth&quot;:644,&quot;rectHeight&quot;:58,&quot;noteText&quot;:&quot;stay in their homes and offer award rewarding careers in a rapidly growing market. (Add a dot after market)&quot;,&quot;noteStatus&quot;:&quot;close&quot;},{&quot;canvasMode&quot;:&quot;page&quot;,&quot;rectPosX&quot;:161,&quot;rectPosY&quot;:216,&quot;rectWidth&quot;:315,&quot;rectHeight&quot;:41,&quot;noteText&quot;:&quot;We Help Seniors Stay in the comfort of their homes &quot;,&quot;noteStatus&quot;:&quot;close&quot;}]">
+                    <span id="mark-notes-corrected">Mark all as corrected &amp; save</span>    
+                    <h2 id="no-corrections-notice" style="display: none;">No Corrections</h2>
+                </div>
+            </div>
+            <form id="editor-hidden-form" action="#" method="POST" style="display:none">
+                <input type="text" name="note_json" />
+                <input type="checkbox" name="corrected_bool" />
+            </form>
+        </main>
+        <script src="js/editor.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script>
+            var adNumber = "493";
+            alert('This is a demo.');
+        </script>
+    
+</body></html>
