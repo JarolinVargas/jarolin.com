@@ -16,7 +16,7 @@ export const portfolio = {
         meta: {
             title: 'Luminal Website Builder & HTML Template',
             context: 'Personal Project',
-            duration: 'April 2014 - December 2018',
+            duration: 'April 2014 - Present',
             role: 'Developer & Designer',
             link: 'https://luminaldev.com',
             slug: 'luminal'
@@ -27,10 +27,7 @@ export const portfolio = {
         },
         jsx: (
             <React.Fragment>
-                <h3 className="heading primary-color" style={{marginTop: 0}}>Luminal Website Builder</h3>
-                <p>Luminal Website Builder is part of a personal project I’ve been working on for a number of years. It allows users with little or no coding experience to build their personal or small business website with an easy-to-use interface. Similar to Wix and Squarespace website builders; users can create responsive and multi-purpose websites by dragging and dropping elements, editing text, changing colors, and changing options of individual elements without writing or editing code.</p>
-                <h3 className="heading primary-color">Luminal HTML Template</h3>
-                <p>Luminal Template is part of the Luminal personal project. It's a highly customizable, multi-purpose, responsive HTML5 template with excellent browser compatibility; and can be easily customized without writing or editing code using the Luminal Website Builder. I focused on using a component-based system when designing and building the template to let users place and reuse components in many ways without hassle.</p>
+                <p>Luminal is a personal project I’ve been working on for several years that consists of an easy to use website builder, and highly customizable HTML5 template. Users can build browser-compatible, multiple-page, responsive websites through an easy to use interface without writing or editing code. The Luminal website builder makes it easy to edit text, change colors, and much more. <em>Detailed case study coming soon.</em></p>
             </React.Fragment>
         )
     },
