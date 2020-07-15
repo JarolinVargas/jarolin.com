@@ -171,6 +171,18 @@ nav {
 }
 .App[data-path="/writings"] .article a {color: #ff615c}
 
+.contact-gradient {
+  color: #fe69f1;
+  background: -webkit-gradient(linear, left top, right top, from(#fe69f1), to(#e22525));
+  background: -webkit-linear-gradient(left, #fe69f1 0%, #e22525 50%);
+  background: -o-linear-gradient(left, #fe69f1 0%, #e22525 50%);
+  background: linear-gradient(to right, #fe69f1 0%, #e22525 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+.App[data-path="/contact"] .article a {color: #fe69f1}
+
 
 
 /* media queries */
@@ -186,7 +198,7 @@ nav {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 665px) {
   .App {
     padding: 10px;
     padding-top: 20px;

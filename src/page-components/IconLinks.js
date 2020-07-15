@@ -3,7 +3,7 @@ import { motion } from "framer";
 import './IconLinks.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDribbble, faGithub, faCodepen, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 const animations = {
     initial: {

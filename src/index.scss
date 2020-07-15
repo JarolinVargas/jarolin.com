@@ -3,13 +3,17 @@ html, body {
   min-width: 320px;
 }
 
-/** {
-  cursor: none;
-}*/
-
 a {
   text-decoration: none;
   color: inherit;
+
+  &.contact-mailto {
+    color: #2e3646;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 body {
@@ -80,14 +84,4 @@ body:not(:hover) {
   top: 0px;
   left: 0px;
   background-image: url('../src/assets/diagonal.svg');
-
-  /*&:before {
-    content: "";
-    width: 50%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.08);
-    position: absolute;
-    top: 0px;
-    left: 0px;
-  }*/
 }
