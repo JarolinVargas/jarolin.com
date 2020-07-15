@@ -2,6 +2,13 @@
     width: 100%;
     color: #FFF;
     overflow: hidden;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+
+    > div {
+        position: relative;
+    }
 
     input, textarea {
         width: 100%;
@@ -47,6 +54,14 @@
         position: relative;
         z-index: 0;
     }
+
+    .contact-form-submit-btn {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        font-size: 1.7em;
+        margin: auto;
+    }
 }
 
 .contact-form-submit-btn {
@@ -54,6 +69,14 @@
     font-size: 1.7em;
     font-weight: bold;
     cursor: pointer;
+}
+
+@media screen and (max-width: 930px) {
+    .Form {
+        .contact-form-submit-btn {
+            position: relative;
+        }
+    }
 }
 
 @media screen and (max-width: 450px) {

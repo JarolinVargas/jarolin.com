@@ -235,11 +235,8 @@ export function Contact(props) {
 				</div>
 				<div>
 					<div className="vertical-cols">
-						<div>
+						<div style={{height: '100%'}}>
 							{activeOption !== null ? <Form activeOption={activeOption} submit={submitForm}/> : ''}
-						</div>
-						<div style={{textAlign: 'center'}}>
-							<motion.span initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className="contact-form-submit-btn contact-gradient" onClick={() => setSubmitForm(true)}>{activeOption === null ? 'Select an Option' : 'Submit Form'}</motion.span>
 						</div>
 						<div style={{textAlign: 'right'}}>
 							<a href="mailto:jarolinvargas@gmail.com" className="contact-mailto">JarolinVargas@gmail.com</a>
