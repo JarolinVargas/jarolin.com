@@ -6,15 +6,15 @@ import './Form.scss';
 const animations = {
     initial: {
         opacity: 0,
-        height: '0%'
+        y: -200
     },
     enter: {
         opacity: 1,
-        height: '100%'
+        y: 0
     },
     exit: {
         opacity: 0,
-        height: '0%',
+        y: 200,
         transition: {
             ease: 'easeOut'
         }
@@ -22,25 +22,17 @@ const animations = {
 }
 
 export default function Form(props) {
-    const formRef = useRef(null);
-    const [emailSent, setEmailSent] = useState(false);
-
     function handleSubmit(event) {
         event.preventDefault();
         emailjs.sendForm('gmail', 'template_0SkNquXo', event.target, 'user_pCMJbFKNIBy3Z3bW7S0LX').then((result) => {
-            setEmailSent(true);
             alert('Your message was sent sucessfully');
         }, (error) => {
             alert(error.text);
         });
     }
 
-    if( props.submit === true && emailSent === false && formRef.current.reportValidity() ) {
-        formRef.current.querySelector('.contact-form-submit-btn').click();
-    }
-
 	return (
-        <motion.form ref={formRef} className="Form" initial="initial" enter="enter" exit="exit" variants={animations} onSubmit={handleSubmit}>
+        <motion.form className="Form" initial="initial" enter="enter" exit="exit" variants={animations} onSubmit={handleSubmit}>
             <div>
                 <div className="form-input-col">
                     <div className="form-input-container">
@@ -52,7 +44,7 @@ export default function Form(props) {
                         <input type="email" name="email_address" required/>
                     </div>
                 </div>
-                <motion.div className="form-input-col" initial={props.activeOption === '1' ? {height: 0, opacity: 0} : {height: 'auto', opacity: 1}} animate={props.activeOption === '2' ? {height: 'auto', opacity: 1} : {height: 0, opacity: 0}}>
+                <motion.div className="form-input-col" initial={props.activeOption === '1' ? {height: 0, opacity: 0} : {height: 'auto', opacity: 1}} animate={props.activeOption === '2' ? {height: 'auto', opacity: 1, transition: {ease: 'easeOut'}} : {height: 0, opacity: 0}}>
                     <div className="form-input-container">
                         <label>Services</label>
                         <input type="text" name="services" placeholder="Development, UI/UX Design, Product Design"/>

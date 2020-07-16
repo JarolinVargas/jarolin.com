@@ -235,7 +235,7 @@ export function Contact(props) {
 				</div>
 				<div>
 					<div className="vertical-cols">
-						<div style={{height: '100%'}}>
+						<div className="form-container" style={{height: '100%'}}>
 							{activeOption !== null ? <Form activeOption={activeOption} submit={submitForm}/> : ''}
 						</div>
 						<div style={{textAlign: 'right'}}>

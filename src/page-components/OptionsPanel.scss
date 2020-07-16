@@ -34,6 +34,8 @@
             top: 30px;
             border-radius: 30px;
             box-shadow: inset 0px 0px 3px black;
+            border: solid 1px rgb(254, 105, 241);
+            box-sizing: border-box;
         }
 
         &.option-active {

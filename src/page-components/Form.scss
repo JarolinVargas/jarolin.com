@@ -61,6 +61,25 @@
         bottom: 0px;
         font-size: 1.7em;
         margin: auto;
+        -webkit-text-fill-color: #ec3f6e;
+    }
+}
+
+.form-container {
+    &:empty {
+        &:after {
+            content: "select an option";
+            top: 0px;
+            bottom: 0px;
+            margin: auto;
+            height: 25px;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            display: block;
+            text-align: center;
+            color: #FFF;
+        }
     }
 }
 
