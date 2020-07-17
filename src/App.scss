@@ -147,16 +147,16 @@ nav {
 }
 
 .portfolio-gradient {
-  color: #25cbd7;
-  background: -webkit-gradient(linear, left top, right top, from(#10d48f), to(#8ad725));
-  background: -webkit-linear-gradient(left, #10d48f 0%, #8ad725 50%);
-  background: -o-linear-gradient(left, #10d48f 0%, #8ad725 50%);
-  background: linear-gradient(to right, #10d48f 0%, #8ad725 50%);
+  color: #06b5ca;
+  background: -webkit-gradient(linear, left top, right top, from(#c9fa84), to(#06b5ca));
+  background: -webkit-linear-gradient(left, #c9fa84 0%, #06b5ca 50%);
+  background: -o-linear-gradient(left, #c9fa84 0%, #06b5ca 50%);
+  background: linear-gradient(to right, #c9fa84 0%, #06b5ca 50%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
-.App[data-path="/portfolio"] .article a {color: #10d48f}
+.App[data-path="/portfolio"] .article a {color: #06b5ca}
 
 .writings-gradient {
   color: #a800fe;
