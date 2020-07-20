@@ -220,7 +220,6 @@ export function WritingsView(props) {
 
 export function Contact(props) {
 	const [activeOption, setActiveOption] = useState(null);
-	const [submitForm, setSubmitForm] = useState(false);
 	ReactGA.pageview(window.location.pathname);
 
 	const updateActiveOption = (event) => {
@@ -236,10 +235,10 @@ export function Contact(props) {
 				<div>
 					<div className="vertical-cols">
 						<div className="form-container" style={{height: '100%'}}>
-							{activeOption !== null ? <Form activeOption={activeOption} submit={submitForm}/> : ''}
+							{activeOption !== null ? <Form activeOption={activeOption}/> : ''}
 						</div>
 						<div style={{textAlign: 'right'}}>
-							<a href="mailto:jarolinvargas@gmail.com" className="contact-mailto">JarolinVargas@gmail.com</a>
+							<a href="mailto:jarolinvargas@gmail.com" className="contact-mailto" target="_blank">JarolinVargas@gmail.com</a>
 						</div>
 					</div>
 				</div>

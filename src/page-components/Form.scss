@@ -61,7 +61,13 @@
         bottom: 0px;
         font-size: 1.7em;
         margin: auto;
-        -webkit-text-fill-color: #ec3f6e;
+        -webkit-text-fill-color: #e22525;
+        color: #e22525;
+
+        &:hover {
+            color: #fe69f1;
+            -webkit-text-fill-color: #fe69f1;
+        }
     }
 }
 

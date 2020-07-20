@@ -14,7 +14,8 @@ const gradients = {
 	floatingView: {
 		'/': 'linear-gradient(326deg, #3af4f5 0%, #164dfe 74%)',
 		'/portfolio': 'linear-gradient(326deg, #06b5ca 0%, #8ce1a0 74%)',
-		'/writings': 'linear-gradient(326deg, #f0de72 0%, #ff615c 74%)'
+		'/writings': 'linear-gradient(326deg, #f0de72 0%, #ff615c 74%)',
+		'/contact': 'linear-gradient(326deg, #fe69f1, #e22525 74%)'
 	}
 }
 

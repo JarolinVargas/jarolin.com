@@ -40,8 +40,8 @@
         z-index: -1;
         opacity: 0.5;
         transition: opacity .30s;
-        -webkit-mask-image: linear-gradient(50deg, rgba(255, 255, 255, 0) 40%, #FFF 100%);
-        mask-image: linear-gradient(50deg, rgba(255, 255, 255, 0) 40%, #FFF 100%);
+        -webkit-mask-image: linear-gradient(50deg, rgba(255, 255, 255, 0) 15%, #FFF 100%);
+        mask-image: linear-gradient(50deg, rgba(255, 255, 255, 0) 15%, #FFF 100%);
     }
 
     .item-count {

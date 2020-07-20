@@ -12,8 +12,18 @@
 		}
 	}
 
+	@-webkit-keyframes rotation {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(359deg);
+		}
+	}
+
 	.st3 {
 		animation: rotation 30s infinite linear;
+		-webkit-transform-origin: center;
 		transform-origin: center;
 	}
 

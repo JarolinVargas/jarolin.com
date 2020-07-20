@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { motion } from "framer";
 import './Form.scss';
@@ -22,10 +22,12 @@ const animations = {
 }
 
 export default function Form(props) {
+    const [formSubmit, setFormSubmit] = useState(false);
+
     function handleSubmit(event) {
         event.preventDefault();
         emailjs.sendForm('gmail', 'template_0SkNquXo', event.target, 'user_pCMJbFKNIBy3Z3bW7S0LX').then((result) => {
-            alert('Your message was sent sucessfully');
+            setFormSubmit(true);
         }, (error) => {
             alert(error.text);
         });
@@ -60,7 +62,7 @@ export default function Form(props) {
                 </div>
             </div>
             <div style={{flexBasis: '100%'}}>
-                <input type="submit" className="contact-form-submit-btn contact-gradient" value={props.activeOption === null ? 'Select an Option' : 'Submit Form'}/>
+                <input type="submit" className="contact-form-submit-btn contact-gradient" value={formSubmit === true ? 'Your message was sent sucessfully' : 'Submit Form'}/>
             </div>
         </motion.form>
 	)
