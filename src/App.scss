@@ -62,8 +62,8 @@
 }
 
 
-
-nav {
+/* nav */
+nav.nav-desktop {
   height: 50px;
   width: calc(100% - 30px);
   position: absolute;
@@ -131,6 +131,91 @@ nav {
     transition-property: left;
     transition-duration: .30s;
     transition-timing-function: ease-out;
+  }
+}
+
+/* mobile nav */
+nav.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 0px;
+  width: 100%;
+  border-top: solid 1px;
+  border-bottom: 0;
+  border-left: 0;
+  border-image-slice: 1;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 70px;
+    height: 70px;
+    top: -1px;
+    right: 0px;
+    float: right;
+    position: relative;
+    border-bottom-left-radius: 100px;
+    cursor: pointer;
+    color: #FFF;
+    background-attachment: fixed;
+    padding-top: 55px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+    transition-property: opacity;
+    transition-duration: .15s;
+
+    li:not(:first-child) {
+      padding: 10px 20px;
+      box-sizing: border-box;
+      font-weight: 800;
+      font-size: 16px;
+      transition: margin-left .10s;
+    }
+
+    li:first-child {
+      color: #FFF;
+      text-align: center;
+      display: block;
+      font-size: 22px;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      padding: 11px 17px 28px 34px;
+      box-sizing: border-box;
+    }
+  }
+
+  a {
+    display: block;
+  }
+
+  a.active {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 0px;
+      bottom: 0px;
+      margin: auto;
+      border-radius: 5px;
+      width: 5px;
+      height: 5px;
+      background-color: #FFF;
+      box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+    }
   }
 }
 
@@ -206,7 +291,7 @@ nav {
     font-size: 14px;
   }
 
-  nav {
+  nav.nav-desktop {
     width: calc(100% - 20px);
 
     ul {
@@ -245,7 +330,7 @@ nav {
     padding-bottom: 0;
   }
 
-  nav {
+  nav.nav-desktop {
     width: 100%;
   }
 
@@ -273,8 +358,43 @@ nav {
 }
 
 @media screen and (max-width: 430px) {
-  nav ul li {
-    font-size: .76em;
+  .App {
+    padding-top: 0px;
+  }
+
+  nav.nav-desktop {
+    display: none;
+  }
+
+  nav.nav-mobile {
+    display: block;
+    z-index: 100;
+  }
+
+  /* adjust content to allow normal scrolling */
+  .layouts.scroll-y {
+    overflow: visible;
+  }
+
+  .content {
+    position: relative;
+    height: auto;
+    top: 0px;
+    padding: 10px 0px;
+
+    > .page {
+      height: auto;
+      position: relative;
+      bottom: auto;
+
+      > .layouts {
+        min-height: calc(100vh - 21px);
+      }
+    }
+  }
+
+  .frame {
+    height: auto;
   }
 }
 

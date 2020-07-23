@@ -13,6 +13,8 @@
         display: block;
         position: relative;
         overflow: hidden;
+        transition-property: padding-left;
+        transition-duration: .15s;
     }
 
     h2 {

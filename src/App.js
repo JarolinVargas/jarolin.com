@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { AnimatePresence, motion } from "framer";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AboutMe, Portfolio, Writings, PortfolioView, WritingsView, Contact } from './pages';
 import './App.scss';
 
@@ -21,6 +23,7 @@ const gradients = {
 
 export default function App() {
 	const navRef = useRef(null);
+	const [mobileNav, setMobileNav] = useState(false);
 	const [path, setPath] = useState({
 		path: `/${window.location.pathname.split('/')[1]}`,
 		activePageIndicatorPos: '90.5px'
@@ -48,6 +51,10 @@ export default function App() {
 		})
 	}
 
+	const toggleMobileNav = () => {
+		setMobileNav(!mobileNav ? true : false);
+	}
+
 	const repositionActiveTabIndicator = (clickedLink) => {
 		if( navRef.current ) {
 			const activeTabEl = !clickedLink ? navRef.current.querySelector('a.active') : clickedLink.target;
@@ -59,7 +66,7 @@ export default function App() {
 	return (
 		<Router>
 			<div className="App" data-path={path.path}>
-				<nav ref={navRef}>
+				<nav className="nav-desktop" ref={navRef}>
 					<motion.span className="nav-active-page-indicator" style={{left: path.activePageIndicatorPos}} animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.span>
 					<ul>
 						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.li>
@@ -73,6 +80,15 @@ export default function App() {
 						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.li>
 					</ul>
 				</nav>
+				<motion.nav className="nav-mobile" animate={{borderImageSource: gradients.pages[path.path]}} transition={{duration: 2}}>
+					<motion.ul animate={!mobileNav ? {width: 70, height: 70, borderBottomLeftRadius: 100, backgroundImage: gradients.pages[path.path]} : {width: 170, height: 260, borderBottomLeftRadius: 50, backgroundImage: gradients.pages[path.path]}}>
+						<li onClick={toggleMobileNav}><FontAwesomeIcon icon={!mobileNav ? faBars : faTimes}></FontAwesomeIcon></li>
+						<motion.li onClick={toggleMobileNav}><NavLink to="/" exact onClick={updatePath}>ABOUT ME</NavLink></motion.li>
+						<motion.li onClick={toggleMobileNav}><NavLink to="/portfolio" onClick={updatePath}>PORTFOLIO</NavLink></motion.li>
+						<motion.li onClick={toggleMobileNav}><NavLink to="/writings" onClick={updatePath}>WRITINGS</NavLink></motion.li>
+						<motion.li onClick={toggleMobileNav}><NavLink to="/contact" onClick={updatePath}>CONTACT</NavLink></motion.li>
+					</motion.ul>
+				</motion.nav>
 				<motion.div className="frame" animate={{borderImageSource: gradients.pages[path.path]}} transition={{duration: 2}}>
 					<main className="content">
 						<div className="page">

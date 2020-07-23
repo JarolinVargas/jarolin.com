@@ -2,27 +2,26 @@ import React, { useState , useEffect} from 'react';
 import { Frame } from "framer";
 import './FloatingView.scss';
 
-const animations = {
-    initial: {
-        width: 0,
-        height: 0
-    },
-    expand: {
-        height: 'calc(100% - 20px)',
-        width: 350,
-        borderRadius: '30px',
-        overflowY: 'scroll'
-    },
-    default: {
-        width: 100,
-        height: 100,
-        borderRadius: 350,
-        overflowY: 'hidden'
-    }
-}
-
 export default function FloatingView(props) {
     const [active, setActive] = useState(false);
+    const animations = {
+        initial: {
+            width: 0,
+            height: 0
+        },
+        expand: {
+            height: window.innerWidth > 430 ? 'calc(100% - 20px)' : 'calc(100vh - 200px)',
+            width: window.innerWidth > 430 ? 350 : 300,
+            borderRadius: '30px',
+            overflowY: 'scroll'
+        },
+        default: {
+            width: 100,
+            height: 100,
+            borderRadius: 350,
+            overflowY: 'hidden'
+        }
+    }
 
     useEffect(() => {
 		window.addEventListener('popstate', (event) => {

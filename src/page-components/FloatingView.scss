@@ -4,7 +4,7 @@
     right: -20px;
     width: 100px;
     height: 100px;
-    max-width: calc(100% - 20px);
+    //max-width: calc(100% - 20px);
     border-bottom-right-radius: 0 !important;
     background-color: transparent !important;
     z-index: 1000;
@@ -41,6 +41,13 @@ body.floating-view-active {
         }
     }
 
+    nav.nav-mobile {
+        ul {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
     .page {
         > .layouts {
             filter: blur(3px);
@@ -67,7 +74,7 @@ body.floating-view-active {
         background-color: rgba(0, 0, 0, 0.1);
     }
 
-    .App > nav {
+    .App > nav.nav-desktop {
         pointer-events: none;
     }
 }
