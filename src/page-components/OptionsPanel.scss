@@ -41,7 +41,6 @@
         &.option-active {
             &:after {
                 background: linear-gradient(to right, rgb(254, 105, 241), rgb(226, 37, 37));
-                box-shadow: 0px 0px 5px rgb(226, 37, 37);
             }
         }
 

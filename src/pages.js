@@ -170,13 +170,11 @@ for( const property in writings ) {
 export function Writings(props) {
 	ReactGA.pageview(window.location.pathname);
 	return (
-		<React.Fragment>
-			<motion.div className="layouts layout-col-1 scroll-y padding-off" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
-				<div className="col-1">
-					<BlogList pageGradient={props.pageGradient} list={writingsList}></BlogList>
-				</div>
-			</motion.div>
-		</React.Fragment>
+		<motion.div className="layouts layout-col-1 scroll-y padding-off" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
+			<div className="col-1">
+				<BlogList pageGradient={props.pageGradient} list={writingsList}></BlogList>
+			</div>
+		</motion.div>
 	)
 }
 
@@ -227,22 +225,20 @@ export function Contact(props) {
 	}
 
 	return (
-		<React.Fragment>
-			<motion.div className="layouts layout-col-2 narrower-col-1 padding-off effects-off scroll-y" initial="initial" animate="enter" exit="exit" variants={layoutsStagger}>
-				<div>
-					<OptionsPanel activeOption={activeOption} updateActiveOption={updateActiveOption}/>
-				</div>
-				<div>
-					<div className="vertical-cols">
-						<div className="form-container" style={{height: '100%'}}>
-							{activeOption !== null ? <Form activeOption={activeOption}/> : ''}
-						</div>
-						<div style={{textAlign: 'right'}}>
-							<a href="mailto:jarolinvargas@gmail.com" className="contact-mailto" target="_blank">JarolinVargas@gmail.com</a>
-						</div>
+		<motion.div className="layouts layout-col-2 narrower-col-1 padding-off effects-off scroll-y" initial="initial" animate="enter" exit="exit" variants={layoutsStagger}>
+			<div>
+				<OptionsPanel activeOption={activeOption} updateActiveOption={updateActiveOption}/>
+			</div>
+			<div>
+				<div className="vertical-cols">
+					<div className="form-container" style={{height: '100%'}}>
+						{activeOption !== null ? <Form activeOption={activeOption}/> : ''}
+					</div>
+					<div style={{textAlign: 'right'}}>
+						<a href="mailto:jarolinvargas@gmail.com" className="contact-mailto" target="_blank" rel="noopener noreferrer">JarolinVargas@gmail.com</a>
 					</div>
 				</div>
-			</motion.div>
-		</React.Fragment>
+			</div>
+		</motion.div>
 	)
 }
