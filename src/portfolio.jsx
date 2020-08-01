@@ -25,11 +25,9 @@ export const portfolio = {
             cover: luminal,
             bannerCover: luminalBanner
         },
-        jsx: (
-            <React.Fragment>
-                <p>Luminal is a personal project I’ve been working on for several years that consists of an easy to use website builder, and highly customizable HTML5 template. Users can build browser-compatible, multiple-page, responsive websites through an easy to use interface without writing or editing code. The Luminal website builder makes it easy to edit text, change colors, and much more. <em>Detailed case study coming soon.</em></p>
-            </React.Fragment>
-        )
+        jsx: `
+            <p>Luminal is a personal project I’ve been working on for several years that consists of an easy to use website builder, and highly customizable HTML5 template. Users can build browser-compatible, multiple-page, responsive websites through an easy to use interface without writing or editing code. The Luminal website builder makes it easy to edit text, change colors, and much more. <em>Detailed case study coming soon.</em></p>
+        `
     },
     'forcebrands-newsroom': {
         meta: {
@@ -44,11 +42,9 @@ export const portfolio = {
             cover: newsroom,
             bannerCover: newsroomBanner
         },
-        jsx: (
-            <React.Fragment>
-                <p>The ForceBrands Newsroom Blog is the place to gain insights from the CPG industry's leading recruiting firm. At ForceBrands, I was tasked with redesigning and rebuilding the wordress blog, while staying close to the design asthetic of the ForceBrands website. I worked closely with the marketing and editorial team to define goals, functionality, and expectations. I designed the blog using Adobe Xd and developed using HTML5, SCSS, PHP, and vanilla JavaScript. Learned to developed WordPress themes in the process.</p>
-            </React.Fragment>
-        )
+        jsx: `
+            <p>The ForceBrands Newsroom Blog is the place to gain insights from the CPG industry's leading recruiting firm. At ForceBrands, I was tasked with redesigning and rebuilding the wordress blog, while staying close to the design asthetic of the ForceBrands website. I worked closely with the marketing and editorial team to define goals, functionality, and expectations. I designed the blog using Adobe Xd and developed using HTML5, SCSS, PHP, and vanilla JavaScript. Learned WordPress theme development in the process.</p>
+        `
     },
     'job-board-react-app': {
         meta: {
@@ -63,11 +59,9 @@ export const portfolio = {
             cover: jobboard,
             bannerCover: jobboardBanner
         },
-        jsx: (
-            <React.Fragment>
-                <p>The white-label job board app is an independent job board React application that exists on the clients domain and provides a place to list and publish open opportunities. At ForceBrands, I designed and built all front-end aspects of the application. I used ReactJS, SCSS on the front-end, and the back-end API was built by a remote developer using Ruby on Rails.</p>
-            </React.Fragment>
-        )
+        jsx: `
+            <p>The white-label job board app is an independent job board React application that exists on the clients domain and provides a place to list and publish open opportunities. At ForceBrands, I designed and built all front-end aspects of the application. I used ReactJS, SCSS on the front-end, and the back-end API was built by a remote developer using Ruby on Rails.</p>
+        `
     },
     'manhattan-bridge-capital': {
         meta: {
@@ -82,11 +76,9 @@ export const portfolio = {
             cover: mbc,
             bannerCover: mbcBanner
         },
-        jsx: (
-            <React.Fragment>
-                <p>Manhattan Bridge Capital is the home page of a popular hard-money lender. At Jwiz Marketing Solutions I was tasked with re-designing and re-building the previous 12-year old design as well as digitizing the loan application, transferring press-release articles from HTML5 files to a MySQL database using PHP, and developing a custom content management system to upload, edit, and delete press release articles and other content.</p>
-            </React.Fragment>
-        )
+        jsx: `
+            <p>Manhattan Bridge Capital is the home page of a popular hard-money lender. At Jwiz Marketing Solutions I was tasked with re-designing and re-building the previous 12-year old design as well as digitizing the loan application, transferring press-release articles from HTML5 files to a MySQL database using PHP, and developing a custom content management system to upload, edit, and delete press release articles and other content.</p>
+        `
     },
     'graphics-corrections-tool': {
         meta: {
@@ -101,11 +93,9 @@ export const portfolio = {
             cover: jdigital,
             bannerCover: ''
         },
-        jsx: (
-            <React.Fragment>
-                <p>Jwiz Graphics Corrections is a web app I develped at Jwiz Marketing Solutions that drastically reduced the time needed to proofread and correct mistakes for client graphics. I created an editor that uses JavaScript canvas and allows the proofreader to highlight certain areas over the image that need correction. When an area is highlighted; a note is created and used to type the correction that the graphics designer can later read and correct without dealing with paper and hand-written notes. It has been used to proofread and correct the flyers, coupons, and banners of over 700 clients.</p>
-            </React.Fragment>
-        )
+        jsx: `
+            <p>Jwiz Graphics Corrections is a web app I develped at Jwiz Marketing Solutions that drastically reduced the time needed to proofread and correct mistakes for client graphics. I created an editor that uses JavaScript canvas and allows the proofreader to highlight certain areas over the image that need correction. When an area is highlighted; a note is created and used to type the correction that the graphics designer can later read and correct without dealing with paper and hand-written notes. It has been used to proofread and correct the flyers, coupons, and banners of over 700 clients.</p>
+        `
     },
     'referral-service-landing-page': {
         meta: {
@@ -120,10 +110,8 @@ export const portfolio = {
             cover: referralService,
             bannerCover: ''
         },
-        jsx: (
-            <React.Fragment>
-                <p>Referral Service Landing Page makes finding the right business easy. Users provide details on the services they need and jWiz Marketing Solutions will help find the right business that can provide the services at the right price. I was tasked with creating a new design that can target niche businesses. I created a design that is easy to maintain and customize by allowing future developers to create new themes by editing JSON file instead of the source code. Some of the themes are linked below.</p>
-            </React.Fragment>
-        )
+        jsx: `
+            <p>Referral Service Landing Page makes finding the right business easy. Users provide details on the services they need and jWiz Marketing Solutions will help find the right business that can provide the services at the right price. I was tasked with creating a new design that can target niche businesses. I created a design that is easy to maintain and customize by allowing future developers to create new themes by editing JSON file instead of the source code. Some of the themes are linked below.</p>
+        `
     }
 }

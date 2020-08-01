@@ -99,7 +99,7 @@ export default function App() {
 										<Route path="/portfolio" exact children={<Portfolio pageGradient={gradients.pages['/portfolio']} floatingViewGradient={gradients.floatingView['/portfolio']}/>} />
 										<Route path="/writings" exact children={<Writings pageGradient={gradients.pages['/writings']} floatingViewGradient={gradients.floatingView['/writings']}/>} />
 										<Route path="/portfolio/:name" children={<PortfolioView pageGradient={gradients.pages['/portfolio']} floatingViewGradient={gradients.floatingView['/portfolio']}/>} />
-										<Route path="/writings/:id" children={<WritingsView pageGradient={gradients.pages['/writings']} floatingViewGradient={gradients.floatingView['/writings']}/>} />
+										<Route path="/writings/:id/:title" children={<WritingsView pageGradient={gradients.pages['/writings']} floatingViewGradient={gradients.floatingView['/writings']}/>} />
 										<Route path="/contact" exact children={<Contact pageGradient={gradients.pages['/contact']} floatingViewGradient={gradients.floatingView['/contact']}/>} />
 									</Switch>
 								</AnimatePresence>
