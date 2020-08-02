@@ -78,8 +78,6 @@ export function AboutMe() {
 			</motion.div>
 			<Background>
 				<motion.img className="my-portrait" src={JarolinVargas} alt="Jarolin Vargas" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}/>
-				<Circle size={300} right={0} top={60} shadow="-50px -50px 50px rgba(0, 0, 0, 0.1)"/>
-				<Circle size={300} right={-140} top={-140} shadow="0px 0px 50px rgba(0, 0, 0, 0.2)"/>
 				<GridDots width={140} height={140} bottom={15} right={15}/>
 			</Background>
 		</React.Fragment>
