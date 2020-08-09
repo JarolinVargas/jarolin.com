@@ -12,7 +12,7 @@ import List from './page-components/List';
 import BlogList from './page-components/BlogList';
 import OptionsPanel from './page-components/OptionsPanel';
 import Form from './page-components/Form';
-import Background, { Circle, GridDots, Image } from './page-components/Background';
+import Background, { GridDots, Image } from './page-components/Background';
 import JarolinVargas from './assets/jarolin-vargas.svg';
 import './page-components/Layouts.scss';
 
@@ -152,24 +152,24 @@ export function PortfolioView(props) {
 
 
 let writingsList = [];
+const writingsListQuery = `{
+	writings(orderBy: createdAt_DESC) {
+		id
+		listCover {
+		  url
+		}
+		title
+		topic
+		date
+		article_id
+	}
+}`
+
 export function Writings(props) {
 	const [writings, setWritings] = useState(false);
 
-	if( !writingsList.length ) {
-        const query = `{
-            writings(orderBy: createdAt_DESC) {
-				id
-                listCover {
-                  url
-                }
-                title
-                topic
-                date
-                article_id
-            }
-        }`
-           
-        request('https://api-eu-central-1.graphcms.com/v2/ckd9lt56kglb901z548nw00qe/master', query).then((data) => {
+	if( !writingsList.length ) {           
+        request('https://api-eu-central-1.graphcms.com/v2/ckd9lt56kglb901z548nw00qe/master', writingsListQuery).then((data) => {
 			writingsList = data.writings;
 			setWritings(true);
 		});
@@ -190,6 +190,7 @@ export function Writings(props) {
 
 export function WritingsView(props) {
 	const [writing, setWriting] = useState(null);
+	const [writingsListFetched, setWritingsListFetch] = useState(false);
 	const pathname = window.location.pathname;
 	const articleKey = pathname.substring(pathname.lastIndexOf('/') + 1);
 
@@ -218,14 +219,22 @@ export function WritingsView(props) {
 		return false;
 	}
 
+	if( !writingsList.length ) {
+        request('https://api-eu-central-1.graphcms.com/v2/ckd9lt56kglb901z548nw00qe/master', writingsListQuery).then((data) => {
+			writingsList = data.writings;
+			setWritingsListFetch(true);
+		});
+		return false;
+	}
+
 	ReactGA.pageview(pathname);
 	return (
 		<React.Fragment>
-			{/*<FloatingView label="More" labelExpanded="More Writings" gradient={props.floatingViewGradient}>
+			<FloatingView label="More" labelExpanded="More Writings" gradient={props.floatingViewGradient}>
 				<List>
-					
+					{writingsList}
 				</List>
-			</FloatingView>*/}
+			</FloatingView>
 			<motion.div className="layouts layout-col-1 padding-off scroll-y border-right" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
 				<div className="col-1" style={{maxWidth: 1000}}>
 					<article>
