@@ -89,7 +89,7 @@ export function AboutMe() {
 const floatingViewPortfolioList = [];
 for( const property in portfolio ) {
 	const p = portfolio[property];
-	floatingViewPortfolioList.push({label: p.meta.title, link: `portfolio/${p.meta.slug}`});
+	floatingViewPortfolioList.push({title: p.meta.title, link: `/portfolio/${p.meta.slug}`});
 }
 
 export function Portfolio(props) {
