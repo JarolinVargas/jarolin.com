@@ -33,14 +33,13 @@
             right: 0px;
             top: 30px;
             border-radius: 30px;
-            box-shadow: inset 0px 0px 3px black;
             border: solid 1px rgb(254, 105, 241);
             box-sizing: border-box;
         }
 
         &.option-active {
             &:after {
-                background: linear-gradient(to right, rgb(254, 105, 241), rgb(226, 37, 37));
+                background: linear-gradient(to right, #FF3CAC, #8700ff);
             }
         }
 

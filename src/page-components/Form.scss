@@ -61,12 +61,15 @@
         bottom: 0px;
         font-size: 1.7em;
         margin: auto;
-        -webkit-text-fill-color: #e22525;
-        color: #e22525;
+        display: block;
+        background: linear-gradient(to right, #FF3CAC, #8700ff);
+        width: auto;
+        left: 0px;
+        right: 0px;
+        color: #FFF;
 
         &:hover {
-            color: #fe69f1;
-            -webkit-text-fill-color: #fe69f1;
+            background: linear-gradient(to right, #8700ff, #FF3CAC);
         }
     }
 }
@@ -85,6 +88,7 @@
             display: block;
             text-align: center;
             color: #FFF;
+            font-size: 18px;
         }
     }
 }
@@ -109,10 +113,9 @@
         .form-input-col {
             flex-direction: column;
         }
-    }
 
-    .contact-form-submit-btn {
-        margin: 30px 0px;
-        display: inline-block;
+        .contact-form-submit-btn {
+            margin: 30px auto;
+        }
     }
 }

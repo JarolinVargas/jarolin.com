@@ -256,16 +256,16 @@ nav.nav-mobile {
 .App[data-path="/writings"] .article a {color: #ff615c}
 
 .contact-gradient {
-  color: #fe69f1;
-  background: -webkit-gradient(linear, left top, right top, from(#fe69f1), to(#e22525));
-  background: -webkit-linear-gradient(left, #fe69f1 0%, #e22525 50%);
-  background: -o-linear-gradient(left, #fe69f1 0%, #e22525 50%);
-  background: linear-gradient(to right, #fe69f1 0%, #e22525 50%);
+  color: #FF3CAC;
+  background: -webkit-gradient(linear, left top, right top, from(#FF3CAC), to(#8700ff));
+  background: -webkit-linear-gradient(left, #FF3CAC 0%, #8700ff 50%);
+  background: -o-linear-gradient(left, #FF3CAC 0%, #8700ff 50%);
+  background: linear-gradient(to right, #FF3CAC 0%, #8700ff 50%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
-.App[data-path="/contact"] .article a {color: #fe69f1}
+.App[data-path="/contact"] .article a {color: #FF3CAC}
 
 
 

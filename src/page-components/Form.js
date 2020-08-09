@@ -62,7 +62,7 @@ export default function Form(props) {
                 </div>
             </div>
             <div style={{flexBasis: '100%'}}>
-                <input type="submit" className="contact-form-submit-btn contact-gradient" value={formSubmit === true ? 'Your message was sent successfully' : 'Submit Form'}/>
+                <input type="submit" className="contact-form-submit-btn" value={formSubmit === true ? 'Message sent' : 'Submit Form'}/>
             </div>
         </motion.form>
 	)

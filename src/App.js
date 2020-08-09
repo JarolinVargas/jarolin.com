@@ -11,13 +11,13 @@ const gradients = {
 		'/': 'linear-gradient(to right, #3af4f5, #164dfe)',
 		'/portfolio': 'linear-gradient(to right, #c9fa84, #06b5ca)',
 		'/writings': 'linear-gradient(to right, #ff615c, #f0de72)',
-		'/contact': 'linear-gradient(to right, #fe69f1, #e22525)'
+		'/contact': 'linear-gradient(to right, #FF3CAC, #8700ff)'
 	},
 	floatingView: {
 		'/': 'linear-gradient(326deg, #3af4f5 0%, #164dfe 74%)',
 		'/portfolio': 'linear-gradient(326deg, #06b5ca 0%, #8ce1a0 74%)',
 		'/writings': 'linear-gradient(326deg, #f0de72 0%, #ff615c 74%)',
-		'/contact': 'linear-gradient(326deg, #fe69f1, #e22525 74%)'
+		'/contact': 'linear-gradient(326deg, #FF3CAC, #8700ff 74%)'
 	}
 }
 
