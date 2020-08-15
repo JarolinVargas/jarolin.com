@@ -5,14 +5,17 @@ import './List.scss';
 
 const animations = {
     initial: {
-        y: -100,
+        y: -50,
         display: 'none',
         opacity: 0
     },
     enter: {
         y: 0,
         display: 'block',
-        opacity: 1
+        opacity: 1,
+        transition: {
+            ease: "easeOut"
+        }
     }
 }
 

@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { AboutMe, Portfolio, Writings, PortfolioView, WritingsView, Contact } from './pages';
+import { AboutMe, Portfolio, Writings, PortfolioView, WritingsView, Contact, NotFound } from './pages';
 import './App.scss';
 
 const gradients = {
@@ -11,7 +11,8 @@ const gradients = {
 		'/': 'linear-gradient(to right, #3af4f5, #164dfe)',
 		'/portfolio': 'linear-gradient(to right, #c9fa84, #06b5ca)',
 		'/writings': 'linear-gradient(to right, #ff615c, #f0de72)',
-		'/contact': 'linear-gradient(to right, #FF3CAC, #8700ff)'
+		'/contact': 'linear-gradient(to right, #FF3CAC, #8700ff)',
+		'404': 'linear-gradient(to right, #ff615c, #f0de72)'
 	},
 	floatingView: {
 		'/': 'linear-gradient(326deg, #3af4f5 0%, #164dfe 74%)',
@@ -45,8 +46,9 @@ export default function App() {
 	}, []);
 
 	const updatePath = (event) => {
+		const pagePath = !event ? `/${window.location.pathname.split('/')[1]}` : event.target.getAttribute('href')
 		setPath({
-			path: !event ? `/${window.location.pathname.split('/')[1]}` : event.target.getAttribute('href'),
+			path: !gradients.pages[pagePath] ? '404' : pagePath,
 			activePageIndicatorPos: repositionActiveTabIndicator(event)
 		})
 	}
@@ -56,11 +58,10 @@ export default function App() {
 	}
 
 	const repositionActiveTabIndicator = (clickedLink) => {
-		if( navRef.current ) {
-			const activeTabEl = !clickedLink ? navRef.current.querySelector('a.active') : clickedLink.target;
-			const [activeTabPos, activeTabWidth] = [activeTabEl.offsetLeft, activeTabEl.offsetWidth]
-			return `${activeTabPos + (activeTabWidth / 2) - 3.5}px`;
-		}
+		if( !navRef.current.querySelector('a.active') && !clickedLink ) { return '0px' }
+		const activeTabEl = !clickedLink ? navRef.current.querySelector('a.active') : clickedLink.target;
+		const [activeTabPos, activeTabWidth] = [activeTabEl.offsetLeft, activeTabEl.offsetWidth]
+		return `${activeTabPos + (activeTabWidth / 2) - 3.5}px`;
 	}
 
 	return (
@@ -101,6 +102,7 @@ export default function App() {
 										<Route path="/portfolio/:name" children={<PortfolioView pageGradient={gradients.pages['/portfolio']} floatingViewGradient={gradients.floatingView['/portfolio']}/>} />
 										<Route path="/writings/:id/:title" children={<WritingsView pageGradient={gradients.pages['/writings']} floatingViewGradient={gradients.floatingView['/writings']}/>} />
 										<Route path="/contact" exact children={<Contact pageGradient={gradients.pages['/contact']} floatingViewGradient={gradients.floatingView['/contact']}/>} />
+										<Route children={<NotFound/>} />
 									</Switch>
 								</AnimatePresence>
 							)}/>

@@ -85,3 +85,21 @@ body:not(:hover) {
   left: 0px;
   background-image: url('../src/assets/diagonal.svg');
 }
+
+// not found
+.not-found {
+  text-align: center;
+  color: #FFF;
+
+  h1 {
+    font-size: 10em;
+    margin: 0 0 30px 0;
+    filter: blur(7px);
+    line-height: 1;
+  }
+
+  h2 {
+    font-weight: 400;
+    margin: 0;
+  }
+}

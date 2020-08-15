@@ -18,7 +18,7 @@ const list = {
 
 const listItems = {
     initial: {
-        x: -500,
+        x: -300,
         opacity: 0
     },
     enter: {
@@ -26,7 +26,7 @@ const listItems = {
         opacity: 1
     },
     exit: {
-        x: 500,
+        x: 300,
         opacity: 0,
         transition: {
             ease: 'easeOut'

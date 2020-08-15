@@ -131,6 +131,10 @@ nav.nav-desktop {
     transition-property: left;
     transition-duration: .30s;
     transition-timing-function: ease-out;
+
+    &[style*="0px"] {
+      visibility: hidden;
+    }
   }
 }
 
