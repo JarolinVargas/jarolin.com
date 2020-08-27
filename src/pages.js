@@ -197,19 +197,19 @@ export function WritingsView(props) {
 	if( !writing ) {
         const query = `{
             writings(where: {id: "${articleKey}"}) {
-                listCover {
-                  url
+				listCover {
+					url
 				}
 				viewCover {
 					url
 				}
 				article {
-				  html
+					html
 				}
-                title
-                topic
-                date
-                article_id
+				title
+				topic
+				date
+				article_id
             }
         }`
            
