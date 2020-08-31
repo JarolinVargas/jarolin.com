@@ -18,7 +18,7 @@ export const portfolio = {
             context: 'Personal Project',
             duration: 'April 2014 - Present',
             role: 'Developer & Designer',
-            link: 'https://luminaldev.com',
+            link: 'http://luminaldev.com',
             slug: 'luminal'
         },
         images: {
