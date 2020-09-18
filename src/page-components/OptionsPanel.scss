@@ -52,10 +52,15 @@
             }
         }
 
-        &:hover {
+        &:not(.disabled):hover {
             svg {
                 transform: scale(1.15)
             }
+        }
+
+        &.disabled {
+            opacity: 0.2;
+            cursor: not-allowed;
         }
     }
 

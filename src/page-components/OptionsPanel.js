@@ -29,7 +29,7 @@ export default function OptionsPanel(props) {
                 <h2 className="contact-gradient">Just reaching out</h2>
                 <p>Feel free to reach out for any reason at all. I'm down to help and give feedback on development and design related stuff.</p>
             </div>
-            <div className={`option-2${props.activeOption === '2' ? ' option-active' : ''}`} data-option="2" onClick={props.updateActiveOption}>
+            <div className={`option-2 disabled${props.activeOption === '2' ? ' option-active' : ''}`} data-option="2">
                 <FontAwesomeIcon icon={faHandshake} className="icons" />
                 <h2 className="contact-gradient">Let's work together</h2>
                 <p>I'm currently available for freelance work. Reach out if you have a project you find me to be a good fit for.</p>
