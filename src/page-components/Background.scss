@@ -44,7 +44,7 @@
     background-repeat: no-repeat;
 
     &.fade {
-        -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
-        mask-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+        -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.15) 100%);
+        mask-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.15) 100%);
     }
 }
