@@ -4,13 +4,12 @@
     right: -20px;
     width: 100px;
     height: 100px;
-    //max-width: calc(100% - 20px);
-    border-bottom-right-radius: 0 !important;
-    background-color: transparent !important;
+    border-radius: 30px;
+    border-bottom-right-radius: 0;
     z-index: 1000;
     cursor: pointer;
     overflow-x: hidden;
-    background-color: #2a2a72;
+    will-change: width, height, contents, scroll-position;
 
     > .label {
         line-height: 100px;

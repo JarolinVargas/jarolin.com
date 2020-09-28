@@ -296,7 +296,6 @@ export function NotFound(props) {
 			<div style={{alignSelf: 'center'}}>
 				<div className="not-found">
 					<h1>404</h1>
-					<h2>page not found</h2>
 				</div>
 			</div>
 		</motion.div>

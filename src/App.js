@@ -82,7 +82,7 @@ export default function App() {
 					</ul>
 				</nav>
 				<motion.nav className="nav-mobile" animate={{borderImageSource: gradients.pages[path.path]}} transition={{duration: 2}}>
-					<motion.ul animate={!mobileNav ? {width: 70, height: 70, borderBottomLeftRadius: 100, backgroundImage: gradients.pages[path.path]} : {width: 170, height: 260, borderBottomLeftRadius: 30, backgroundImage: gradients.pages[path.path]}}>
+					<motion.ul animate={!mobileNav ? {width: 70, height: 70, borderBottomLeftRadius: '100px', backgroundImage: gradients.pages[path.path]} : {width: 170, height: 260, borderBottomLeftRadius: '30px', backgroundImage: gradients.pages[path.path]}}>
 						<li onClick={toggleMobileNav}><FontAwesomeIcon icon={!mobileNav ? faBars : faTimes}></FontAwesomeIcon></li>
 						<motion.li onClick={toggleMobileNav}><NavLink to="/" exact onClick={updatePath}>ABOUT ME</NavLink></motion.li>
 						<motion.li onClick={toggleMobileNav}><NavLink to="/portfolio" onClick={updatePath}>PORTFOLIO</NavLink></motion.li>

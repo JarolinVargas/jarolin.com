@@ -4,22 +4,30 @@ import './FloatingView.scss';
 
 export default function FloatingView(props) {
     const [active, setActive] = useState(false);
+
     const animations = {
         initial: {
             width: 0,
-            height: 0
+            height: 0,
+            transition: {
+                ease: 'easeOut'
+            }
         },
         expand: {
-            height: window.innerWidth > 430 ? 'calc(100% - 20px)' : 'calc(100vh - 200px)',
+            height: window.innerWidth > 430 ? 'calc(100% - 20px)' : 'calc(100vh - 110px)',
             width: window.innerWidth > 430 ? 350 : 300,
-            borderRadius: '30px',
-            overflowY: 'scroll'
+            transition: {
+                type: 'spring',
+                stiffness: 85
+            }
         },
         default: {
             width: 100,
             height: 100,
-            borderRadius: 350,
-            overflowY: 'hidden'
+            transition: {
+                type: 'spring',
+                stiffness: 85
+            }
         }
     }
 

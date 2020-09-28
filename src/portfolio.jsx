@@ -1,4 +1,3 @@
-import React from 'react';
 import './page-components/Article.scss';
 import luminal from './assets/portfolio-img/luminal.png';
 import luminalBanner from './assets/portfolio-img/luminal-banner.png';
