@@ -6,7 +6,7 @@ import ProjectButton from './ProjectButton';
 
 const animations = {
 	initial: {
-		y: -200,
+		y: -100,
 		opacity: 0
 	},
 	enter: {
@@ -14,7 +14,7 @@ const animations = {
 		opacity: 1
 	},
 	exit: {
-		y: 500,
+		y: 50,
 		opacity: 0,
 		transition: {
 			ease: 'easeOut'

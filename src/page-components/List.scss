@@ -15,17 +15,6 @@
         border-radius: 5px;
         transition: background-color .10s;
 
-        a {
-            display: block;
-            padding: 5px 0px;
-            transition: margin-left .10s;
-
-            &:hover {
-                margin-left: 5px;
-                color: #FFF;
-            }
-        }
-
         &:before {
             content: "";
             position: absolute;
@@ -50,10 +39,19 @@
             }
         }
     }
-}
 
-.FloatingView {
-    .List {
+    a {
+        display: block;
+        padding: 5px 0px;
+        transition: margin-left .10s;
+
+        &:hover {
+            margin-left: 5px;
+            color: #FFF;
+        }
+    }
+
+    .FloatingView & {
         color: #FFF;
         height: 100%;
         margin-left: 20px;

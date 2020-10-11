@@ -13,7 +13,7 @@ const animations = {
     },
     exit: {
         opacity: 0,
-        y: 500,
+        y: 100,
         transition: {
             ease: 'easeOut'
         }

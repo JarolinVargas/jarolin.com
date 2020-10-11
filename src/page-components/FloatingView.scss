@@ -11,7 +11,7 @@
     overflow-x: hidden;
     will-change: width, height, contents, scroll-position;
 
-    > .label {
+    .label {
         line-height: 100px;
         text-align: center;
         color: #FFF;
@@ -22,7 +22,6 @@
         text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
     }
 
-    /* scrollbar */
     &::-webkit-scrollbar {
         width: 0px;
         background-color: transparent;

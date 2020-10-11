@@ -6,7 +6,7 @@ import './Form.scss';
 const animations = {
     initial: {
         opacity: 0,
-        y: -200
+        y: -100
     },
     enter: {
         opacity: 1,
@@ -14,7 +14,7 @@ const animations = {
     },
     exit: {
         opacity: 0,
-        y: 200,
+        y: 50,
         transition: {
             ease: 'easeOut'
         }

@@ -6,19 +6,19 @@ import './BlogList.scss';
 const list = {
     enter: {
         transition: {
-            staggerChildren: 0.1
+            staggerChildren: 0.05
         }
     },
     exit: {
         transition: {
-            staggerChildren: 0.1
+            staggerChildren: 0.05
         }
     }
 }
 
 const listItems = {
     initial: {
-        x: -300,
+        x: -100,
         opacity: 0
     },
     enter: {
@@ -26,7 +26,7 @@ const listItems = {
         opacity: 1
     },
     exit: {
-        x: 300,
+        x: 50,
         opacity: 0,
         transition: {
             ease: 'easeOut'

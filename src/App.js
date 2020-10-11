@@ -3,7 +3,13 @@ import { AnimatePresence, motion } from "framer";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { AboutMe, Portfolio, Writings, PortfolioView, WritingsView, Contact, NotFound } from './pages';
+import AboutMe from './pages/about-me';
+import Portfolio from './pages/portfolio';
+import PortfolioView from './pages/portfolio-view';
+import Writings from './pages/writings';
+import WritingsView from './pages/writings-view';
+import Contact from './pages/contact';
+import NotFound from './pages/not-found';
 import './App.scss';
 
 const gradients = {
@@ -20,6 +26,12 @@ const gradients = {
 		'/writings': 'linear-gradient(326deg, #f0de72 0%, #ff615c 74%)',
 		'/contact': 'linear-gradient(326deg, #FF3CAC, #8700ff 74%)'
 	}
+}
+
+const animation = {
+    pageTransition: {
+        duration: 2
+    }
 }
 
 export default function App() {
@@ -46,15 +58,18 @@ export default function App() {
 	}, []);
 
 	const updatePath = (event) => {
-		const pagePath = !event ? `/${window.location.pathname.split('/')[1]}` : event.target.getAttribute('href')
+		const pagePath = !event ? `/${window.location.pathname.split('/')[1]}` : event.target.getAttribute('href');
 		setPath({
 			path: !gradients.pages[pagePath] ? '404' : pagePath,
 			activePageIndicatorPos: repositionActiveTabIndicator(event)
-		})
+		});
 	}
 
-	const toggleMobileNav = () => {
-		setMobileNav(!mobileNav ? true : false);
+	const toggleMobileNav = (event) => {
+        setMobileNav(!mobileNav ? true : false);
+        if( event.target.tagName === 'A' ) {
+            updatePath();
+        }
 	}
 
 	const repositionActiveTabIndicator = (clickedLink) => {
@@ -68,29 +83,29 @@ export default function App() {
 		<Router>
 			<div className="App" data-path={path.path}>
 				<nav className="nav-desktop" ref={navRef}>
-					<motion.span className="nav-active-page-indicator" style={{left: path.activePageIndicatorPos}} animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.span>
+					<motion.span className="nav-active-page-indicator" style={{left: path.activePageIndicatorPos}} animate={{backgroundImage: gradients.pages[path.path]}} transition={animation.pageTransition}></motion.span>
 					<ul>
-						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={animation.pageTransition}></motion.li>
 						<li><NavLink to="/" exact onClick={updatePath}>ABOUT ME</NavLink></li>
-						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={animation.pageTransition}></motion.li>
 						<li><NavLink to="/portfolio" onClick={updatePath}>PORTFOLIO</NavLink></li>
-						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={animation.pageTransition}></motion.li>
 						<li><NavLink to="/writings" onClick={updatePath}>WRITINGS</NavLink></li>
-						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={animation.pageTransition}></motion.li>
 						<li><NavLink to="/contact" onClick={updatePath}>CONTACT</NavLink></li>
-						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={{duration: 2}}></motion.li>
+						<motion.li className="nav-separator" animate={{backgroundImage: gradients.pages[path.path]}} transition={animation.pageTransition}></motion.li>
 					</ul>
 				</nav>
-				<motion.nav className="nav-mobile" animate={{borderImageSource: gradients.pages[path.path]}} transition={{duration: 2}}>
-					<motion.ul animate={!mobileNav ? {width: 70, height: 70, borderBottomLeftRadius: '100px', backgroundImage: gradients.pages[path.path]} : {width: 170, height: 260, borderBottomLeftRadius: '30px', backgroundImage: gradients.pages[path.path]}}>
-						<li onClick={toggleMobileNav}><FontAwesomeIcon icon={!mobileNav ? faBars : faTimes}></FontAwesomeIcon></li>
-						<motion.li onClick={toggleMobileNav}><NavLink to="/" exact onClick={updatePath}>ABOUT ME</NavLink></motion.li>
-						<motion.li onClick={toggleMobileNav}><NavLink to="/portfolio" onClick={updatePath}>PORTFOLIO</NavLink></motion.li>
-						<motion.li onClick={toggleMobileNav}><NavLink to="/writings" onClick={updatePath}>WRITINGS</NavLink></motion.li>
-						<motion.li onClick={toggleMobileNav}><NavLink to="/contact" onClick={updatePath}>CONTACT</NavLink></motion.li>
+				<motion.nav className="nav-mobile" animate={{borderImageSource: gradients.pages[path.path]}} transition={animation.pageTransition}>
+					<motion.ul onClick={toggleMobileNav} animate={!mobileNav ? {width: 70, height: 70, borderBottomLeftRadius: '100px', backgroundImage: gradients.pages[path.path]} : {width: 170, height: 260, borderBottomLeftRadius: '30px', backgroundImage: gradients.pages[path.path]}}>
+						<li><FontAwesomeIcon icon={!mobileNav ? faBars : faTimes}></FontAwesomeIcon></li>
+						<motion.li><NavLink to="/" exact>ABOUT ME</NavLink></motion.li>
+						<motion.li><NavLink to="/portfolio">PORTFOLIO</NavLink></motion.li>
+						<motion.li><NavLink to="/writings">WRITINGS</NavLink></motion.li>
+						<motion.li><NavLink to="/contact">CONTACT</NavLink></motion.li>
 					</motion.ul>
 				</motion.nav>
-				<motion.div className="frame" animate={{borderImageSource: gradients.pages[path.path]}} transition={{duration: 2}}>
+				<motion.div className="frame" animate={{borderImageSource: gradients.pages[path.path]}} transition={animation.pageTransition}>
 					<main className="content">
 						<div className="page">
 							<Route render={({location}) => (
