@@ -2,25 +2,9 @@ import React, { useState } from 'react';
 import { request } from 'graphql-request';
 import { motion } from "framer";
 import ReactGA from 'react-ga';
-import BlogList from '../page-components/BlogList';
-import '../page-components/Layouts.scss';
-
-const layoutsAnimation = {
-	initial: {
-		boxShadow: '0px 0px 0px #000',
-		backgroundColor: 'rgba(255, 255, 255, 0)'
-	},
-	enter: {
-		boxShadow: '0px 0px 30px #000',
-		backgroundColor: 'rgba(255, 255, 255, 0.005)'
-	},
-	exit: {
-		boxShadow: '0px 0px 0px #000',
-		backgroundColor: 'rgba(255, 255, 255, 0)',
-		borderColor: 'transparent'
-	}
-}
-
+import BlogList from '../components/BlogList';
+import '../components/Layouts.scss';
+import { layoutsAnimation } from '../animations';
 
 let writingsList = [];
 const writingsListQuery = `{

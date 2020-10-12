@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from "framer";
-import '../page-components/Layouts.scss';
+import '../components/Layouts.scss';
 
 export default function NotFound(props) {
 	return (

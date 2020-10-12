@@ -1,24 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from "framer";
 import ReactGA from 'react-ga';
-import OptionsPanel from '../page-components/OptionsPanel';
-import Form from '../page-components/Form';
-import '../page-components/Layouts.scss';
-
-const layoutsStagger = {
-	enter: {
-		transition: {
-			staggerChildren: 0.1
-		}
-	},
-	exit: {
-		overflow: 'visible',
-		transition: {
-			staggerChildren: 0.1
-		}
-	}
-}
-
+import OptionsPanel from '../components/OptionsPanel';
+import Form from '../components/Form';
+import '../components/Layouts.scss';
 
 export default function Contact(props) {
 	const [activeOption, setActiveOption] = useState(null);
@@ -56,4 +41,18 @@ export default function Contact(props) {
 			</div>
 		</motion.div>
 	)
+}
+
+const layoutsStagger = {
+	enter: {
+		transition: {
+			staggerChildren: 0.1
+		}
+	},
+	exit: {
+		overflow: 'visible',
+		transition: {
+			staggerChildren: 0.1
+		}
+	}
 }

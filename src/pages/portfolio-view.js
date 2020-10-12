@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from "framer";
 import { portfolio } from '../portfolio.jsx';
 import ReactGA from 'react-ga';
-import ArticleHeading from '../page-components/ArticleHeading';
-import Article from '../page-components/Article';
-import FloatingView from '../page-components/FloatingView';
-import List from '../page-components/List';
-import Background, { Image } from '../page-components/Background';
-import '../page-components/Layouts.scss';
+import ArticleHeading from '../components/ArticleHeading';
+import Article from '../components/Article';
+import FloatingView from '../components/FloatingView';
+import List from '../components/List';
+import Background, { Image } from '../components/Background';
+import '../components/Layouts.scss';
 
 const layoutsAnimation = {
 	initial: {

@@ -19,6 +19,13 @@
     .my-title {
         margin: 0;
         font-size: 1.15em;
+
+        span {
+            font-size: .7em;
+            color: #5d5d5d;
+            font-weight: 400;
+            -webkit-text-fill-color: #5d5d5d;
+        }
     }
     
     .my-bio {

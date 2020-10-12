@@ -18,7 +18,7 @@ export default function FloatingView(props) {
             width: window.innerWidth > 430 ? 350 : 300,
             transition: {
                 type: 'spring',
-                stiffness: 85
+                stiffness: 75
             }
         },
         default: {
@@ -26,7 +26,7 @@ export default function FloatingView(props) {
             height: 100,
             transition: {
                 type: 'spring',
-                stiffness: 85
+                stiffness: 75
             }
         }
     }

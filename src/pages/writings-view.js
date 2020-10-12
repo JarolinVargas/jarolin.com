@@ -2,29 +2,13 @@ import React, { useState } from 'react';
 import { request } from 'graphql-request';
 import { motion } from "framer";
 import ReactGA from 'react-ga';
-import ArticleHeading from '../page-components/ArticleHeading';
-import Article from '../page-components/Article';
-import FloatingView from '../page-components/FloatingView';
-import List from '../page-components/List';
-import Background, { Image } from '../page-components/Background';
-import '../page-components/Layouts.scss';
-
-const layoutsAnimation = {
-	initial: {
-		boxShadow: '0px 0px 0px #000',
-		backgroundColor: 'rgba(255, 255, 255, 0)'
-	},
-	enter: {
-		boxShadow: '0px 0px 30px #000',
-		backgroundColor: 'rgba(255, 255, 255, 0.005)'
-	},
-	exit: {
-		boxShadow: '0px 0px 0px #000',
-		backgroundColor: 'rgba(255, 255, 255, 0)',
-		borderColor: 'transparent'
-	}
-}
-
+import ArticleHeading from '../components/ArticleHeading';
+import Article from '../components/Article';
+import FloatingView from '../components/FloatingView';
+import List from '../components/List';
+import Background, { Image } from '../components/Background';
+import '../components/Layouts.scss';
+import { layoutsAnimation } from '../animations';
 
 let writingsList = [];
 const writingsListQuery = `{
@@ -90,7 +74,7 @@ export default function WritingsView(props) {
 			<motion.div className="layouts layout-col-1 padding-off scroll-y border-right" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
 				<div className="col-1" style={{maxWidth: 1000}}>
 					<article>
-						<ArticleHeading 
+						<ArticleHeading
 							title={writing.title}
 							meta={[{label: 'Published', value: writing.date},{label: 'Topic', value: writing.topic}]}
 							gradientClass="writings-gradient"

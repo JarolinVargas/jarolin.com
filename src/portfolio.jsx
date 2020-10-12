@@ -1,4 +1,4 @@
-import './page-components/Article.scss';
+import './components/Article.scss';
 import luminal from './assets/portfolio-img/luminal.png';
 import luminalBanner from './assets/portfolio-img/luminal-banner.png';
 import jobboard from './assets/portfolio-img/job-board.png';
@@ -25,7 +25,7 @@ export const portfolio = {
             bannerCover: luminalBanner
         },
         jsx: `
-            <p>Luminal is a personal project I’ve been working on for several years that consists of an easy to use website builder, and highly customizable HTML5 template. Users can build browser-compatible, multiple-page, responsive websites through an easy to use interface without writing or editing code. The Luminal website builder makes it easy to edit text, change colors, and much more. <em>Detailed case study coming soon.</em></p>
+            <p>Luminal is a personal project I’ve been working on for several years that consists of an easy to use website builder, and highly customizable HTML5 template. Users can build browser-compatible, multiple-page, responsive websites through an easy to use interface without writing or editing code. The Luminal website builder makes it easy to edit text, change colors, and much more.</p>
         `
     },
     'forcebrands-newsroom': {

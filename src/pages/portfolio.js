@@ -2,44 +2,11 @@ import React from 'react';
 import { motion } from "framer";
 import { portfolio } from '../portfolio.jsx';
 import ReactGA from 'react-ga';
-import ItemBanner from '../page-components/ItemBanner';
-import FloatingView from '../page-components/FloatingView';
-import List from '../page-components/List';
-import '../page-components/Layouts.scss';
-
-const layoutColAnimation = {
-	initial: {
-		y: -100,
-		opacity: 0
-	},
-	enter: {
-		y: 0,
-		opacity: 1
-	},
-	exit: {
-		y: 50,
-		opacity: 0,
-		transition: {
-            ease: 'easeOut'
-        }
-	}
-}
-
-const layoutsStagger = {
-	enter: {
-		transition: {
-			staggerChildren: 0.05
-		}
-	},
-	exit: {
-		overflow: 'visible',
-		transition: {
-			staggerChildren: 0.05
-		}
-	}
-}
-
-
+import ItemBanner from '../components/ItemBanner';
+import FloatingView from '../components/FloatingView';
+import List from '../components/List';
+import '../components/Layouts.scss';
+import { layoutColAnimation, layoutsStagger } from '../animations';
 
 const floatingViewPortfolioList = [];
 for( const property in portfolio ) {

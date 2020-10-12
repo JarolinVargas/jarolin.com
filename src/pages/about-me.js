@@ -1,27 +1,11 @@
 import React from 'react';
 import { motion } from "framer";
 import ReactGA from 'react-ga';
-import MyIntro from '../page-components/MyIntro';
-import Background, { GridDots } from '../page-components/Background';
+import MyIntro from '../components/MyIntro';
+import Background, { GridDots } from '../components/Background';
 import JarolinVargas from '../assets/jarolin-vargas.svg';
-import '../page-components/Layouts.scss';
-
-const layoutsAnimation = {
-	initial: {
-		boxShadow: '0px 0px 0px #000',
-		backgroundColor: 'rgba(255, 255, 255, 0)'
-	},
-	enter: {
-		boxShadow: '0px 0px 30px #000',
-		backgroundColor: 'rgba(255, 255, 255, 0.005)'
-	},
-	exit: {
-		boxShadow: '0px 0px 0px #000',
-		backgroundColor: 'rgba(255, 255, 255, 0)',
-		borderColor: 'transparent'
-	}
-}
-
+import { layoutsAnimation } from '../animations';
+import '../components/Layouts.scss';
 
 export default function AboutMe() {
 	ReactGA.pageview(window.location.pathname);
@@ -30,7 +14,11 @@ export default function AboutMe() {
 			<motion.div className="layouts layout-col-2 narrow-col-1 scroll-y" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
 				<div style={{height: '200px'}}></div>
 				<div className="center-col">
-					<MyIntro/>
+					<MyIntro
+						name="Jarolin E. Vargas"
+						title="Front-End Engineer &amp; UI/UX Designer"
+						bio="I design and build unique and memorable web applications. With over 7 years of development and design experience, I’ve learned not to compromise between great design and code quality. The gap between the design and development process makes building great websites harder, and taking on both roles has allowed me to be ambitious with design, as well as code."
+					/>
 				</div>
 			</motion.div>
 			<Background>
