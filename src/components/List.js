@@ -28,9 +28,18 @@ const staggerAnimation = {
 }
 
 export default function List(props) {
+    let listItems;
+    if( props.portfolioList ) {
+        listItems = props.portfolioList.map((item, i) =>
+            <motion.li key={i} variants={animations}>
+                <Link to={`portfolio/${item.sys['id']}`}>{item.projectTitle}</Link>
+            </motion.li>
+        )
+    }
+
     return (
         <motion.ul className="List" initial="initial" animate="enter" variants={staggerAnimation}>
-            {props.children.map((item, i) => <motion.li key={i} variants={animations}><Link to={!item.id ? item.link : `/writings/${item.title.toLowerCase().replace(/\s/g, '-')}/${item.id}`}>{item.title}</Link></motion.li>)}
+            {listItems}
         </motion.ul>
     )
 }

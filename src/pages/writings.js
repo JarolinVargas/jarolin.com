@@ -1,32 +1,41 @@
 import React, { useState } from 'react';
-import { request } from 'graphql-request';
 import { motion } from "framer";
 import ReactGA from 'react-ga';
 import BlogList from '../components/BlogList';
+import { accessToken, spaceId } from '../snippets/contentful-keys';
 import '../components/Layouts.scss';
 import { layoutsAnimation } from '../animations';
 
 let writingsList = [];
-const writingsListQuery = `{
-	writings(orderBy: createdAt_DESC) {
-		id
-		listCover {
-			url
+const query = `{
+	writingsCollection {
+		items {
+		  title
+		  topic
+		  published
+		  listCover {
+			  url
+		  }
+		  sys {
+			  id
+		  }
 		}
-		title
-		topic
-		date
-		article_id
 	}
 }`
 
 export default function Writings(props) {
-	const [writings, setWritings] = useState(false);
+	const [writingsLoaded, setWritingsLoaded] = useState(false);
 
-	if( !writingsList.length ) {           
-        request('https://api-eu-central-1.graphcms.com/v2/ckd9lt56kglb901z548nw00qe/master', writingsListQuery).then((data) => {
-			writingsList = data.writings;
-			setWritings(true);
+	if( !writingsList.length && !writingsLoaded ) {           
+		fetch(`https://graphql.contentful.com/content/v1/spaces/${spaceId}/environments/master?access_token=${accessToken}`, {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json'
+			},
+			body: JSON.stringify({query})
+		}).then(res => res.json()).then(response => {
+			writingsList = response.data.writingsCollection.items;
+			setWritingsLoaded(true);
 		});
 		return false;
 	}

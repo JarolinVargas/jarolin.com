@@ -22,6 +22,8 @@ const animations = {
 
 export default function Article(props) {
     return (
-        <motion.div className="article" dangerouslySetInnerHTML={{__html: props.children}} initial="initial" animate="enter" exit="exit" variants={animations}/>
+        <motion.div className="article" initial="initial" animate="enter" exit="exit" variants={animations}>
+            {props.children}
+        </motion.div>
     )
 }
