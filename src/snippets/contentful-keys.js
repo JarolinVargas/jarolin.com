@@ -1,4 +1,4 @@
 export const [accessToken, spaceId] = [
-    process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
-    process.env.REACT_APP_CONTENTFUL_SPACE_ID
+    'hExk_XtnD3_PbLWvKGK7J_kZTZo8cOC8DeuQlXugx1s',
+    '0mo16etbpbdn'
 ];
