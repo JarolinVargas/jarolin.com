@@ -59,6 +59,7 @@
   left: -80px;
   height: 110%;
   min-height: 500px;
+  max-width: 100%;
 }
 
 
@@ -284,7 +285,7 @@ nav {
 // Media Queries
 @media screen and (max-width: 1115px) {
   img.my-portrait {
-    height: 103%;
+    height: 87%;
   }
 }
 
@@ -412,11 +413,5 @@ nav {
   .frame {
     height: auto;
     min-height: 100vh;
-  }
-}
-
-@media screen and (max-width: 370px) {
-  img.my-portrait {
-    left: -100px;
   }
 }

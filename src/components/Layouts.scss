@@ -191,13 +191,12 @@
     /* about-me portrait */
     img.my-portrait {
         top: -50px;
-        right: 0px;
-        left: auto;
-        max-width: initial;
+        right: 0;
+        left: 0;
         height: 400px !important;
         margin: 0 auto;
-        -webkit-mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 5%, #FFF 50%);
-        mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 5%, #FFF 50%);
+        -webkit-mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 100px, #FFF 290px);
+        mask-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 100px, #FFF 290px);
     }
 
     /* Background */

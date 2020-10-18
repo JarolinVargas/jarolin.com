@@ -10,8 +10,7 @@ import { layoutColAnimation, layoutsStagger } from '../animations';
 let portfolioList = [];
 let portfolioListFeatured = [];
 
-const query = `
-{
+const query = `{
 	portfolioCollection {
 		items {
 			projectTitle,

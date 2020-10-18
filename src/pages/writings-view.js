@@ -15,8 +15,7 @@ export default function WritingsView(props) {
 	useEffect(() => {
 		const pathname = window.location.pathname;
 		const writingId = pathname.split('/')[2];
-		const query = `
-		{
+		const query = `{
 			writings(id: "${writingId}") {
 				title
 				topic
