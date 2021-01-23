@@ -1,0 +1,29 @@
+.ProjectButton {
+    width: 100%;
+    position: relative;
+
+    a {
+        width: 186px;
+        height: 186px;
+        line-height: 186px;
+        letter-spacing: 3px;
+        font-size: 24px;
+        border-radius: 100%;
+        margin: 0 auto;
+        align-self: center;
+        display: block;
+        background-attachment: fixed;
+        color: #FFF;
+        text-align: center;
+        text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+        transition: border-radius .10s;
+        background: -webkit-gradient(linear, left top, right top, from(#c9fa84), to(#06b5ca));
+        background: -webkit-linear-gradient(left, #c9fa84 0%, #06b5ca 50%);
+        background: -o-linear-gradient(left, #c9fa84 0%, #06b5ca 50%);
+        background: linear-gradient(to right, #c9fa84 0%, #06b5ca 50%);
+
+        &:hover {
+            border-top-right-radius: 2px;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.content-meta {
+    width: 100%;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    color: #FFF;
+
+    li {
+        margin-right: 35px;
+        margin-bottom: 10px;
+        display: inline-block;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .cm-label {
+        display: block;
+        font-weight: 600;
+        font-size: 0.75em;
+        text-transform: uppercase;
+    }
+
+    .cm-value {
+        margin: 0;
+        font-weight: 500;
+        font-size: 1.1em;
+    }
+}
