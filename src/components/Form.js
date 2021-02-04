@@ -49,11 +49,11 @@ export default function Form(props) {
                 <motion.div className="form-input-col" initial={props.activeOption === '1' ? {height: 0, opacity: 0} : {height: 'auto', opacity: 1}} animate={props.activeOption === '2' ? {height: 'auto', opacity: 1, transition: {ease: 'easeOut'}} : {height: 0, opacity: 0}}>
                     <div className="form-input-container">
                         <label>Services</label>
-                        <input type="text" name="services" disabled={props.activeOption === '1' ? true : false} placeholder="Development, UI/UX Design, Product Design"/>
+                        <input type="text" name="services" placeholder="Development, UI/UX Design, Product Design"/>
                     </div>
                     <div className="form-input-container">
                         <label>Budget</label>
-                        <input type="text" name="budget" disabled={props.activeOption === '1' ? true : false}/>
+                        <input type="text" name="budget"/>
                     </div>
                 </motion.div>
                 <div className="form-input-container form-textarea">
