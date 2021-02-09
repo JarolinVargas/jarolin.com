@@ -38,7 +38,7 @@ export default function Form(props) {
             <div>
                 <div className="form-input-col">
                     <div className="form-input-container">
-                        <label>Your Name <span className="contact-gradient">*</span></label>
+                        <label>First &amp; Last Name <span className="contact-gradient">*</span></label>
                         <input type="text" name="from_name" required/>
                     </div>
                     <div className="form-input-container">
@@ -49,7 +49,7 @@ export default function Form(props) {
                 <motion.div className="form-input-col" initial={props.activeOption === '1' ? {height: 0, opacity: 0} : {height: 'auto', opacity: 1}} animate={props.activeOption === '2' ? {height: 'auto', opacity: 1, transition: {ease: 'easeOut'}} : {height: 0, opacity: 0}}>
                     <div className="form-input-container">
                         <label>Services</label>
-                        <input type="text" name="services" disabled={props.activeOption === '1' ? true : false} placeholder="Development, UI/UX Design, Product Design"/>
+                        <input type="text" name="services" disabled={props.activeOption === '1' ? true : false} placeholder="Development, UI/UX Design"/>
                     </div>
                     <div className="form-input-container">
                         <label>Budget</label>
@@ -57,12 +57,12 @@ export default function Form(props) {
                     </div>
                 </motion.div>
                 <div className="form-input-container form-textarea">
-                    <label>{props.activeOption === '1' ? "What's up?" : 'Project details'} <span className="contact-gradient">*</span></label>
+                    <label>{props.activeOption === '1' ? "What's up?" : 'Message Body'} <span className="contact-gradient">*</span></label>
                     <textarea name="message_html" required></textarea>
                 </div>
             </div>
             <div style={{flexBasis: '100%'}}>
-                <input type="submit" className="contact-form-submit-btn" value={formSubmit === true ? 'Message sent' : 'Submit Form'}/>
+                <input type="submit" className="contact-form-submit-btn" value={formSubmit === true ? 'your email has been sent' : 'send email'}/>
             </div>
         </motion.form>
 	)

@@ -25,7 +25,7 @@ export default function Contact(props) {
 					}}
 					option2={{
 						heading: "Let's Work Together",
-						paragraph: "Tell me about your project and what you're looking for. From there, we can schedule a call or video chat to learn all the details."
+						paragraph: "Tell me about your project and what you're looking for. From there, we can schedule a call or video chat."
 					}}
 				/>
 			</div>

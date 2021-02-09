@@ -49,7 +49,7 @@ export default function Portfolio(props) {
 				}
 			}
 			setPortfolioLoaded(true);
-		});
+		}).catch(() => alert('Failed to load portfolio items. Please reload the page.'));
 		return false;
 	}
 

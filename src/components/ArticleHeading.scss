@@ -20,7 +20,6 @@
     }
 
     .article-meta {
-   
         flex-grow: 1;
         align-self: center;
 
@@ -48,7 +47,7 @@
 
 @media screen and (max-width: 950px) {
     .ArticleHeading {
-        padding: 15px !important;
+        padding: 50px 15px !important;
 
         .article-meta h1 {
             font-size: 2em;

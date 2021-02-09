@@ -37,7 +37,7 @@ export default function WritingsView(props) {
 			body: JSON.stringify({query})
 		}).then(res => res.json()).then(response => {
 			setWriting(response.data.writings);
-		});
+		}).catch(() => alert('Failed to load post. Please reload the page.'));;
 		ReactGA.pageview(pathname);
 	}, []);
 

@@ -44,16 +44,12 @@ export default function App() {
 
 	useEffect(() => {
 		updatePath();
-		window.addEventListener('popstate', (event) => {
-			updatePath();
-		});
+		window.addEventListener('popstate', (event) => updatePath());
 
 		let resizeEnd;
-		window.addEventListener('resize', function() {
+		window.addEventListener('resize', () => {
 			clearTimeout(resizeEnd);
-			resizeEnd = this.setTimeout(function() {
-				updatePath();
-			}, 300);
+			resizeEnd = setTimeout(updatePath, 300);
 		});
 	}, []);
 
@@ -73,7 +69,7 @@ export default function App() {
 	}
 
 	const repositionActiveTabIndicator = (clickedLink) => {
-		if( !navRef.current.querySelector('a.active') && !clickedLink ) { return '0px' }
+		if( !navRef.current.querySelector('a.active') && !clickedLink ) return '0px';
 		const activeTabEl = !clickedLink ? navRef.current.querySelector('a.active') : clickedLink.target;
 		const [activeTabPos, activeTabWidth] = [activeTabEl.offsetLeft, activeTabEl.offsetWidth]
 		return `${activeTabPos + (activeTabWidth / 2) - 3.5}px`;

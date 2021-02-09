@@ -57,7 +57,7 @@ export default function PortfolioView(props) {
 			body: JSON.stringify({query})
 		}).then(res => res.json()).then(response => {
 			setPortfolioItem(response.data.portfolio);
-		});
+		}).catch(() => alert('Failed to load portfolio item. Please reload the page.'));;
 		ReactGA.pageview(window.location.pathname);
 	}, []);
 

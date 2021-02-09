@@ -36,7 +36,7 @@ export default function Writings(props) {
 		}).then(res => res.json()).then(response => {
 			writingsList = response.data.writingsCollection.items;
 			setWritingsLoaded(true);
-		});
+		}).catch(() => alert('Failed to load posts. Please reload the page.'));;
 		return false;
 	}
 
