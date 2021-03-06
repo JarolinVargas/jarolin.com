@@ -71,7 +71,7 @@ export default function App() {
 	const repositionActiveTabIndicator = (clickedLink) => {
 		if( !navRef.current.querySelector('a.active') && !clickedLink ) return '0px';
 		const activeTabEl = !clickedLink ? navRef.current.querySelector('a.active') : clickedLink.target;
-		const [activeTabPos, activeTabWidth] = [activeTabEl.offsetLeft, activeTabEl.offsetWidth]
+		const [activeTabPos, activeTabWidth] = [activeTabEl.offsetLeft, activeTabEl.offsetWidth];
 		return `${activeTabPos + (activeTabWidth / 2) - 3.5}px`;
 	}
 

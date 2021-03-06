@@ -7,8 +7,6 @@ import List from '../components/List';
 import { accessToken, spaceId } from '../snippets/contentful-keys';
 import '../components/Layouts.scss';
 import { layoutColAnimation, layoutsStagger } from '../animations';
-let portfolioList = [];
-let portfolioListFeatured = [];
 
 const query = `{
 	portfolioCollection {
@@ -29,6 +27,9 @@ const query = `{
 		}
 	}
 }`
+
+let portfolioList = [];
+let portfolioListFeatured = [];
 
 export default function Portfolio(props) {
 	const [portfolioLoaded, setPortfolioLoaded] = useState(false);

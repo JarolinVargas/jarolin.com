@@ -17,7 +17,8 @@ export default function AboutMe() {
 					<MyIntro
 						name="Jarolin E. Vargas"
 						title="Front-End Engineer &amp; UI/UX Designer"
-						bio="I design and build unique and memorable web applications. With over 7 years of development and design experience, I’ve learned not to compromise between great design and code quality. The gap between the design and development process makes building great websites harder, and taking on both roles has allowed me to be ambitious with design, as well as code."
+						subtitle="-&nbsp;Available&nbsp;for&nbsp;freelance/full&#8209;time"
+						bio="Hi! I’m a Front-End Engineer with some UI &amp; UX design skills who strives to deliver the best experience possible for the end-user. I have experience building full-scale web applications both independently, and as part of a team. While I specialize in user-facing features, I sometimes dive into the back-end with PHP and MySQL. Check out the rest of my portfolio and hit me up if you’re interested in working together. &#9996;"
 					/>
 				</div>
 			</motion.div>

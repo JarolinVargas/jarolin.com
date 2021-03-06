@@ -38,7 +38,7 @@ export default function MyIntro(props) {
     return (
         <motion.div className="MyIntro" variants={variants}>
             <motion.h1 className="my-name aboutme-gradient" variants={animations}>{props.name}</motion.h1>
-            <motion.h3 className="my-title aboutme-gradient" variants={animations}>{props.title}<span> -&nbsp;Freelancer&nbsp;&amp;&nbsp;Contractor</span></motion.h3>
+            <motion.h3 className="my-title aboutme-gradient" variants={animations}>{props.title}<span> {props.subtitle}</span></motion.h3>
             <motion.p className="my-bio" variants={animations}>{props.bio}</motion.p>
 			<IconLinks/>
         </motion.div>
