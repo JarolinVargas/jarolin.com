@@ -32,4 +32,13 @@
     }
 
     h1, h2, h3, h4, h5, h6 {color: #464646}
+
+    img {
+        max-width: 100%;
+    }
+
+    .article-img-col-3 {
+        width: 33.3333%;
+        display: inline-block;
+    }
 }

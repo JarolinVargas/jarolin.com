@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from "framer";
+import { BLOCKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import ReactGA from 'react-ga';
 import ArticleHeading from '../components/ArticleHeading';
@@ -44,7 +45,20 @@ export default function PortfolioView(props) {
 					url
 				},
 				details {
-					json
+					json,
+					links {
+						assets {
+							block {
+								fileName
+								title
+								description
+								url
+								sys {
+									id
+								}
+							}
+						}
+					}
 				}
 			}
 		}`
@@ -79,7 +93,7 @@ export default function PortfolioView(props) {
 							gradientClass="portfolio-gradient"
 						/>
 						<Article>
-							{documentToReactComponents(portfolioItem.details.json)}
+							{documentToReactComponents(portfolioItem.details.json, getRenderOptions(portfolioItem.details.links))}
 						</Article>
 					</article>
 				</div>
@@ -89,4 +103,21 @@ export default function PortfolioView(props) {
 			</Background>
 		</React.Fragment>
 	)
+}
+
+
+function getRenderOptions(links) {
+	const assetBlockMap = new Map();
+	for (const asset of links.assets.block) {
+	  assetBlockMap.set(asset.sys.id, asset);
+	}
+  
+	return {
+	  renderNode: {
+		[BLOCKS.EMBEDDED_ASSET]: (node, next) => {
+			const asset = assetBlockMap.get(node.data.target.sys.id);
+			return <div className="article-img-col-3"><img src={asset.url} alt={asset.title}/></div>
+		},
+	  }
+	}
 }
