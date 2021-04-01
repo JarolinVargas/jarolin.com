@@ -20,7 +20,7 @@
         position: relative;
 
         svg {
-            padding: 10px 0px;
+            padding-bottom: 10px;
             transition: transform .10s;
         }
 
@@ -70,14 +70,16 @@
 
     h2 {
         margin-bottom: 5px;
+        font-size: 1.30em;
     }
 
     .icons {
-        font-size: 3.5em;
+        font-size: 3em;
     }
 
     p {
         line-height: 1.85em;
         margin: 0;
+        font-size: 0.90em;
     }
 }

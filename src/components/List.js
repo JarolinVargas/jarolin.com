@@ -6,7 +6,7 @@ export default function List(props) {
     let listItems;
     if( props.portfolioList ) {
         listItems = props.portfolioList.map((item, i) =>
-            <li key={i}>
+            <li key={item.sys['id']}>
                 <Link to={`portfolio/${item.sys['id']}`}>{item.projectTitle}</Link>
             </li>
         )

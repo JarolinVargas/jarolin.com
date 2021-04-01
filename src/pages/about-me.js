@@ -18,7 +18,7 @@ export default function AboutMe() {
 						name="Jarolin E. Vargas"
 						title="Front-End Engineer &amp; UI/UX Designer"
 						subtitle="-&nbsp;Available&nbsp;for&nbsp;freelance/full&#8209;time"
-						bio="Hi! I’m a Front-End Engineer with some UI &amp; UX design skills who strives to deliver the best experience possible for the end-user. I have experience building full-scale web applications both independently, and as part of a team. While I specialize in user-facing features, I sometimes dive into the back-end with PHP and MySQL. Check out the rest of my portfolio and hit me up if you’re interested in working together. &#9996;"
+						bio="Hey! I’m a Front-End Engineer with some UI &amp; UX design skills who strives to deliver the best experience possible for the end-user. I have experience building full-scale web applications both independently, and as part of a team. While I specialize in user-facing features, I sometimes dive into the back-end with PHP and MySQL. Check out the rest of my portfolio and hit me up if you’re interested in working together. &#9996;"
 					/>
 				</div>
 			</motion.div>
