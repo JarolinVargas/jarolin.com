@@ -21,7 +21,7 @@
     "framer-motion": "^2.7.5",
     "graphql": "^15.3.0",
     "graphql-request": "^3.1.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-ga": "^3.1.2",
