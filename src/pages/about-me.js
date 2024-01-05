@@ -12,19 +12,19 @@ export default function AboutMe() {
 	return (
 		<React.Fragment>
 			<motion.div className="layouts layout-col-2 narrow-col-1 scroll-y" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
-				<div style={{height: '200px'}}></div>
+				<div style={{ height: '200px' }}></div>
 				<div className="center-col">
 					<MyIntro
 						name="Jarolin E. Vargas"
-						title="Front-End Engineer &amp; UI/UX Designer"
+						title="Front-End Developer &amp; UI/UX Designer"
 						subtitle="-&nbsp;Available&nbsp;for&nbsp;freelance/full&#8209;time"
-						bio="Hey! I’m a Front-End Engineer with some UI &amp; UX design skills who strives to deliver the best experience possible for the end-user. I have experience building full-scale web applications both independently, and as part of a team. While I specialize in user-facing features, I sometimes dive into the back-end with PHP and MySQL. Check out the rest of my portfolio and hit me up if you’re interested in working together. &#9996;"
+						bio="I’m a Front-End Developer with some design skills who strives to deliver the best experience possible for the end-user. I have experience building complex web applications independently, and as part of a team. I specialize in user-facing features including design, which allows me to build products and features quickly from start to finish. Check out the rest of my portfolio and reach out if you’re interested in working together. &#9996;"
 					/>
 				</div>
 			</motion.div>
 			<Background>
-				<motion.img className="my-portrait" src={JarolinVargas} alt="Jarolin Vargas" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}/>
-				<GridDots width={140} height={140} bottom={15} right={15}/>
+				<motion.img className="my-portrait" src={JarolinVargas} alt="Jarolin Vargas" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />
+				<GridDots width={140} height={140} bottom={15} right={15} />
 			</Background>
 		</React.Fragment>
 	)

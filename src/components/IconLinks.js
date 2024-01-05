@@ -30,7 +30,7 @@ export default function IconLinks() {
                 <li><a href="https://github.com/JarolinVargas" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} color="#FFF" /></a></li>
                 <li><a href="https://dribbble.com/JarolinVargas" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faDribbble} color="#EA4C89" /></a></li>
                 <li><a href="https://www.linkedin.com/in/jarolin-vargas-04099b156/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} color="#028fc7" /></a></li>
-                <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFileAlt} color="orange" /></a></li>
+                <li><a href="https://assets.ctfassets.net/0mo16etbpbdn/3Sky758gzo11ti5M5bHXMs/eeeb5c4e20be199d3754984496c07660/Jarolin-vargas-resume.pdf" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFileAlt} color="orange" /></a></li>
             </motion.ul>
         </div>
     )
