@@ -3,7 +3,8 @@ import { motion } from "framer";
 import ReactGA from 'react-ga';
 import MyIntro from '../components/MyIntro';
 import Background, { GridDots } from '../components/Background';
-import JarolinVargas from '../assets/jarolin-vargas.svg';
+import JarolinVargas from '../assets/jarolin-vargas.jpeg';
+import JarolinVargasMobile from '../assets/jarolin-vargas-mobile.png';
 import { layoutsAnimation } from '../animations';
 import '../components/Layouts.scss';
 
@@ -12,8 +13,9 @@ export default function AboutMe() {
 	return (
 		<React.Fragment>
 			<motion.div className="layouts layout-col-2 narrow-col-1 scroll-y" initial="initial" animate="enter" exit="exit" variants={layoutsAnimation}>
-				<div style={{ height: '200px' }}></div>
+				<div className="about-placeholder" style={{ height: '200px' }}></div>
 				<div className="center-col">
+					<motion.img className="my-portrait-mobile" src={JarolinVargasMobile} alt="Jarolin Vargas" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} style={{display: 'none'}} />
 					<MyIntro
 						name="Jarolin E. Vargas"
 						title="Front-End Developer &amp; UI/UX Designer"

@@ -133,7 +133,7 @@
 }
 
 /* media queries */
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1200px) {
     .layouts {
         &.layout-col-2.narrow-col-1, &.layout-col-2.narrower-col-1 {
             grid-template-columns: 1fr;
